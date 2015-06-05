@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="GlobalConfigurationList" OnQuickLaunch="TRUE" TemplateType="10007" Url="Lists/GlobalConfigurationList" Description="Global configuration Key and value pair">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">ProjectTaskAssignedEmailSubjectKey</Field>
+          <Field Name="Value">Action Required: New Project Change request for review</Field>
+          <Field Name="Description">Specify the subject line for Project change task assigned mail</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskAssignedEmailBodyKey</Field>
+          <Field Name="Value"><![CDATA[Hi,
+
+New Project change request has been requested for review. A task has been assigned against your name.
+
+To review the task, click on the following Task Url:
+
+Title : %Task: Title%
+Task Url: <a href='%TaskSpecial: TaskUrl%' >%TaskSpecial: TaskUrl%</a>
+
+Regards,
+JCI Support Team]]>
+          </Field>
+          <Field Name="Description"><![CDATA[Specify the body content for Project change task assigned mail. Tokens are
+            %Task: Title% - Task Title
+            %TaskSpecial: TaskUrl% - Task Url]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskDueEmailSubjectKey</Field>
+          <Field Name="Value"><![CDATA[Reminder: Project change request for review]]></Field>
+          <Field Name="Description"><![CDATA[Specify the subject line for Project change task due mail]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskDueEmailBodyKey</Field>
+          <Field Name="Value"><![CDATA[Hi, 
+
+A task assigned to you is due and requires you to take action. 
+
+Title : %Task: Title% 
+
+Task Url: <a href='%TaskSpecial: TaskUrl%' >%TaskSpecial: TaskUrl%</a> 
+
+Regards, 
+JCI Support Team]]></Field>
+          <Field Name="Description"><![CDATA[Specify the body content for Project change task due mail. Tokens are
+            %Task: Title% - Task Title
+            %TaskSpecial: TaskUrl% - Task Url]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskApprovedEmailSubjectKey</Field>
+          <Field Name="Value"><![CDATA[Project Change Request approved]]></Field>
+          <Field Name="Description"><![CDATA[Specify the subject line for Project change approved mail]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskApprovedEmailBodyKey</Field>
+          <Field Name="Value"><![CDATA[<HTML><HEAD> <META name=GENERATOR content='MSHTML 10.00.9200.16540'></HEAD> <BODY>Dear {0}, <BR/><BR/>The <A HREF='{3}'>{1}</A> Project Change Request that you requested has been approved.<BR/><BR/>Thank you, <BR/>{2}<BODY></HTML>]]></Field>
+          <Field Name="Description"><![CDATA[Specify the body content for Project change approved mail. Tokens are
+            {0} : Requestor Name
+            {1} : Request title
+            {2}: Approver Name
+            {3}: Project Change Request URL in a View mode]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskRejectedEmailSubjectKey</Field>
+          <Field Name="Value"><![CDATA[Project Change Request denied]]></Field>
+          <Field Name="Description"><![CDATA[Specify the subject line for Project change denied mail]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskRejectedEmailBodyKey</Field>
+          <Field Name="Value"><![CDATA[<HTML><HEAD> <META name=GENERATOR content='MSHTML 10.00.9200.16540'></HEAD> <BODY>Dear {0}, <BR/><BR/>The <A HREF='{4}'>{1}</A> project change that you requested has been denied. {2}<BR/><BR/>If you require further assistance please contact {3} to find additional information concerning features/functionality of the Project change request.<BR/><BR/>Thank you,<BR/>{3}</BODY></HTML>]]></Field>
+          <Field Name="Description"><![CDATA[Specify the body content for Project change approved mail. Tokens are
+            {0} : Requestor Name
+            {1} : Request Title
+            {2} : Approver Comments
+            {3} : Approvers Title
+            {4} : Project Change Request URL in a View mode]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskMoreInfoRequiredEmailSubjectKey</Field>
+          <Field Name="Value"><![CDATA[More info requested by approver from project change requestor]]></Field>
+          <Field Name="Description"><![CDATA[Specify the subject line for Project change more info required mail]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskMoreInfoRequiredEmailBodyKey</Field>
+          <Field Name="Value"><![CDATA[<HTML><HEAD> <META name=GENERATOR content='MSHTML 10.00.9200.16540'></HEAD> <BODY>Dear {0}, <BR/><BR/>The <A HREF='{4}'>{1}</A> Project Change Request that you requested is in process. However, there is additional information that is needed before the site can be approved and created.<BR/>Please provide the following information, so that we can proceed with processing your request. {2} <BR/><BR/>To Provide additional comment  please click on 'JCI Notes' field on  this url: <a href='{5}' target='_blank'>{1}</a>. <BR/><BR/>Thank you,<BR/>{3}</BODY></HTML>]]></Field>
+          <Field Name="Description"><![CDATA[Specify the body content for Project change more info required mail. Tokens are
+            {0} : Requestor Name
+            {1} : Request Title
+            {2} : Approver Comments
+            {3} : Approvers Title
+            {4} : Project Change Request URL in a View mode
+            {5} : Project Change Request URL in a Edit mode]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskCancelEmailSubjectKey</Field>
+          <Field Name="Value"><![CDATA[Canceled: New project change request for review]]></Field>
+          <Field Name="Description"><![CDATA[Subject line for project change task cancelled]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">ProjectTaskCancelEmailBodyKey</Field>
+          <Field Name="Value"><![CDATA[Assigned task has been cancelled]]></Field>
+          <Field Name="Description"><![CDATA[Body content for project change task cancelled]]></Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

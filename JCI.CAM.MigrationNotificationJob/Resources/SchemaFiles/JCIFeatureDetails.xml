@@ -1,0 +1,79 @@
+<Features>
+  <!-- JCI.Foundation.SiteProvisioning.Lists and JCI.Foundation.SiteProvisioning.Pages features has JCI.Foundation.Branding.SiteProvisioningAssets feature dependency -->
+  <Feature Name="JCI.Foundation.SiteProvisioning.Lists" GUID="af29ce8e-5307-4cd7-a904-a61616c654f3" Scope="Web" />
+  <Feature Name="JCI.Foundation.SiteProvisioning.Pages" GUID="f1c98c0d-f80d-4b0a-bd0b-9158fa58e9a8" Scope="Web" />
+      <Feature Name="JCI.Foundation.Branding.SiteProvisioningAssets" GUID="7f22433f-7a4e-4a64-a7df-d456dd37e49c" Scope="Web" />
+
+  <!-- JCI.Foundation.Branding.CommunityPortalBranding and JCI.Foundation.Branding.SearchBranding features has JCI.Foundation.Branding.CommonSiteAssets feature dependency -->
+  <Feature Name="JCI.Foundation.Branding.CommunityPortalBranding" GUID="a1328422-8787-4a67-8d31-a5d8f74bd573" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.SearchBranding" GUID="644c06b1-30ff-48f0-93dc-a603d6cae0a4" Scope="Web" />
+      <Feature Name="JCI.Foundation.Branding.CommonSiteAssets" GUID="94886076-4211-449d-accd-e54ad7585ca2" Scope="Web" />
+      
+
+  <!-- JCI.Foundation.Collaboration.BaseDocumentLibrar and JCI.Foundation.Collaboration.ProjectDocumentLibrary features has JCI.Foundation.Core.AutoTagging feature dependency -->
+  <Feature Name="JCI.Foundation.Collaboration.BaseDocumentLibrary" GUID="056ee638-9c10-4eb6-83f7-a34dcb4c1de8" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.ProjectDocumentLibrary" GUID="b1894cf6-f138-452d-be02-7785c158bb01" Scope="Web" />
+  
+
+  
+  <!-- Following features has JCI.Foundation.Collaboration.CommunitySiteBase feature dependency -->
+  <Feature Name="JCI.Foundation.Collaboration.CommunityAnnouncements" GUID="4017ca37-0e47-4a09-82e9-10eb15a6852e" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.CommunityDiscussions" GUID="fa6c4821-28a5-4dd0-a1a2-eed33de5bfa4" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.CommunityJoin" GUID="1fe8bebf-b0cc-4330-9078-7e4fd42e2b75" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.CommunityLinks" GUID="a6dfd15f-4f74-45b0-8d24-d55531d1c454" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.CommunityPromotedLinks" GUID="74500fd8-1d1c-4c02-81d6-d95af647f70d" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.CommunityTopContributors" GUID="0489189a-f82d-43ac-be31-b738f5f9aa15" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.CommunityWhatsHappenning" GUID="062007ce-b336-462c-9c26-832251925063" Scope="Web" />
+      <!-- JCI.Foundation.Collaboration.CommunitySiteBase feature has JCI.Foundation.Branding.CommunitySiteAsset feature dependency -->
+      <Feature Name="JCI.Foundation.Collaboration.CommunitySiteBase" GUID="1eb21665-4f04-4310-8980-104b96887e4b" Scope="Web" />
+          <Feature Name="JCI.Foundation.Branding.CommunitySiteAsset" GUID="ad2b52fa-0217-49da-b9cd-1bf192bd6773" Scope="Web" />
+
+  
+  <!-- Following features has JCI.Foundation.Collaboration.ProjectSiteBase feature dependency -->
+  <Feature Name="JCI.Foundation.Collaboration.ProjectAnnoucements" GUID="6dcd6744-dd62-4b97-a8af-ca207d1d4439" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.ProjectLinks" GUID="a259ae71-771c-4554-b83b-ce8c2b4d2b5b" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.ProjectSummary" GUID="52c043fc-4335-4c82-8385-ca1fca938e97" Scope="Web" />
+      <Feature Name="JCI.Foundation.Collaboration.ProjectSiteBase" GUID="e6e51ed8-5ee4-4e7c-ad34-0bf4a57d2d74" Scope="Web" />
+  <!-- Following features has JCI.Foundation.Collaboration.TeamSiteBase feature dependency -->
+  <Feature Name="JCI.Foundation.Collaboration.TeamAnnouncements" GUID="f4c77600-2297-4c97-9059-570c52101a50" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.TeamDiscussions" GUID="414e6d23-379b-4da2-8895-3ca5eade2b4f" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.TeamDocuments" GUID="8599557d-cb3e-4185-a1f5-cf09c9445b70" Scope="Web" />
+      <Feature Name="JCI.Foundation.Collaboration.TeamSiteBase" GUID="00ce7360-6b31-4dd0-8080-7c684a7911b3" Scope="Web" />
+          <!-- JCI.Foundation.Collaboration.ProjectSiteBase and  feature has JCI.Foundation.Branding.CommunitySiteAsset feature dependency -->
+          <Feature Name="JCI.Foundation.Branding.CollaborationSiteAssets" GUID="afbe0759-62db-4e7a-bf45-66756f0ad1cf" Scope="Web" />
+          
+  <!-- TaxonomyFieldAdded feature has JCI.Foundation.Core.ContentTypes feature dependency -->  
+      <Feature Name="TaxonomyFieldAdded" GUID="73ef14b1-13a9-416b-a9b5-ececa2b0604c" Scope="Web" />      
+
+  <!-- Following features doen't have any feature dependency -->
+  <Feature Name="JCI.Foundation.Branding.BlogSiteBranding" GUID="25ddba6c-dc38-4a9a-8101-5f51bc2b2f23" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.CommunitySiteBrandingV2" GUID="aa9e2708-348f-4fd0-9c84-0787e43bea0a" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.MySiteBranding" GUID="1b55539b-717b-4270-a7ce-72dca0536179" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.MySiteHostBranding" GUID="ebf12c2e-1d95-454f-990e-3a2cce09e284" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.JCIPartnerSiteMaster" GUID="2127afc1-5d41-4d06-8242-88e9523c178e" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.ProjectSiteAssets" GUID="e20fb623-1d0c-40a4-ae66-4f85ac57d41f" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.ProjectSiteBrandingV2" GUID="59942af8-debd-41ac-9596-87ab82517083" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.SetMySiteBranding" GUID="8bfdfd67-fc25-4731-9f53-3e61daf102d6" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.SiteProvisioningAssetsCR009" GUID="dcc4ce57-3ee1-4a6a-b82e-3370ab7895eb" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.TeamSiteBrandingV2" GUID="49c5ac20-d237-49e1-a902-f8424a3c8854" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.UploadDirectAccessScript" GUID="fd57fcf2-b302-464e-a3fa-48c359fe3e18" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.ProjectWorkFlows" GUID="e30f826f-0fc4-473a-87d6-9bc886a37158" Scope="Web" />
+  <Feature Name="JCI.Foundation.Collaboration.TeamProjectAssignments" GUID="e32afde8-7b9f-4c59-9de2-d64f2514fcdd" Scope="Web" />
+  <!--<Feature Name="JCI.Foundation.Collaboration.TestSite" GUID="0925c121-6f17-4120-b443-2e88f5160941" Scope="Web" />-->
+  <Feature Name="JCI.Foundation.Core.GlobalConfigurationList" GUID="c722c66d-1f14-4533-904f-f2486d7240b7" Scope="Web" />
+  <Feature Name="JCI.Foundation.Core.JCIDiagonistics" GUID="aede2433-9006-49a3-a295-301dff8b5f9a" Scope="Web" />
+  <Feature Name="JCI.Foundation.MySite.MySiteHostSettings" GUID="f405f188-7373-4840-a358-6d02d7086a14" Scope="Web" />
+  <Feature Name="JCI.Foundation.SiteProvisioning.CR009Enhancements" GUID="89865948-4b72-4bd1-8c73-39dc1d4a1624" Scope="Web" />
+  <Feature Name="JCI.Foundation.SiteProvisioning.CR009EnhancementsContentHub" GUID="e5ba3a9c-86ef-4aac-be93-7e511196440a" Scope="Web" />
+  <Feature Name="JCI.Foundation.SiteProvisioning.TimerJobs" GUID="21ba5fb6-25c9-4afc-8aa1-cf8e0b345c3b" Scope="Web" />
+  <Feature Name="JCI.Foundation.SiteProvisioning.Workflows" GUID="0389bada-4458-4644-9035-f33164dcadcf" Scope="Web" />
+  
+  <Feature Name="JCI.Foundation.Core.AutoTagging" GUID="37ca0e87-bb09-4e32-b06d-25c2812626f1" Scope="Web" />
+  
+  <!-- Site scoped features -->
+  <Feature Name="JCI.Foundation.Core.ContentTypes" GUID="4525dacd-f117-4627-b97c-c16751ad4c55" Scope="Site" />
+  <Feature Name="JCI.Foundation.Branding.PartnerSiteSearchConfiguration" GUID="082bd75c-37a7-450c-8a08-c5dffd2f8dc7" Scope="Site" />
+  <Feature Name="JCI.Foundation.MySite.SocialBookmarks" GUID="e3d3605b-579b-46e6-8be2-0758edb1a457" Scope="Site" />
+  <Feature Name="JCI.Foundation.Collaboration.DisableSharePointDesigner" GUID="7b218f04-147d-45b9-949d-383bd7387346" Scope="Site" />
+  <Feature Name="JCI.Foundation.SiteProvisioning.WebParts" GUID="77b8b65f-0fc5-4ec3-96b4-611be5743911" Scope="Site" />
+</Features>

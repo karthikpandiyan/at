@@ -1,0 +1,339 @@
+﻿body {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.nobold {
+    font-weight: 100;
+}
+
+span.validationMessage {
+    font-size: small;
+}
+div.input-group > span.validationMessage {
+    position: absolute;
+    top: 30px;
+    left: -15px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+span.input-group-addon > span.validationMessage {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.loader {
+    color: #fff;
+    opacity: 1;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loaderText {
+    color: #3095BF;
+    height: 1000px;
+    width: 100%;
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+label,
+button,
+textarea {
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+.red {
+    color: #e72020;
+}
+
+.green {
+    color: #61b528;
+}
+
+.blue {
+    color: #3095BF;
+}
+
+.validationMessage {
+    color: #f00;
+    clear: both;
+    margin-left: 15px;
+    display: block;
+}
+
+.color {
+    background-color: #187ac3;
+    vertical-align: bottom;
+    text-align: center;
+    border: solid #3888c4 0;
+    padding-bottom: 0;
+    padding-top: 600px;
+    height: 650px;
+}
+
+.color1 {
+    background-color: #41A6D0;
+}
+
+.color2 {
+    background-color: #3095BF;
+}
+
+.color3 {
+    background-color: #1E83AE;
+}
+
+.color > a {
+    color: #fff;
+    font-family: "Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif !important;
+    font-size: 13px;
+}
+
+    .color > a:hover {
+        text-decoration: none;
+        color: #fff;
+        font-family: "Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif !important;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+.width {
+    width: 1000px;
+}
+
+.fix {
+    min-width: 80px;
+}
+
+section {
+    height: 650px;
+}
+
+.border {
+    border: 0 solid #c1c1c1;
+    border-left-width: 1px;
+    padding: 0;
+    padding-left: 10px;
+    height: 650px;
+}
+
+    .border > p {
+        font-size: smaller;
+    }
+
+a > i {
+    font-size: x-large;
+    cursor: pointer;
+}
+
+div > label {
+    font-size: smaller;
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding: 0;
+}
+
+div > input {
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+div > select {
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+div > textarea {
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.options {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: small;
+    cursor: pointer;
+    color: forestgreen;
+    background-color: lavender;
+    padding: 10px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.SiteType > div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.prefix {
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-wrap: none;
+    overflow-x: hidden;
+}
+
+.SiteTypeSelected {
+    background-color: #c1c1c1;
+    color: #fff;
+}
+
+.thumb:hover img,
+.thumb:hover .thumbnail,
+.thumb:hover {
+    background-color: #41A6D0;
+    border-color: #41A6D0;
+    color: #fff;
+}
+
+.thumb2:hover img,
+.thumb2:hover .thumbnail,
+.thumb2:hover {
+    border-color: lavender;
+    cursor: default;
+}
+
+.pt10 {
+    padding-top: 10px;
+    height: 80%;
+}
+
+.pad0 {
+    padding: 0;
+}
+
+.description
+{
+    width: 400px;
+    height: 200px;
+}
+
+.pad20 {
+    padding: 20px;
+    margin: 20px;
+}
+
+.msg
+{
+    margin-top: 20px;
+    width: 300px;
+}
+
+div > span.validationMessage {
+    margin-top: 5px;
+}
+
+.noBorder {
+    border: none;
+    width: 100px;
+    outline: 0 invert none !important;
+}
+
+.cam-entity-resolved {
+    border-collapse: collapse;
+    cursor: pointer;
+    display: inline-block;
+    max-width: 400px;
+    overflow: hidden;
+    text-decoration: underline;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+.cam-peoplepicker-delImage {
+    border-collapse: collapse;
+    cursor: pointer;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: x-small;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+    .cam-peoplepicker-delImage:hover {
+        text-decoration: none;
+    }
+
+.cam-peoplepicker-usersearch {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+div.thumb {
+    cursor: pointer;
+}
+
+#desc ~ .validationMessage
+{
+    position: absolute;
+    top: -25px;
+    right: 90px; 
+    left:auto;
+} 
+/* Following 3 classes contains css login to control animation of 
+   Help on hover */
+
+span.help {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    span.help ~ div.help {
+        position: absolute;
+        width: 350px;
+        z-index: 2;
+        right: 0;
+        top: 35px;
+        visibility: hidden;
+        background-color: #6495ed;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    span.help:hover ~ div.help {
+        visibility: visible;
+    }

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Team Calendar" OnQuickLaunch="FALSE" TemplateType="106" FeatureId="00bfea71-ec85-4903-972d-ebe475780106" Url="Lists/TeamCalendar" Description="Team site calendar"></ListInstance>
+</Elements>

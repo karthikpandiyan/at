@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{721A1C4F-3026-433F-AFE9-D76FACCD0356}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JCI.CAM.Provisioning.Core</RootNamespace>
+    <AssemblyName>JCI.CAM.Provisioning.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.IdentityModel.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Online.SharePoint.Client.Tenant">
+      <HintPath>..\ReferencedAssemblies\Microsoft.Online.SharePoint.Client.Tenant.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.Taxonomy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.UserProfiles, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.WorkflowServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication\AppOnlyAuthenticationSite.cs" />
+    <Compile Include="Authentication\AppOnlyAuthenticationTenant.cs" />
+    <Compile Include="Authentication\IAuthentication.cs" />
+    <Compile Include="AutoTagData\AutoTaggingHelper.cs" />
+    <Compile Include="AutoTagData\ProfileHelper.cs" />
+    <Compile Include="Configuration\AppSettingsManager.cs" />
+    <Compile Include="Configuration\ConfigurationFactoryManager.cs" />
+    <Compile Include="Configuration\IAppSettingsManager.cs" />
+    <Compile Include="Configuration\IConfigurationFactory.cs" />
+    <Compile Include="Configuration\ITemplateFactory.cs" />
+    <Compile Include="Configuration\TemplateManager.cs" />
+    <Compile Include="Configuration\XMLTemplateManager.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Constants\SiteRequestListFields.cs" />
+    <Compile Include="Entity\AutoTagRequestInformation.cs" />
+    <Compile Include="Entity\EventCodes.cs" />
+    <Compile Include="Entity\SiteMetadata.cs" />
+    <Compile Include="ProvisioningData\AbstractProvisioningService.cs" />
+    <Compile Include="ProvisioningData\IProvisioningService.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ProvisioningData\OnlineProvisioningService.cs" />
+    <Compile Include="ProvisioningData\OnPremProvisioningService.cs" />
+    <Compile Include="RequestData\DataStoreException.cs" />
+    <Compile Include="RequestData\ISiteRequestFactory.cs" />
+    <Compile Include="RequestData\ISiteRequestManager.cs" />
+    <Compile Include="RequestData\SiteProvisioningManager.cs" />
+    <Compile Include="RequestData\SiteRequestFactory.cs" />
+    <Compile Include="RequestData\SiteRequestManager.cs" />
+    <Compile Include="Entity\AppSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\ExtensibilityManager.cs" />
+    <Compile Include="Extensibility\ISharePointExtensibility.cs" />
+    <Compile Include="ISharePointService.cs" />
+    <Compile Include="PCResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PCResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharePointContext.cs" />
+    <Compile Include="Entity\SharePointUser.cs" />
+    <Compile Include="Entity\SiteRequestInformation.cs" />
+    <Compile Include="Entity\SiteRequestStatus.cs" />
+    <Compile Include="TemplateEntites\AdditionalAdministrator.cs" />
+    <Compile Include="TemplateEntites\ConfigurationContainer.cs" />
+    <Compile Include="TemplateEntites\ConfigurationContainers.cs" />
+    <Compile Include="TemplateEntites\ContentType.cs" />
+    <Compile Include="TemplateEntites\ContentTypeBinding.cs" />
+    <Compile Include="TemplateEntites\ContentTypeFile.cs" />
+    <Compile Include="TemplateEntites\CustomAction.cs" />
+    <Compile Include="TemplateEntites\DeploymentFile.cs" />
+    <Compile Include="TemplateEntites\DeploymentFileProperty.cs" />
+    <Compile Include="TemplateEntites\DeploymentModule.cs" />
+    <Compile Include="TemplateEntites\DeploymentModules.cs" />
+    <Compile Include="TemplateEntites\Feature.cs" />
+    <Compile Include="TemplateEntites\Field.cs" />
+    <Compile Include="TemplateEntites\FieldsFile.cs" />
+    <Compile Include="TemplateEntites\ListInstance.cs" />
+    <Compile Include="TemplateEntites\Member.cs" />
+    <Compile Include="TemplateEntites\Owner.cs" />
+    <Compile Include="TemplateEntites\SiteProperty.cs" />
+    <Compile Include="TemplateEntites\SiteSecurity.cs" />
+    <Compile Include="TemplateEntites\Template.cs" />
+    <Compile Include="TemplateEntites\TemplateConfiguration.cs" />
+    <Compile Include="TemplateEntites\Tenancy.cs" />
+    <Compile Include="TemplateEntites\TenancyConfiguration.cs" />
+    <Compile Include="TemplateEntites\ThemePackage.cs" />
+    <Compile Include="TemplateEntites\User.cs" />
+    <Compile Include="TemplateEntites\Vistor.cs" />
+    <Compile Include="TokenHelper.cs" />
+    <Compile Include="Utilities\ConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\PathHelper.cs" />
+    <Compile Include="Utilities\XmlSerializerHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\key.snk">
+      <Link>key.snk</Link>
+    </None>
+    <None Include="Resources\Themes\Contoso\contoso.spcolor">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Themes\Contoso\contoso.spfont">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Themes\Garage\garage.spcolor">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Themes\Garage\garagewhite.spcolor">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Themes\SPC\SPCTheme.spcolor">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JCI.CAM.Common\JCI.CAM.Common.csproj">
+      <Project>{cd640094-5058-47d2-ace5-c535fcc32d80}</Project>
+      <Name>JCI.CAM.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PCResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PCResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Themes\Contoso\Contoso.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Themes\Contoso\contosobg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Themes\Contoso\contosologo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Themes\Garage\garagebg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Themes\Garage\garagelogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Themes\SPC\SPCbg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Themes\SPC\SPCLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,9 @@
+﻿<Feature xmlns="http://schemas.microsoft.com/sharepoint/" ImageUrl="/Images/JCI_featureIcon.png" Title="JCI.Foundation.Collaboration.CommunitySiteBase" AlwaysForceInstall="TRUE" Description="This is the base community feature which need to be executed in order to provision community site" Id="1eb21665-4f04-4310-8980-104b96887e4b" Scope="Web">
+  <ElementManifests>
+    <ElementManifest Location="CommunityAnnouncements\Elements.xml" />
+    <ElementManifest Location="CommunityCalendar\Elements.xml" />
+    <ElementManifest Location="CommunityLinks\Elements.xml" />
+    <ElementManifest Location="CommunityPictureLibrary\Elements.xml" />
+    <ElementManifest Location="CommunityPromotedLinks\Elements.xml" />
+  </ElementManifests>
+</Feature>

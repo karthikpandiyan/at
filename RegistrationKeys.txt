@@ -1,0 +1,7 @@
+*** O365 Sharepoint ***
+<add key="ClientId" value="8ae1d124-2d8a-4180-9c10-ad1c926f996b" />
+<add key="ClientSecret" value="lh0z4M0Z238ao9NVWiF+YvmFHqfGftMmHlEb5yqUz/E=" />
+
+*** Localhost ***
+<add key="ClientId" value="2732460e-dab5-4c3e-87c3-2348b3e2d9b2" />
+<add key="ClientSecret" value="uzzX4hnF/gh5O8Z/9I4IV5pH08g2PjXgMQmtNFEZoFQ=" />

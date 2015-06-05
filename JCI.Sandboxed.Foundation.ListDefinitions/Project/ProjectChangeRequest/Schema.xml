@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="ProjectChangeRequest" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/ProjectChangeRequest" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/" EnableContentTypes="TRUE" VersioningEnabled="TRUE" MajorVersionLimit="10">
+  <MetaData>
+    <ContentTypes>
+
+
+      
+      
+      
+    <ContentTypeRef ID="0x01008A0D4AE55A3A4DA7AE0C93739366B32A" /><ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
+    <Fields>
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field ID="{23203e97-3bfe-40cb-afb4-07aa2b86bf45}" Type="Text" Name="ProjectID" DisplayName="Project ID" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" AllowDeletion="TRUE" StaticName="ProjectID" /><Field ID="{d13619fd-7dad-42cd-87a2-aaa8a4d780b1}" Type="DateTime" Name="DateIssued" DisplayName="Date Issued" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="DateIssued" /><Field ID="{35145188-c527-4153-a6be-e44f3fde5993}" Type="Note" Name="ProjectDescription" Group="JCI.Foundation.Columns" DisplayName="Project Description" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="ProjectDescription" /><Field ID="{58a540ed-d3dc-4e8f-8a87-1d8d1eebfa14}" Type="Note" Name="Impact" DisplayName="Impact" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Impact" /><Field ID="{1d3a8b2a-1375-41e1-8672-4f82e2a6fbd6}" Type="Note" Name="JCINotes" DisplayName="JCI Notes" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="JCINotes" /><Field ID="{dac36c1c-032e-4f73-b0ec-8a96c8f11c49}" Type="User" Name="ApprovedBy" DisplayName="Approved By" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="ApprovedBy" /><Field ID="{eb273e76-d562-47d6-951d-2f4b9c0ea9eb}" Type="DateTime" Name="DeadLine" DisplayName="DeadLine" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="DeadLine" /><Field ID="{88e7c39a-ee85-4155-8d88-1d539ddefde7}" Type="Choice" Name="WorkflowStatus" DisplayName="Workflow Status" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="WorkflowStatus" Hidden="TRUE">
+        <Default>New</Default>
+        <CHOICES>
+          
+          
+          
+          
+          
+          
+        <CHOICE>New</CHOICE><CHOICE>Approved</CHOICE><CHOICE>Rejected</CHOICE><CHOICE>Pending</CHOICE><CHOICE>MoreInfoRequired</CHOICE><CHOICE>InformationProvided</CHOICE></CHOICES>
+      </Field><Field ID="{855d5649-576e-45fe-bcbc-cfee918374b2}" Type="Boolean" Name="Done" DisplayName="Work Completed" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Done" /><Field ID="{ba6d9f76-01a7-4f33-a4dd-0f6685f26d94}" Type="Calculated" DisplayName="Change Request Status" ResultType="Text" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" ReadOnly="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" Customization="" StaticName="ChangeRequestStatus" Name="ChangeRequestStatus" ShowInEditForm="TRUE" ShowInViewForms="TRUE" ShowInListSettings="TRUE">
+        <Formula>=WorkflowStatus</Formula>
+        <FormulaDisplayNames>=WorkflowStatus</FormulaDisplayNames>
+        <FieldRefs>
+          <FieldRef Name="WorkflowStatus" />
+        </FieldRefs>
+      </Field></Fields>
+
+    <Views>
+
+
+      
+      
+    <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="ID" />
+          <FieldRef Name="ProjectID" />
+          <FieldRef Name="JCIPriority" />
+          <FieldRef Name="ChangeType" />
+          <FieldRef Name="DateIssued" />
+          <FieldRef Name="ProjectDescription" />
+          <FieldRef Name="Impact" />
+          <FieldRef Name="JCINotes" />
+          <FieldRef Name="ApprovedBy" />
+          <FieldRef Name="DeadLine" />
+          <FieldRef Name="Done" />
+          <FieldRef Name="ChangeRequestStatus" />
+        </ViewFields>
+        <Query>
+          <OrderBy>
+
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" UseDefaultListFormWebPart="FALSE" WebPartZoneID="Main">
+        <WebParts>
+          <AllUsersWebPart WebPartOrder="1" WebPartZoneID="Main">
+            <![CDATA[<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="Microsoft.SharePoint.WebPartPages.DataFormWebPart, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+      <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="InitialAsyncDataFetch" type="bool">False</property>
+        <property name="ChromeType" type="chrometype">None</property>
+        <property name="UseSQLDataSourcePaging" type="bool">True</property>
+        <property name="Height" type="string" />
+        <property name="CacheXslStorage" type="bool">True</property>
+        <property name="XslLink" type="string" null="true" />
+        <property name="ParameterBindings" type="string">
+		 &lt;ParameterBinding Name="ListItemId" Location="QueryString(ID)" DefaultValue="0"/&gt;
+		 &lt;ParameterBinding Name="ListName" Location="None" DefaultValue="ProjectChangeRequest"/&gt;
+		 &lt;ParameterBinding Name="MaximumRows" Location="None" DefaultValue="10"/&gt;
+		 &lt;ParameterBinding Name="dvt_apos" Location="Postback;Connection"/&gt;
+		 &lt;ParameterBinding Name="ManualRefresh" Location="WPProperty[ManualRefresh]"/&gt;
+		 &lt;ParameterBinding Name="UserID" Location="CAMLVariable" DefaultValue="CurrentUserName"/&gt;
+		 &lt;ParameterBinding Name="Today" Location="CAMLVariable" DefaultValue="CurrentDate"/&gt;
+	 </property>
+        <property name="AllowZoneChange" type="bool">True</property>
+        <property name="AutoRefresh" type="bool">False</property>
+        <property name="XmlDefinitionLink" type="string" />
+        <property name="DataFields" type="string">
+
+@Title,Title;@ProjectID,Project ID;@DateIssued,Date Issued;@ProjectDescription,Project Description;@Impact,Impact;@JCINotes,JCI Notes;@ApprovedBy,Approved By;@DeadLine,DeadLine;@WorkflowStatus,Workflow Status;@Done,Done;@ChangeRequestStatus,Change Request Status;@JCIPriority,JCI Priority;@ChangeType,Change Type;@ID,ID;@ContentType,Content Type;@Modified,Modified;@Created,Created;@Author,Created By;@Editor,Modified By;@_UIVersionString,Version;@Attachments,Attachments;@File_x0020_Type,File Type;@FileLeafRef,Name (for use in forms);@FileDirRef,Path;@FSObjType,Item Type;@_HasCopyDestinations,Has Copy Destinations;@_CopySource,Copy Source;@ContentTypeId,Content Type ID;@_ModerationStatus,Approval Status;@_UIVersion,UI Version;@Created_x0020_Date,Created;@FileRef,URL Path;@ItemChildCount,Item Child Count;@FolderChildCount,Folder Child Count;@AppAuthor,App Created By;@AppEditor,App Modified By;</property>
+        <property name="NoDefaultStyle" type="string">TRUE</property>
+        <property name="ViewFlag" type="string">8</property>
+        <property name="CatalogIconImageUrl" type="string" />
+        <property name="ListUrl" type="string" null="true" />
+        <property name="AutoRefreshInterval" type="int">60</property>
+        <property name="AllowConnect" type="bool">True</property>
+        <property name="DataSourcesString" type="string">&lt;%@ Register TagPrefix="sharepoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %&gt;&lt;%@ Register TagPrefix="webpartpages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %&gt;&lt;sharepoint:SPDataSource runat="server" DataSourceMode="ListItem" SelectCommand="&amp;lt;View&amp;gt;&amp;lt;Query&amp;gt;&amp;lt;Where&amp;gt;&amp;lt;Eq&amp;gt;&amp;lt;FieldRef Name=&amp;quot;ContentType&amp;quot;/&amp;gt;&amp;lt;Value Type=&amp;quot;Text&amp;quot;&amp;gt;ProjectChangeRequest&amp;lt;/Value&amp;gt;&amp;lt;/Eq&amp;gt;&amp;lt;/Where&amp;gt;&amp;lt;/Query&amp;gt;&amp;lt;/View&amp;gt;" UpdateCommand="" InsertCommand="" DeleteCommand="" UseInternalName="True" UseServerDataFormat="True" ID="ProjectChangeRequest"&gt;&lt;SelectParameters&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="ListItemId" PropertyName="ParameterValues" DefaultValue="0" Name="ListItemId"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="ListName" PropertyName="ParameterValues" DefaultValue="ProjectChangeRequest" Name="ListName"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="MaximumRows" PropertyName="ParameterValues" DefaultValue="10" Name="MaximumRows"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;/SelectParameters&gt;
+&lt;UpdateParameters&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="ListItemId" PropertyName="ParameterValues" DefaultValue="0" Name="ListItemId"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="ListName" PropertyName="ParameterValues" DefaultValue="ProjectChangeRequest" Name="ListName"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;/UpdateParameters&gt;
+&lt;InsertParameters&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="ListItemId" PropertyName="ParameterValues" DefaultValue="0" Name="ListItemId"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="ListName" PropertyName="ParameterValues" DefaultValue="ProjectChangeRequest" Name="ListName"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;/InsertParameters&gt;
+&lt;DeleteParameters&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="ListItemId" PropertyName="ParameterValues" DefaultValue="0" Name="ListItemId"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;webpartpages:DataFormParameter ParameterKey="ListName" PropertyName="ParameterValues" DefaultValue="ProjectChangeRequest" Name="ListName"&gt;&lt;/webpartpages:DataFormParameter&gt;
+&lt;/DeleteParameters&gt;
+&lt;/sharepoint:SPDataSource&gt;
+</property>
+        <property name="AllowClose" type="bool">True</property>
+        <property name="ShowWithSampleData" type="bool">False</property>
+        <property name="Xsl" type="string">
+
+
+&lt;xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" xmlns:dsp="http://schemas.microsoft.com/sharepoint/dsp" version="1.0" exclude-result-prefixes="xsl msxsl ddwrt" xmlns:ddwrt="http://schemas.microsoft.com/WebParts/v2/DataView/runtime" xmlns:asp="http://schemas.microsoft.com/ASPNET/20" xmlns:__designer="http://schemas.microsoft.com/WebParts/v2/DataView/designer" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:SharePoint="Microsoft.SharePoint.WebControls" xmlns:ddwrt2="urn:frontpage:internal"&gt;
+	&lt;xsl:output method="html" indent="no"/&gt;
+	&lt;xsl:decimal-format NaN=""/&gt;
+	&lt;xsl:param name="dvt_apos"&gt;&amp;apos;&lt;/xsl:param&gt;
+	&lt;xsl:param name="ManualRefresh"&gt;&lt;/xsl:param&gt;
+	&lt;xsl:variable name="dvt_1_automode"&gt;0&lt;/xsl:variable&gt;
+	&lt;xsl:template match="/" xmlns:x="http://www.w3.org/2001/XMLSchema" xmlns:dsp="http://schemas.microsoft.com/sharepoint/dsp" xmlns:asp="http://schemas.microsoft.com/ASPNET/20" xmlns:__designer="http://schemas.microsoft.com/WebParts/v2/DataView/designer" xmlns:SharePoint="Microsoft.SharePoint.WebControls"&gt;
+		&lt;xsl:choose&gt;
+			&lt;xsl:when test="($ManualRefresh = 'True')"&gt;
+				&lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+					&lt;tr&gt;
+						&lt;td valign="top"&gt;
+							&lt;xsl:call-template name="dvt_1"/&gt;
+						&lt;/td&gt;
+						&lt;td width="1%" class="ms-vb" valign="top"&gt;
+							&lt;img src="/_layouts/15/images/staticrefresh.gif" id="ManualRefresh" border="0" onclick="javascript: {ddwrt:GenFireServerEvent('__cancel')}" alt="Click here to refresh the dataview."/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/table&gt;
+			&lt;/xsl:when&gt;
+			&lt;xsl:otherwise&gt;
+				&lt;xsl:call-template name="dvt_1"/&gt;
+			&lt;/xsl:otherwise&gt;
+		&lt;/xsl:choose&gt;
+	&lt;/xsl:template&gt;
+	
+	&lt;xsl:template name="dvt_1"&gt;
+		&lt;xsl:variable name="dvt_StyleName"&gt;ListForm&lt;/xsl:variable&gt;
+		&lt;xsl:variable name="Rows" select="/dsQueryResponse/Rows/Row"/&gt;
+		&lt;div&gt;
+			&lt;span id="part1"&gt;
+				&lt;table border="0" width="100%"&gt;
+					&lt;xsl:call-template name="dvt_1.body"&gt;
+						&lt;xsl:with-param name="Rows" select="$Rows"/&gt;
+					&lt;/xsl:call-template&gt;
+				&lt;/table&gt;
+			&lt;/span&gt;
+			&lt;SharePoint:AttachmentUpload runat="server" ControlMode="Edit"/&gt;
+			&lt;SharePoint:ItemHiddenVersion runat="server" ControlMode="Edit"/&gt;
+		&lt;/div&gt;
+	&lt;/xsl:template&gt;
+	&lt;xsl:template name="dvt_1.body"&gt;
+		&lt;xsl:param name="Rows"/&gt;
+		&lt;tr&gt;
+			&lt;td class="ms-toolbar" nowrap="nowrap"&gt;
+				&lt;SharePoint:FormToolBar runat="server" ControlMode="Edit"/&gt;
+				&lt;SharePoint:ItemValidationFailedMessage runat="server" ControlMode="Edit"/&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;xsl:for-each select="$Rows"&gt;
+			&lt;xsl:call-template name="dvt_1.rowedit"&gt;
+				&lt;xsl:with-param name="Pos" select="concat('_', position())" /&gt;
+			&lt;/xsl:call-template&gt;
+			
+		&lt;/xsl:for-each&gt;
+		&lt;tr&gt;
+			&lt;td class="ms-toolbar" nowrap="nowrap"&gt;
+				&lt;table&gt;
+					&lt;tr&gt;
+						&lt;td class="ms-descriptiontext" nowrap="nowrap"&gt;
+							&lt;SharePoint:CreatedModifiedInfo ControlMode="Edit" runat="server"/&gt;
+						&lt;/td&gt;
+						&lt;td width="99%" class="ms-toolbar" nowrap="nowrap"&gt;&lt;IMG SRC="/_layouts/15/images/blank.gif" width="1" height="18"/&gt;&lt;/td&gt;
+						&lt;td class="ms-toolbar" nowrap="nowrap"&gt;
+							&lt;SharePoint:SaveButton runat="server" ControlMode="Edit" id="savebutton2"/&gt;
+						&lt;/td&gt;
+						&lt;td class="ms-separator"&gt;&amp;#160;&lt;/td&gt;
+						&lt;td class="ms-toolbar" nowrap="nowrap" align="right"&gt;
+							&lt;SharePoint:GoBackButton runat="server" ControlMode="Edit" id="gobackbutton2"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/table&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/xsl:template&gt;
+	&lt;xsl:template name="dvt_1.rowedit"&gt;
+		&lt;xsl:param name="Pos" select="position()"/&gt;
+		&lt;xsl:variable name="origWFStatus" select="@WorkflowStatus"/&gt;
+		&lt;xsl:variable name="altWFStatus"&gt;
+			&lt;xsl:choose&gt;
+				&lt;xsl:when test="$origWFStatus = 'MoreInfoRequired'"&gt;InformationProvided&lt;/xsl:when&gt;
+				&lt;xsl:otherwise&gt;&lt;xsl:value-of select="$origWFStatus" &gt;&lt;/xsl:value-of&gt;&lt;/xsl:otherwise&gt;			
+			&lt;/xsl:choose&gt;
+		&lt;/xsl:variable&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				&lt;table border="0" cellspacing="0" width="100%"&gt;
+					&lt;tr style="display:none;"&gt;
+						&lt;script type="text/javascript"&gt;
+						function MarkStatus(ele,val)
+						{
+							// alert(val);
+							var ele1 = ele;
+							// alert(ele1);
+							if(ele1 != null)
+							{
+								var tbx = ele1.firstChild;
+								// alert(tbx);
+								tbx.value = val;
+							}
+						}
+						&lt;/script&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Custom Edit&lt;span class="ms-formvalidation"&gt;&lt;/span&gt;
+								&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody" id="JCIhiddenStatus"&gt;
+						&lt;asp:TextBox runat="server" id="ff25{$Pos}" Text="" __designer:bind="{ddwrt:DataBind('u',concat('ff25',$Pos),'Text','TextChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@WorkflowStatus')}"&gt;&lt;/asp:TextBox&gt;
+						&lt;xsl:value-of select="@WorkflowStatus"&gt;&lt;/xsl:value-of&gt;
+						&lt;/td&gt;
+						&lt;script type="text/javascript"&gt;MarkStatus(JCIhiddenStatus,&amp;apos;&lt;xsl:value-of select="$altWFStatus" /&gt;&amp;apos;);&lt;/script&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Title&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;
+								&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff1{$Pos}" ControlMode="Edit" FieldName="Title" __designer:bind="{ddwrt:DataBind('u',concat('ff1',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@Title')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff1description{$Pos}" FieldName="Title" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+          &lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;ID&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;xsl:value-of select="@ID"&gt;&lt;/xsl:value-of&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Project ID&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff2{$Pos}" ControlMode="Edit" FieldName="ProjectID" __designer:bind="{ddwrt:DataBind('u',concat('ff2',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@ProjectID')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff2description{$Pos}" FieldName="ProjectID" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;JCI Priority&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff4{$Pos}" ControlMode="Edit" FieldName="JCIPriority" __designer:bind="{ddwrt:DataBind('u',concat('ff4',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@JCIPriority')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff4description{$Pos}" FieldName="JCIPriority" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Change Type&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff5{$Pos}" ControlMode="Edit" FieldName="ChangeType" __designer:bind="{ddwrt:DataBind('u',concat('ff5',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@ChangeType')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff5description{$Pos}" FieldName="ChangeType" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Date Issued&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff6{$Pos}" ControlMode="Edit" FieldName="DateIssued" __designer:bind="{ddwrt:DataBind('u',concat('ff6',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@DateIssued')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff6description{$Pos}" FieldName="DateIssued" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Project Description&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff7{$Pos}" ControlMode="Edit" FieldName="ProjectDescription" __designer:bind="{ddwrt:DataBind('u',concat('ff7',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@ProjectDescription')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff7description{$Pos}" FieldName="ProjectDescription" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Impact&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff8{$Pos}" ControlMode="Edit" FieldName="Impact" __designer:bind="{ddwrt:DataBind('u',concat('ff8',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@Impact')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff8description{$Pos}" FieldName="Impact" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;JCI Notes&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff9{$Pos}" ControlMode="Edit" FieldName="JCINotes" __designer:bind="{ddwrt:DataBind('u',concat('ff9',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@JCINotes')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff9description{$Pos}" FieldName="JCINotes" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Approved By&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff10{$Pos}" ControlMode="Edit" FieldName="ApprovedBy" __designer:bind="{ddwrt:DataBind('u',concat('ff10',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@ApprovedBy')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff10description{$Pos}" FieldName="ApprovedBy" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;DeadLine&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff11{$Pos}" ControlMode="Edit" FieldName="DeadLine" __designer:bind="{ddwrt:DataBind('u',concat('ff11',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@DeadLine')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff11description{$Pos}" FieldName="DeadLine" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Work Completed&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff12{$Pos}" ControlMode="Edit" FieldName="Done" __designer:bind="{ddwrt:DataBind('u',concat('ff12',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@Done')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff12description{$Pos}" FieldName="Done" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
+							&lt;H3 class="ms-standardheader"&gt;
+								&lt;nobr&gt;Change Request Status&lt;/nobr&gt;
+							&lt;/H3&gt;
+						&lt;/td&gt;
+						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
+							&lt;SharePoint:FormField runat="server" id="ff15{$Pos}" ControlMode="Display" FieldName="ChangeRequestStatus" __designer:bind="{ddwrt:DataBind('u',concat('ff15',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@ChangeRequestStatus')}"/&gt;
+							&lt;SharePoint:FieldDescription runat="server" id="ff15description{$Pos}" FieldName="Done" ControlMode="Edit"/&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr id="idAttachmentsRow"&gt;
+						&lt;td nowrap="true" valign="top" class="ms-formlabel" width="20%"&gt;
+							&lt;SharePoint:FieldLabel ControlMode="Edit" FieldName="Attachments" runat="server"/&gt;
+						&lt;/td&gt;
+						&lt;td valign="top" class="ms-formbody" width="80%"&gt;
+							&lt;SharePoint:FormField runat="server" id="AttachmentsField" ControlMode="Edit" FieldName="Attachments" __designer:bind="{ddwrt:DataBind('u','AttachmentsField','Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@Attachments')}"/&gt;
+							&lt;script&gt;
+          var elm = document.getElementById(&amp;quot;idAttachmentsTable&amp;quot;);
+          if (elm == null || elm.rows.length == 0)
+          document.getElementById(&amp;quot;idAttachmentsRow&amp;quot;).style.display=&amp;apos;none&amp;apos;;
+        &lt;/script&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;xsl:if test="$dvt_1_automode = '1'" ddwrt:cf_ignore="1"&gt;
+						&lt;tr&gt;
+							&lt;td colspan="99" class="ms-vb"&gt;
+								&lt;span ddwrt:amkeyfield="ID" ddwrt:amkeyvalue="ddwrt:EscapeDelims(string(@ID))" ddwrt:ammode="view"&gt;&lt;/span&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/xsl:if&gt;
+				&lt;/table&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;	</property>
+        <property name="EnableOriginalValue" type="bool">False</property>
+        <property name="Hidden" type="bool">False</property>
+		<property name="ListDisplayName" type="string">ProjectChangeRequest</property>
+        <property name="ListName" type="string"></property>
+        <property name="DataSourceID" type="string" />
+        <property name="FireInitialRow" type="bool">True</property>
+        <property name="ManualRefresh" type="bool">False</property>
+        <property name="ViewFlags" type="Microsoft.SharePoint.SPViewFlags, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Hidden</property>
+        <property name="ChromeState" type="chromestate">Normal</property>
+        <property name="AllowHide" type="bool">True</property>
+        <property name="ListDisplayName" type="string" null="true" />
+        <property name="SampleData" type="string" null="true" />
+        <property name="AsyncRefresh" type="bool">False</property>
+        <property name="Title" type="string">ProjectChangeRequest</property>
+        <property name="Description" type="string" />
+        <property name="AllowMinimize" type="bool">True</property>
+        <property name="TitleUrl" type="string" />
+        <property name="CacheXslTimeOut" type="int">86400</property>
+        <property name="DisplayName" type="string">ProjectChangeRequest</property>
+        <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_EDITFORM</property>
+        <property name="Width" type="string" />
+        <property name="AllowEdit" type="bool">True</property>
+        <property name="ExportMode" type="exportmode">All</property>
+        <property name="Direction" type="direction">NotSet</property>
+        <property name="PageSize" type="int">-1</property>
+        <property name="ViewContentTypeId" type="string" />
+        <property name="HelpUrl" type="string" />
+        <property name="XmlDefinition" type="string" />
+        <property name="Default" type="string">FALSE</property>
+        <property name="TitleIconImageUrl" type="string" />
+        <property name="MissingAssembly" type="string">Cannot import this Web Part.</property>
+        <property name="HelpMode" type="helpmode">Modeless</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>]]></AllUsersWebPart>
+        </WebParts>
+      </Form>
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ListTemplatesConfiguration>
+  <ListTemplates>
+    <ListInstance  Title="SiteApprover"
+                   OnQuickLaunch="false"
+                   Description="Site Approver"
+                   ListTemplateId = "103"
+                   CustomListDefinitionName ="SiteApprover"
+                   IsCustom ="true">
+    </ListInstance>
+    <ListInstance Title="SiteRequest"
+                  OnQuickLaunch="false"
+                  Description="Site Request"
+                  ListTemplateId = "103"
+                  CustomListDefinitionName ="SiteRequest"
+                  IsCustom ="true">
+    </ListInstance>
+    <ListInstance Title="WorkflowConfiguration"
+                 OnQuickLaunch="false"
+                 Description="Workflow Configuration"
+                 ListTemplateId = "103"
+                 CustomListDefinitionName ="WorkflowConfiguration"
+                 IsCustom ="true">
+    </ListInstance>
+    <ListInstance Title="JCIWorkflowHistoryList"
+                  OnQuickLaunch="false"
+                  ListTemplateId="140"
+                  Description="Workflow History List used to store the workflow history"
+                  Hidden="true"
+                  CustomListDefinitionName =""
+                  IsCustom ="false">
+    </ListInstance>
+    <ListInstance Title="JCIWorkflowTaskList"
+                  OnQuickLaunch="false"
+                  ListTemplateId="171"
+                  Description="This list instance is used for workflow Task items."
+                  Hidden="true"
+                  IsCustom ="false"
+                  RemoveDefaultContentTypes="true">
+      <ContentTypeBinding ContentTypeId="0x01080005645F3F85164FDFBA882E93A3F91C65" Default="true" />
+    </ListInstance>
+  </ListTemplates>
+</ListTemplatesConfiguration>

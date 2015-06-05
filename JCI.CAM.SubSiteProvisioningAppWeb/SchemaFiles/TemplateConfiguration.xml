@@ -1,0 +1,98 @@
+﻿<TemplateConfiguration>
+  <Features>
+    <Feature Name="Getting Started (GettingStarted) site feature" ID="4aec7207-0d02-4f4f-aa07-b370199cd0c7" Scope="Web" Activate="false" />
+  </Features>
+  <Policies>
+
+  </Policies>
+  <ThemePackage Name="JCITheme" />
+  <CustomActions>
+    <CustomAction Name="JCI_CAM_SubSite_OverrideCreateNewSite"
+                   Description="Update create new site link point to jci sub site provisioning App page"
+                   Group="ScriptLink"
+                   Location="ScriptLink"
+                   Title="Override Create New Site"
+                   Sequence="1001"
+                   Url="https://~webSiteHostName/subsiteprovisioning/"
+                  Rights="31"
+                      ScriptSrc=""
+                      Enabled="true"
+                      Remove="false">
+      <ScriptBlock>
+        <![CDATA[    
+       var JCI_CAM_SubSiteSetting_AppWebUrl = 'https://~webSiteHostName/subsiteprovisioning/';
+       var headID = document.getElementsByTagName('head')[0]; 
+       var subsiteScriptTag = document.createElement('script');
+          subsiteScriptTag.type = 'text/javascript';
+          subsiteScriptTag.src = JCI_CAM_SubSiteSetting_AppWebUrl + 'Resources/OverrideNewSubSiteLink.js';
+          headID.appendChild(subsiteScriptTag);     
+      ]]>
+      </ScriptBlock>
+    </CustomAction>
+
+    <CustomAction Name="JCI_CAM_HeaderFooterInjection"
+                  Description="Site Classification Application"
+                  Group="ScriptLink"
+                  Location="ScriptLink"
+                  Title="Branding Customization Injection"
+                  ScriptSrc=""
+                  Sequence="1002"
+                  Url="https://~webSiteHostName/branding"
+                  Rights="31"
+                  Enabled="true"
+                  Remove="false">
+      <ScriptBlock>
+        <![CDATA[      
+ 
+          var JCI_CAM_BrandingCustomizationApp_AppWeb = 'https://~webSiteHostName/branding';
+   
+          var headID = document.getElementsByTagName('head')[0]; 
+          var JCIMasterCSS = document.createElement('link');
+          JCIMasterCSS.rel = 'stylesheet'; 
+          JCIMasterCSS.href = JCI_CAM_BrandingCustomizationApp_AppWeb + '/Styles/CSS/JCIMaster.css';
+          JCIMasterCSS.type = 'text/css';
+          headID.appendChild(JCIMasterCSS);
+          var brandingNavigation = document.createElement('script');
+          brandingNavigation.type = 'text/javascript';
+          brandingNavigation.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/InjectBrandingNavigation.js';
+          headID.appendChild(brandingNavigation);        
+          var JCIMaster = document.createElement('script'); JCIMaster.type = 'text/javascript';
+          JCIMaster.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JCIMaster.js';
+          headID.appendChild(JCIMaster);
+          var JCIGlobalNavigation = document.createElement('script');
+          JCIGlobalNavigation.type = 'text/javascript';
+          JCIGlobalNavigation.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JCIGlobalNavigation.js';
+          headID.appendChild(JCIGlobalNavigation);
+          var jQueryWaterMark = document.createElement('script');
+          jQueryWaterMark.type = 'text/javascript';
+          jQueryWaterMark.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JQuery.WaterMark.js';
+          headID.appendChild(jQueryWaterMark);
+          var directAccess = document.createElement('script');
+          directAccess.type = 'text/javascript';
+          directAccess.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/DirectAccess.js';
+          headID.appendChild(directAccess);
+          var webtrendsLoad = document.createElement('script');
+          webtrendsLoad.type = 'text/javascript';
+          webtrendsLoad.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/webtrends.load.js'; 
+          headID.appendChild(webtrendsLoad);
+           var JCIStickyFooter = document.createElement('script'); JCIStickyFooter.type = 'text/javascript';
+          JCIStickyFooter.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JCI.StickyFooter.js';
+          headID.appendChild(JCIStickyFooter);
+         
+        ]]>
+      </ScriptBlock>
+    </CustomAction>
+  </CustomActions>
+  <SiteTemplates>
+    <SiteTemplate Title ="Team Site" Name="STS#0"/>
+    <SiteTemplate Title ="Blog" Name="BLOG#0"/>
+    <SiteTemplate Title="Project Site" Name="PROJECTSITE#0"/>
+    <SiteTemplate Title ="Community Site" Name="COMMUNITY#0"/>
+    <!--<SiteTemplate Title ="Document Center" Name="BDR#0"/>
+    <SiteTemplate Title ="Records Center" Name="OFFILE#1"/>
+    <SiteTemplate Title ="Business Intelligence Center" Name="BICenterSite#0"/>
+    <SiteTemplate Title ="Enterprise Search Center" Name="SRCHCEN#0"/>
+    <SiteTemplate Title ="Basic Search Center" Name="SRCHCENTERLITE#0"/>
+    <SiteTemplate Title ="Visio Process Repository" Name="visprus#0"/>-->
+  </SiteTemplates>
+</TemplateConfiguration>

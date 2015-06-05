@@ -1,0 +1,1400 @@
+<Activity mc:Ignorable="sads" x:Class="JCI.Foundation.SiteRequestWorkflow.SiteRequestApprovalUpdated.Workflow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:made="clr-namespace:Microsoft.Activities.Design.ExpressionTranslation;assembly=Microsoft.Activities.Design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:p="http://schemas.microsoft.com/workflow/2012/07/xaml/activities" xmlns:p1="wf://workflow.windows.net/$Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Sequence DisplayName="SiteRequestedUpdatedFlow" sads:DebugSymbol.Symbol="d3JDOlxKXEJ1aWxkXERldkNSXEpDSS5Gb3VuZGF0aW9uXEpDSS5Gb3VuZGF0aW9uLlNpdGVQcm92aXNpb25pbmdcV29ya2Zsb3dzXFNpdGVSZXF1ZXN0VXBkYXRlZFdvcmtmbG93XFdvcmtmbG93LnhhbWxAPgOOBQ4CAQFNBU2LAQMBjgJOBYwFEAIBA1AJ9wQUAgEJigUJigV8AgEH/wQNhQUhAgEEUQuzARYDAeUBtAELxgEvAwHeAccBC/YEEAIBClINWCMDAYsCWQ1fIwMBiAJgDXIxAwGBAnMNhQExAwH6AYYBDZgBMQMB8wGZAQ2rATEDAewBrAENsgEhAwHmAc4BD/EEGgIBD/QED/QEcQIBDd0BEeMBHwMB2wHkARHkAYUBAwHZAeUBEesBHQMB1gHsARHsAYQBAwHUAe0BEYQCHgMBygGFAhGQAi0DAcQBkQIRqAIeAwG3AakCEakCgQEDAbUBqgIRtQItAwGvAbYCEcECKwMBqQHCAhHIAiUDAaYByQIR4AIeAwGcAeECEewCLQMBlgHtAhHtAqUBAwGUAe4CEYUDHgMBigGGAxGRAy0DAYQBkgMRkgOlAQMBggGTAxGqAx4CAXirAxG2Ay0CAXK3AxG3A6MBAgFwuAMR/AMhAgFJ/QMR8AQaAgEQ8AEX9wE1AwHRAZQCF5sCNQMBwQHMAhfTAjUDAaMB8QIX+AI1AwGRAZYDF50DNQIBf4YEE5YEHgIBQJcEE6cEHgIBN6gEE+8EHgIBFf8DFf8DegIBE4cEFY0EIwIBRo4EFZQEIwIBQ5UEFZUEgwECAUGYBBWeBCMCAT2fBBWlBCMCATqmBBWmBH8CATitBBWzBCMCATS0BBW0BIMBAgEytQQVuwQjAgEvvAQVvASOAQIBLb0EFdQEIgIBI9UEFeAEMQIBHeEEFecEKQIBGugEFe4EIwIBFsAEG8cEOQIBKg==">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:Guid" x:Name="__ReferenceID0" Name="CurrentListID" />
+      <Variable x:TypeArguments="x:Int32" x:Name="__ReferenceID1" Name="CurrentItemID" />
+      <Variable x:TypeArguments="x:String" x:Name="__ReferenceID3" Name="BusinessUnit" />
+      <Variable x:TypeArguments="x:String" x:Name="__ReferenceID5" Name="Region" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsTestSite" />
+      <Variable x:TypeArguments="x:String" x:Name="__ReferenceID2" Name="SiteTitle" />
+      <Variable x:TypeArguments="x:String" x:Name="__ReferenceID4" Name="SiteType" />
+      <Variable x:TypeArguments="x:String" x:Name="__ReferenceID21" Name="TaskListID" />
+      <Variable x:TypeArguments="sco:Collection(x:String)" Name="RequesterEmail" />
+      <Variable x:TypeArguments="p:DynamicValue" x:Name="__ReferenceID11" Name="ResponContent" />
+      <Variable x:TypeArguments="x:String" x:Name="__ReferenceID9" Default="{}{0}_api/web/lists/getByTitle('WorkflowConfiguration')/Items?$filter=Title eq '{1}'" Modifiers="ReadOnly" Name="WorkflowSettingsListQuery" />
+      <Variable x:TypeArguments="x:String" x:Name="__ReferenceID6" Name="WorkflowStatus" />
+    </Sequence.Variables>
+    <p1:WriteToHistory Message="Site Request updated by requester. - Workflow Ver2" />
+    <TryCatch>
+      <TryCatch.Try>
+        <Sequence>
+          <Sequence DisplayName="GetInitialValues">
+            <p1:GetCurrentListId>
+              <p1:GetCurrentListId.Result>
+                <OutArgument x:TypeArguments="s:Guid">
+                  <p:ExpressionContainerReference x:TypeArguments="s:Guid" DisplayName="CurrentListID">
+                    <p:ExpressionContainerReference.Arguments>
+                      <InOutArgument x:TypeArguments="s:Guid" x:Key="CurrentListID">
+                        <VariableReference x:TypeArguments="s:Guid" Variable="{x:Reference __ReferenceID0}" />
+                      </InOutArgument>
+                    </p:ExpressionContainerReference.Arguments>
+                    <ArgumentReference x:TypeArguments="s:Guid" ArgumentName="CurrentListID" />
+                  </p:ExpressionContainerReference>
+                </OutArgument>
+              </p1:GetCurrentListId.Result>
+            </p1:GetCurrentListId>
+            <p1:GetCurrentItemId>
+              <p1:GetCurrentItemId.Result>
+                <OutArgument x:TypeArguments="x:Int32">
+                  <p:ExpressionContainerReference x:TypeArguments="x:Int32" DisplayName="CurrentItemID">
+                    <p:ExpressionContainerReference.Arguments>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="CurrentItemID">
+                        <VariableReference x:TypeArguments="x:Int32" Variable="{x:Reference __ReferenceID1}" />
+                      </InOutArgument>
+                    </p:ExpressionContainerReference.Arguments>
+                    <ArgumentReference x:TypeArguments="x:Int32" ArgumentName="CurrentItemID" />
+                  </p:ExpressionContainerReference>
+                </OutArgument>
+              </p1:GetCurrentItemId.Result>
+            </p1:GetCurrentItemId>
+            <p1:LookupSPListItemStringProperty ItemGuid="{x:Null}" DisplayName="GetSiteTitle" PropertyName="Title">
+              <p1:LookupSPListItemStringProperty.ItemId>
+                <InArgument x:TypeArguments="x:Int32">
+                  <p:ExpressionContainerValue x:TypeArguments="x:Int32">
+                    <p1:GetCurrentItemId />
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:LookupSPListItemStringProperty.ItemId>
+              <p1:LookupSPListItemStringProperty.ListId>
+                <InArgument x:TypeArguments="s:Guid">
+                  <p:ExpressionContainerValue x:TypeArguments="s:Guid" DisplayName="CurrentListID">
+                    <p:ExpressionContainerValue.Arguments>
+                      <InArgument x:TypeArguments="s:Guid" x:Key="CurrentListID">
+                        <VariableValue x:TypeArguments="s:Guid" Variable="{x:Reference __ReferenceID0}" />
+                      </InArgument>
+                    </p:ExpressionContainerValue.Arguments>
+                    <ArgumentValue x:TypeArguments="s:Guid" ArgumentName="CurrentListID" />
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:LookupSPListItemStringProperty.ListId>
+              <p1:LookupSPListItemStringProperty.Result>
+                <OutArgument x:TypeArguments="x:String">
+                  <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="SiteTitle">
+                    <p:ExpressionContainerReference.Arguments>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="SiteTitle">
+                        <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID2}" />
+                      </InOutArgument>
+                    </p:ExpressionContainerReference.Arguments>
+                    <ArgumentReference x:TypeArguments="x:String" ArgumentName="SiteTitle" />
+                  </p:ExpressionContainerReference>
+                </OutArgument>
+              </p1:LookupSPListItemStringProperty.Result>
+            </p1:LookupSPListItemStringProperty>
+            <p1:LookupSPListItemStringProperty ItemGuid="{x:Null}" DisplayName="GetBusinessUnitProperty" PropertyName="BusinessUnit">
+              <p1:LookupSPListItemStringProperty.ItemId>
+                <InArgument x:TypeArguments="x:Int32">
+                  <p:ExpressionContainerValue x:TypeArguments="x:Int32">
+                    <p1:GetCurrentItemId />
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:LookupSPListItemStringProperty.ItemId>
+              <p1:LookupSPListItemStringProperty.ListId>
+                <InArgument x:TypeArguments="s:Guid">
+                  <p:ExpressionContainerValue x:TypeArguments="s:Guid" DisplayName="CurrentListID">
+                    <p:ExpressionContainerValue.Arguments>
+                      <InArgument x:TypeArguments="s:Guid" x:Key="CurrentListID">
+                        <VariableValue x:TypeArguments="s:Guid" Variable="{x:Reference __ReferenceID0}" />
+                      </InArgument>
+                    </p:ExpressionContainerValue.Arguments>
+                    <ArgumentValue x:TypeArguments="s:Guid" ArgumentName="CurrentListID" />
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:LookupSPListItemStringProperty.ListId>
+              <p1:LookupSPListItemStringProperty.Result>
+                <OutArgument x:TypeArguments="x:String">
+                  <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="BusinessUnit">
+                    <p:ExpressionContainerReference.Arguments>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="BusinessUnit">
+                        <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID3}" />
+                      </InOutArgument>
+                    </p:ExpressionContainerReference.Arguments>
+                    <ArgumentReference x:TypeArguments="x:String" ArgumentName="BusinessUnit" />
+                  </p:ExpressionContainerReference>
+                </OutArgument>
+              </p1:LookupSPListItemStringProperty.Result>
+            </p1:LookupSPListItemStringProperty>
+            <p1:LookupSPListItemStringProperty ItemGuid="{x:Null}" DisplayName="GetSiteTypeProperty" PropertyName="SiteType">
+              <p1:LookupSPListItemStringProperty.ItemId>
+                <InArgument x:TypeArguments="x:Int32">
+                  <p:ExpressionContainerValue x:TypeArguments="x:Int32">
+                    <p1:GetCurrentItemId />
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:LookupSPListItemStringProperty.ItemId>
+              <p1:LookupSPListItemStringProperty.ListId>
+                <InArgument x:TypeArguments="s:Guid">
+                  <p:ExpressionContainerValue x:TypeArguments="s:Guid" DisplayName="CurrentListID">
+                    <p:ExpressionContainerValue.Arguments>
+                      <InArgument x:TypeArguments="s:Guid" x:Key="CurrentListID">
+                        <VariableValue x:TypeArguments="s:Guid" Variable="{x:Reference __ReferenceID0}" />
+                      </InArgument>
+                    </p:ExpressionContainerValue.Arguments>
+                    <ArgumentValue x:TypeArguments="s:Guid" ArgumentName="CurrentListID" />
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:LookupSPListItemStringProperty.ListId>
+              <p1:LookupSPListItemStringProperty.Result>
+                <OutArgument x:TypeArguments="x:String">
+                  <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="SiteType">
+                    <p:ExpressionContainerReference.Arguments>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="SiteType">
+                        <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID4}" />
+                      </InOutArgument>
+                    </p:ExpressionContainerReference.Arguments>
+                    <ArgumentReference x:TypeArguments="x:String" ArgumentName="SiteType" />
+                  </p:ExpressionContainerReference>
+                </OutArgument>
+              </p1:LookupSPListItemStringProperty.Result>
+            </p1:LookupSPListItemStringProperty>
+            <p1:LookupSPListItemStringProperty ItemGuid="{x:Null}" DisplayName="GetRegionPropertry" PropertyName="Region">
+              <p1:LookupSPListItemStringProperty.ItemId>
+                <InArgument x:TypeArguments="x:Int32">
+                  <p:ExpressionContainerValue x:TypeArguments="x:Int32">
+                    <p1:GetCurrentItemId />
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:LookupSPListItemStringProperty.ItemId>
+              <p1:LookupSPListItemStringProperty.ListId>
+                <InArgument x:TypeArguments="s:Guid">
+                  <p:ExpressionContainerValue x:TypeArguments="s:Guid" DisplayName="CurrentListID">
+                    <p:ExpressionContainerValue.Arguments>
+                      <InArgument x:TypeArguments="s:Guid" x:Key="CurrentListID">
+                        <VariableValue x:TypeArguments="s:Guid" Variable="{x:Reference __ReferenceID0}" />
+                      </InArgument>
+                    </p:ExpressionContainerValue.Arguments>
+                    <ArgumentValue x:TypeArguments="s:Guid" ArgumentName="CurrentListID" />
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:LookupSPListItemStringProperty.ListId>
+              <p1:LookupSPListItemStringProperty.Result>
+                <OutArgument x:TypeArguments="x:String">
+                  <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="Region">
+                    <p:ExpressionContainerReference.Arguments>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="Region">
+                        <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID5}" />
+                      </InOutArgument>
+                    </p:ExpressionContainerReference.Arguments>
+                    <ArgumentReference x:TypeArguments="x:String" ArgumentName="Region" />
+                  </p:ExpressionContainerReference>
+                </OutArgument>
+              </p1:LookupSPListItemStringProperty.Result>
+            </p1:LookupSPListItemStringProperty>
+            <p1:WriteToHistory>
+              <p1:WriteToHistory.Message>
+                <InArgument x:TypeArguments="x:String">
+                  <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="&quot;Requested Site Title: &quot; + SiteTitle + &quot;, Business Unit: &quot; + BusinessUnit + &quot;, Site Type: &quot; + SiteType + &quot;, Region: &quot; + Region">
+                    <p:ExpressionContainerValue.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="SiteTitle">
+                        <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID2}" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="BusinessUnit">
+                        <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID3}" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="SiteType">
+                        <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID4}" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Region">
+                        <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID5}" />
+                      </InArgument>
+                    </p:ExpressionContainerValue.Arguments>
+                    <p:ConcatString>
+                      <InArgument x:TypeArguments="x:String" EvaluationOrder="1">
+                        <p:ConcatString>
+                          <InArgument x:TypeArguments="x:String" EvaluationOrder="1">
+                            <p:ConcatString>
+                              <p:ConcatString.Result>
+                                <OutArgument x:TypeArguments="x:String" />
+                              </p:ConcatString.Result>
+                              <InArgument x:TypeArguments="x:String" EvaluationOrder="1">
+                                <p:ConcatString>
+                                  <p:ConcatString.Result>
+                                    <OutArgument x:TypeArguments="x:String" />
+                                  </p:ConcatString.Result>
+                                  <InArgument x:TypeArguments="x:String" EvaluationOrder="1">
+                                    <p:ConcatString>
+                                      <p:ConcatString.Result>
+                                        <OutArgument x:TypeArguments="x:String" />
+                                      </p:ConcatString.Result>
+                                      <InArgument x:TypeArguments="x:String" EvaluationOrder="1">
+                                        <p:ConcatString>
+                                          <p:ConcatString.Result>
+                                            <OutArgument x:TypeArguments="x:String" />
+                                          </p:ConcatString.Result>
+                                          <InArgument x:TypeArguments="x:String" EvaluationOrder="1">
+                                            <p:ConcatString>
+                                              <p:ConcatString.Result>
+                                                <OutArgument x:TypeArguments="x:String" />
+                                              </p:ConcatString.Result>
+                                              <InArgument x:TypeArguments="x:String" EvaluationOrder="1" Expression="Requested Site Title: " />
+                                              <InArgument x:TypeArguments="x:String" EvaluationOrder="2">
+                                                <ArgumentValue x:TypeArguments="x:String" ArgumentName="SiteTitle" />
+                                              </InArgument>
+                                            </p:ConcatString>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" EvaluationOrder="2" Expression=", Business Unit: " />
+                                        </p:ConcatString>
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" EvaluationOrder="2">
+                                        <ArgumentValue x:TypeArguments="x:String" ArgumentName="BusinessUnit" />
+                                      </InArgument>
+                                    </p:ConcatString>
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" EvaluationOrder="2" Expression=", Site Type: " />
+                                </p:ConcatString>
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" EvaluationOrder="2">
+                                <ArgumentValue x:TypeArguments="x:String" ArgumentName="SiteType" />
+                              </InArgument>
+                            </p:ConcatString>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" EvaluationOrder="2" Expression=", Region: " />
+                        </p:ConcatString>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" EvaluationOrder="2">
+                        <ArgumentValue x:TypeArguments="x:String" ArgumentName="Region" />
+                      </InArgument>
+                    </p:ConcatString>
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:WriteToHistory.Message>
+            </p1:WriteToHistory>
+          </Sequence>
+          <p1:LookupSPListItemStringProperty ItemGuid="{x:Null}" DisplayName="WorkflowStatusProperty" PropertyName="WorkflowStatus">
+            <p1:LookupSPListItemStringProperty.ItemId>
+              <InArgument x:TypeArguments="x:Int32">
+                <p:ExpressionContainerValue x:TypeArguments="x:Int32">
+                  <p1:GetCurrentItemId />
+                </p:ExpressionContainerValue>
+              </InArgument>
+            </p1:LookupSPListItemStringProperty.ItemId>
+            <p1:LookupSPListItemStringProperty.ListId>
+              <InArgument x:TypeArguments="s:Guid">
+                <p:ExpressionContainerValue x:TypeArguments="s:Guid" DisplayName="CurrentListID">
+                  <p:ExpressionContainerValue.Arguments>
+                    <InArgument x:TypeArguments="s:Guid" x:Key="CurrentListID">
+                      <VariableValue x:TypeArguments="s:Guid" Variable="{x:Reference __ReferenceID0}" />
+                    </InArgument>
+                  </p:ExpressionContainerValue.Arguments>
+                  <ArgumentValue x:TypeArguments="s:Guid" ArgumentName="CurrentListID" />
+                </p:ExpressionContainerValue>
+              </InArgument>
+            </p1:LookupSPListItemStringProperty.ListId>
+            <p1:LookupSPListItemStringProperty.Result>
+              <OutArgument x:TypeArguments="x:String">
+                <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="WorkflowStatus">
+                  <p:ExpressionContainerReference.Arguments>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="WorkflowStatus">
+                      <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID6}" />
+                    </InOutArgument>
+                  </p:ExpressionContainerReference.Arguments>
+                  <ArgumentReference x:TypeArguments="x:String" ArgumentName="WorkflowStatus" />
+                </p:ExpressionContainerReference>
+              </OutArgument>
+            </p1:LookupSPListItemStringProperty.Result>
+          </p1:LookupSPListItemStringProperty>
+          <If DisplayName="CheckForWorkflowStatus">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <p:ExpressionContainerValue x:TypeArguments="x:Boolean" DisplayName="WorkflowStatus.Equals(&quot;InformationProvided&quot;)">
+                  <p:ExpressionContainerValue.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="WorkflowStatus">
+                      <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID6}" />
+                    </InArgument>
+                  </p:ExpressionContainerValue.Arguments>
+                  <p:IsEqualString Pattern="{x:Null}" Text="InformationProvided">
+                    <p:IsEqualString.Input>
+                      <InArgument x:TypeArguments="x:String">
+                        <ArgumentValue x:TypeArguments="x:String" ArgumentName="WorkflowStatus" />
+                      </InArgument>
+                    </p:IsEqualString.Input>
+                  </p:IsEqualString>
+                </p:ExpressionContainerValue>
+              </InArgument>
+            </If.Condition>
+            <If.Then>
+              <Sequence DisplayName="TaskCreationProcess">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" x:Name="__ReferenceID13" Name="SiteApproverEmail" />
+                  <Variable x:TypeArguments="x:Int32" x:Name="__ReferenceID20" Name="ApproverTaskOutCome" />
+                  <Variable x:TypeArguments="x:Int32" x:Name="__ReferenceID12" Name="BusinessUnitAdminId" />
+                  <Variable x:TypeArguments="p:DynamicValue" x:Name="__ReferenceID8" Name="SiteApproverListResponseContent" />
+                  <Variable x:TypeArguments="x:String" x:Name="__ReferenceID10" Name="SiteApproverListURL" />
+                  <Variable x:TypeArguments="p:DynamicValue" x:Name="__ReferenceID18" Name="CancleResponseContent" />
+                  <Variable x:TypeArguments="x:String" x:Name="__ReferenceID19" Name="CancleEmailContent" />
+                  <Variable x:TypeArguments="p:DynamicValue" x:Name="__ReferenceID14" Name="NewResponseConent" />
+                  <Variable x:TypeArguments="x:String" x:Name="__ReferenceID15" Name="NewEmailConent" />
+                  <Variable x:TypeArguments="p:DynamicValue" x:Name="__ReferenceID16" Name="DueResponseContent" />
+                  <Variable x:TypeArguments="x:String" x:Name="__ReferenceID17" Name="DueEmailContent" />
+                  <Variable x:TypeArguments="x:String" x:Name="__ReferenceID7" Name="CurrentWebURL" />
+                </Sequence.Variables>
+                <p1:SetField FieldValueDynamicValue="{x:Null}" DisplayName="SetFieldAsPending" FieldName="WorkflowStatus">
+                  <p1:SetField.FieldValue>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ExpressionContainerValue x:TypeArguments="x:Object" DisplayName="&quot;Pending&quot;">
+                        <p:Convert x:TypeArguments="x:String, x:Object" Input="Pending" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SetField.FieldValue>
+                </p1:SetField>
+                <p1:WriteToHistory Message="Set Workflow status as Pending." />
+                <p1:WebUri DisplayName="GetCurrentWebUrl">
+                  <p1:WebUri.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="CurrentWebURL">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="CurrentWebURL">
+                            <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID7}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:String" ArgumentName="CurrentWebURL" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p1:WebUri.Result>
+                </p1:WebUri>
+                <p1:WriteToHistory Message="Fetching approver information." />
+                <p:HttpSend DisplayName="FetchSiteApproverListURL" Method="GET">
+                  <p:HttpSend.RequestHeaders>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:SetDynamicValueProperties>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument">
+                          <InArgument x:TypeArguments="x:String" x:Key="Accept">application/json;odata=verbose</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </scg:Dictionary>
+                      </p:SetDynamicValueProperties>
+                    </InArgument>
+                  </p:HttpSend.RequestHeaders>
+                  <p:HttpSend.ResponseContent>
+                    <OutArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerReference x:TypeArguments="p:DynamicValue" DisplayName="SiteApproverListResponseContent">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="p:DynamicValue" x:Key="SiteApproverListResponseContent">
+                            <VariableReference x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID8}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="p:DynamicValue" ArgumentName="SiteApproverListResponseContent" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:HttpSend.ResponseContent>
+                  <p:HttpSend.Uri>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="string.Format(WorkflowSettingsListQuery, CurrentWebURL, &quot;ApproverListQueryKey&quot;)">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="WorkflowSettingsListQuery">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID9}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object" x:Key="CurrentWebURL">
+                            <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID7}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:FormatString>
+                          <p:FormatString.Format>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="WorkflowSettingsListQuery" />
+                            </InArgument>
+                          </p:FormatString.Format>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="CurrentWebURL" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="ApproverListQueryKey" />
+                          </InArgument>
+                        </p:FormatString>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:HttpSend.Uri>
+                </p:HttpSend>
+                <p:GetDynamicValueProperty x:TypeArguments="x:String" DisplayName="GetSiteApproverListQuery&lt;String&gt;" PropertyName="d/results(0)/Value">
+                  <p:GetDynamicValueProperty.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="SiteApproverListURL">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="SiteApproverListURL">
+                            <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID10}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:String" ArgumentName="SiteApproverListURL" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:GetDynamicValueProperty.Result>
+                  <p:GetDynamicValueProperty.Source>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerValue x:TypeArguments="p:DynamicValue" DisplayName="SiteApproverListResponseContent">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="p:DynamicValue" x:Key="SiteApproverListResponseContent">
+                            <VariableValue x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID8}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="p:DynamicValue" ArgumentName="SiteApproverListResponseContent" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:GetDynamicValueProperty.Source>
+                </p:GetDynamicValueProperty>
+                <p:HttpSend DisplayName="GetApproverInformation" Method="GET">
+                  <p:HttpSend.RequestHeaders>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:SetDynamicValueProperties>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument">
+                          <InArgument x:TypeArguments="x:String" x:Key="Accept">application/json;odata=verbose</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </scg:Dictionary>
+                      </p:SetDynamicValueProperties>
+                    </InArgument>
+                  </p:HttpSend.RequestHeaders>
+                  <p:HttpSend.ResponseContent>
+                    <OutArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerReference x:TypeArguments="p:DynamicValue" DisplayName="ResponContent">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="p:DynamicValue" x:Key="ResponContent">
+                            <VariableReference x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID11}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="p:DynamicValue" ArgumentName="ResponContent" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:HttpSend.ResponseContent>
+                  <p:HttpSend.Uri>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="string.Format(SiteApproverListURL,CurrentWebURL, BusinessUnit, Region, SiteType)">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="SiteApproverListURL">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID10}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object" x:Key="CurrentWebURL">
+                            <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID7}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object" x:Key="BusinessUnit">
+                            <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID3}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object" x:Key="Region">
+                            <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID5}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object" x:Key="SiteType">
+                            <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID4}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:FormatString>
+                          <p:FormatString.Format>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="SiteApproverListURL" />
+                            </InArgument>
+                          </p:FormatString.Format>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="CurrentWebURL" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="BusinessUnit" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="Region" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="SiteType" />
+                          </InArgument>
+                        </p:FormatString>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:HttpSend.Uri>
+                </p:HttpSend>
+                <p1:WriteToHistory Message="Approver information found." />
+                <p:GetDynamicValueProperty x:TypeArguments="x:Int32" DisplayName="GetBusinessUnitAdminID&lt;Int32&gt;" PropertyName="d/results(0)/BusinessUnitAdminId">
+                  <p:GetDynamicValueProperty.Result>
+                    <OutArgument x:TypeArguments="x:Int32">
+                      <p:ExpressionContainerReference x:TypeArguments="x:Int32" DisplayName="BusinessUnitAdminId">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:Int32" x:Key="BusinessUnitAdminId">
+                            <VariableReference x:TypeArguments="x:Int32" Variable="{x:Reference __ReferenceID12}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:Int32" ArgumentName="BusinessUnitAdminId" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:GetDynamicValueProperty.Result>
+                  <p:GetDynamicValueProperty.Source>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerValue x:TypeArguments="p:DynamicValue" DisplayName="ResponContent">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="p:DynamicValue" x:Key="ResponContent">
+                            <VariableValue x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID11}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="p:DynamicValue" ArgumentName="ResponContent" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:GetDynamicValueProperty.Source>
+                </p:GetDynamicValueProperty>
+                <p1:LookupSPUserProperty PropertyName="LoginName">
+                  <p1:LookupSPUserProperty.PrincipalId>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <p:ExpressionContainerValue x:TypeArguments="x:Int32" DisplayName="BusinessUnitAdminId">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="BusinessUnitAdminId">
+                            <VariableValue x:TypeArguments="x:Int32" Variable="{x:Reference __ReferenceID12}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="x:Int32" ArgumentName="BusinessUnitAdminId" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:LookupSPUserProperty.PrincipalId>
+                  <p1:LookupSPUserProperty.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="SiteApproverEmail">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="SiteApproverEmail">
+                            <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID13}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:String" ArgumentName="SiteApproverEmail" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p1:LookupSPUserProperty.Result>
+                </p1:LookupSPUserProperty>
+                <p1:WriteToHistory>
+                  <p1:WriteToHistory.Message>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="&quot;Approver Information: &quot; + SiteApproverEmail">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="SiteApproverEmail">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID13}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:ConcatString>
+                          <InArgument x:TypeArguments="x:String" EvaluationOrder="1" Expression="Approver Information: " />
+                          <InArgument x:TypeArguments="x:String" EvaluationOrder="2">
+                            <ArgumentValue x:TypeArguments="x:String" ArgumentName="SiteApproverEmail" />
+                          </InArgument>
+                        </p:ConcatString>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:WriteToHistory.Message>
+                </p1:WriteToHistory>
+                <p:HttpSend DisplayName="GetAssignmentEmailContent" Method="GET">
+                  <p:HttpSend.RequestHeaders>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:SetDynamicValueProperties>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument">
+                          <InArgument x:TypeArguments="x:String" x:Key="Accept">application/json;odata=verbose</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </scg:Dictionary>
+                      </p:SetDynamicValueProperties>
+                    </InArgument>
+                  </p:HttpSend.RequestHeaders>
+                  <p:HttpSend.ResponseContent>
+                    <OutArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerReference x:TypeArguments="p:DynamicValue" DisplayName="NewResponseConent">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="p:DynamicValue" x:Key="NewResponseConent">
+                            <VariableReference x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID14}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="p:DynamicValue" ArgumentName="NewResponseConent" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:HttpSend.ResponseContent>
+                  <p:HttpSend.Uri>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="string.Format(WorkflowSettingsListQuery, CurrentWebURL, &quot;TaskAssignedEmailKey&quot;)">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="WorkflowSettingsListQuery">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID9}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object" x:Key="CurrentWebURL">
+                            <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID7}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:FormatString>
+                          <p:FormatString.Format>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="WorkflowSettingsListQuery" />
+                            </InArgument>
+                          </p:FormatString.Format>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="CurrentWebURL" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="TaskAssignedEmailKey" />
+                          </InArgument>
+                        </p:FormatString>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:HttpSend.Uri>
+                </p:HttpSend>
+                <p:GetDynamicValueProperty x:TypeArguments="x:String" DisplayName="GetEmailConent&lt;String&gt;" PropertyName="d/results(0)/Value">
+                  <p:GetDynamicValueProperty.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="NewEmailConent">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="NewEmailConent">
+                            <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID15}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:String" ArgumentName="NewEmailConent" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:GetDynamicValueProperty.Result>
+                  <p:GetDynamicValueProperty.Source>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerValue x:TypeArguments="p:DynamicValue" DisplayName="NewResponseConent">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="p:DynamicValue" x:Key="NewResponseConent">
+                            <VariableValue x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID14}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="p:DynamicValue" ArgumentName="NewResponseConent" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:GetDynamicValueProperty.Source>
+                </p:GetDynamicValueProperty>
+                <p1:WriteToHistory Message="Fetched assigned email content for approver from configuration." />
+                <p:HttpSend DisplayName="GetDueEmailConent" Method="GET">
+                  <p:HttpSend.RequestHeaders>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:SetDynamicValueProperties>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument">
+                          <InArgument x:TypeArguments="x:String" x:Key="Accept">application/json;odata=verbose</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </scg:Dictionary>
+                      </p:SetDynamicValueProperties>
+                    </InArgument>
+                  </p:HttpSend.RequestHeaders>
+                  <p:HttpSend.ResponseContent>
+                    <OutArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerReference x:TypeArguments="p:DynamicValue" DisplayName="DueResponseContent">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="p:DynamicValue" x:Key="DueResponseContent">
+                            <VariableReference x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID16}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="p:DynamicValue" ArgumentName="DueResponseContent" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:HttpSend.ResponseContent>
+                  <p:HttpSend.Uri>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="string.Format(WorkflowSettingsListQuery, CurrentWebURL, &quot;TaskDueEmailKey&quot;)">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="WorkflowSettingsListQuery">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID9}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object" x:Key="CurrentWebURL">
+                            <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID7}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:FormatString>
+                          <p:FormatString.Format>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="WorkflowSettingsListQuery" />
+                            </InArgument>
+                          </p:FormatString.Format>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="CurrentWebURL" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="TaskDueEmailKey" />
+                          </InArgument>
+                        </p:FormatString>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:HttpSend.Uri>
+                </p:HttpSend>
+                <p:GetDynamicValueProperty x:TypeArguments="x:String" DisplayName="GetEmailConent&lt;String&gt;" PropertyName="d/results(0)/Value">
+                  <p:GetDynamicValueProperty.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="DueEmailContent">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="DueEmailContent">
+                            <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID17}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:String" ArgumentName="DueEmailContent" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:GetDynamicValueProperty.Result>
+                  <p:GetDynamicValueProperty.Source>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerValue x:TypeArguments="p:DynamicValue" DisplayName="DueResponseContent">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="p:DynamicValue" x:Key="DueResponseContent">
+                            <VariableValue x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID16}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="p:DynamicValue" ArgumentName="DueResponseContent" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:GetDynamicValueProperty.Source>
+                </p:GetDynamicValueProperty>
+                <p1:WriteToHistory Message="Fetched due task email content for approver from configuration." />
+                <p:HttpSend DisplayName="GetCancelEmailConent" Method="GET">
+                  <p:HttpSend.RequestHeaders>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:SetDynamicValueProperties>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument">
+                          <InArgument x:TypeArguments="x:String" x:Key="Accept">application/json;odata=verbose</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </scg:Dictionary>
+                      </p:SetDynamicValueProperties>
+                    </InArgument>
+                  </p:HttpSend.RequestHeaders>
+                  <p:HttpSend.ResponseContent>
+                    <OutArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerReference x:TypeArguments="p:DynamicValue" DisplayName="CancleResponseContent">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="p:DynamicValue" x:Key="CancleResponseContent">
+                            <VariableReference x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID18}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="p:DynamicValue" ArgumentName="CancleResponseContent" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:HttpSend.ResponseContent>
+                  <p:HttpSend.Uri>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="string.Format(WorkflowSettingsListQuery, CurrentWebURL, &quot;TaskCanceledEmailKey&quot;)">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="WorkflowSettingsListQuery">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID9}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object" x:Key="CurrentWebURL">
+                            <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID7}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:FormatString>
+                          <p:FormatString.Format>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="WorkflowSettingsListQuery" />
+                            </InArgument>
+                          </p:FormatString.Format>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="CurrentWebURL" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Object">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="TaskCanceledEmailKey" />
+                          </InArgument>
+                        </p:FormatString>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:HttpSend.Uri>
+                </p:HttpSend>
+                <p:GetDynamicValueProperty x:TypeArguments="x:String" DisplayName="GetEmailConent&lt;String&gt;" PropertyName="d/results(0)/Value">
+                  <p:GetDynamicValueProperty.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="CancleEmailContent">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="CancleEmailContent">
+                            <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID19}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:String" ArgumentName="CancleEmailContent" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p:GetDynamicValueProperty.Result>
+                  <p:GetDynamicValueProperty.Source>
+                    <InArgument x:TypeArguments="p:DynamicValue">
+                      <p:ExpressionContainerValue x:TypeArguments="p:DynamicValue" DisplayName="CancleResponseContent">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="p:DynamicValue" x:Key="CancleResponseContent">
+                            <VariableValue x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID18}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="p:DynamicValue" ArgumentName="CancleResponseContent" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p:GetDynamicValueProperty.Source>
+                </p:GetDynamicValueProperty>
+                <p1:WriteToHistory Message="Fetched cancel email content for approver from configuration." />
+                <p1:SingleTask RelatedContentLinkListItemId="{x:Null}" SendReminderEmail="{x:Null}" TaskItemId="{x:Null}" Body="Please review the site request task and perform appropriate action" CompletedStatus="Completed" ContentTypeId="0x01080005645F3F85164FDFBA882E93A3F91C65" DefaultTaskOutcome="1" DisplayName="&quot;CreateApprovalTask&quot;" OutcomeFieldName="JCITaskOutcome" OverdueReminderRepeat="1" OverdueRepeatTimes="1" WaitForTaskCompletion="True">
+                  <p1:SingleTask.AssignedTo>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="SiteApproverEmail">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="SiteApproverEmail">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID13}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="x:String" ArgumentName="SiteApproverEmail" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.AssignedTo>
+                  <p1:SingleTask.AssignmentEmailBody>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="NewEmailConent.Substring(NewEmailConent.IndexOf(&quot;#&quot;) + 1)">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="NewEmailConent">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID15}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="NewEmailConent1">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID15}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:Substring>
+                          <p:Substring.Input>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="NewEmailConent1" />
+                            </InArgument>
+                          </p:Substring.Input>
+                          <p:Substring.StartIndex>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <p:Add x:TypeArguments="x:Int32">
+                                <p:Add.Left>
+                                  <InArgument x:TypeArguments="x:Int32" EvaluationOrder="0">
+                                    <p:IndexOfString SearchValue="#" StartIndex="{x:Null}" Count="{x:Null}">
+                                      <p:IndexOfString.Input>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <ArgumentValue x:TypeArguments="x:String" ArgumentName="NewEmailConent" />
+                                        </InArgument>
+                                      </p:IndexOfString.Input>
+                                      <p:IndexOfString.Result>
+                                        <OutArgument x:TypeArguments="x:Int32" />
+                                      </p:IndexOfString.Result>
+                                    </p:IndexOfString>
+                                  </InArgument>
+                                </p:Add.Left>
+                                <p:Add.Right>
+                                  <InArgument x:TypeArguments="x:Int32" EvaluationOrder="1" Expression="1" />
+                                </p:Add.Right>
+                              </p:Add>
+                            </InArgument>
+                          </p:Substring.StartIndex>
+                        </p:Substring>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.AssignmentEmailBody>
+                  <p1:SingleTask.AssignmentEmailSubject>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="NewEmailConent.Substring(0, NewEmailConent.IndexOf(&quot;#&quot;))">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="NewEmailConent">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID15}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="NewEmailConent1">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID15}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:Substring StartIndex="0">
+                          <p:Substring.Input>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="NewEmailConent" />
+                            </InArgument>
+                          </p:Substring.Input>
+                          <p:Substring.Length>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <p:IndexOfString SearchValue="#">
+                                <p:IndexOfString.Input>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <ArgumentValue x:TypeArguments="x:String" ArgumentName="NewEmailConent1" />
+                                  </InArgument>
+                                </p:IndexOfString.Input>
+                              </p:IndexOfString>
+                            </InArgument>
+                          </p:Substring.Length>
+                        </p:Substring>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.AssignmentEmailSubject>
+                  <p1:SingleTask.CancelationEmailBody>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="CancleEmailContent.Substring(CancleEmailContent.IndexOf(&quot;#&quot;) + 1)">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="CancleEmailContent">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID19}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="CancleEmailContent1">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID19}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:Substring>
+                          <p:Substring.Input>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="CancleEmailContent1" />
+                            </InArgument>
+                          </p:Substring.Input>
+                          <p:Substring.StartIndex>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <p:Add x:TypeArguments="x:Int32">
+                                <p:Add.Left>
+                                  <InArgument x:TypeArguments="x:Int32" EvaluationOrder="0">
+                                    <p:IndexOfString SearchValue="#" StartIndex="{x:Null}" Count="{x:Null}">
+                                      <p:IndexOfString.Input>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <ArgumentValue x:TypeArguments="x:String" ArgumentName="CancleEmailContent" />
+                                        </InArgument>
+                                      </p:IndexOfString.Input>
+                                      <p:IndexOfString.Result>
+                                        <OutArgument x:TypeArguments="x:Int32" />
+                                      </p:IndexOfString.Result>
+                                    </p:IndexOfString>
+                                  </InArgument>
+                                </p:Add.Left>
+                                <p:Add.Right>
+                                  <InArgument x:TypeArguments="x:Int32" EvaluationOrder="1" Expression="1" />
+                                </p:Add.Right>
+                              </p:Add>
+                            </InArgument>
+                          </p:Substring.StartIndex>
+                        </p:Substring>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.CancelationEmailBody>
+                  <p1:SingleTask.CancelationEmailSubject>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="CancleEmailContent.Substring(0, CancleEmailContent.IndexOf(&quot;#&quot;))">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="CancleEmailContent">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID19}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="CancleEmailContent1">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID19}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:Substring StartIndex="0">
+                          <p:Substring.Input>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="CancleEmailContent" />
+                            </InArgument>
+                          </p:Substring.Input>
+                          <p:Substring.Length>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <p:IndexOfString SearchValue="#">
+                                <p:IndexOfString.Input>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <ArgumentValue x:TypeArguments="x:String" ArgumentName="CancleEmailContent1" />
+                                  </InArgument>
+                                </p:IndexOfString.Input>
+                              </p:IndexOfString>
+                            </InArgument>
+                          </p:Substring.Length>
+                        </p:Substring>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.CancelationEmailSubject>
+                  <p1:SingleTask.DueDate>
+                    <InArgument x:TypeArguments="s:DateTime">
+                      <p:ExpressionContainerValue x:TypeArguments="s:DateTime" DisplayName="DateTime.UtcNow.AddDays(2)">
+                        <p:AddToDate Days="2">
+                          <p:AddToDate.Input>
+                            <InArgument x:TypeArguments="s:DateTime">
+                              <p:CurrentDate />
+                            </InArgument>
+                          </p:AddToDate.Input>
+                        </p:AddToDate>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.DueDate>
+                  <p1:SingleTask.Outcome>
+                    <OutArgument x:TypeArguments="x:Int32">
+                      <p:ExpressionContainerReference x:TypeArguments="x:Int32" DisplayName="ApproverTaskOutCome">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:Int32" x:Key="ApproverTaskOutCome">
+                            <VariableReference x:TypeArguments="x:Int32" Variable="{x:Reference __ReferenceID20}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:Int32" ArgumentName="ApproverTaskOutCome" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p1:SingleTask.Outcome>
+                  <p1:SingleTask.OverdueEmailBody>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="DueEmailContent.Substring(DueEmailContent.IndexOf(&quot;#&quot;) + 1)">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="DueEmailContent">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID17}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="DueEmailContent1">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID17}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:Substring>
+                          <p:Substring.Input>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="DueEmailContent1" />
+                            </InArgument>
+                          </p:Substring.Input>
+                          <p:Substring.StartIndex>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <p:Add x:TypeArguments="x:Int32">
+                                <p:Add.Left>
+                                  <InArgument x:TypeArguments="x:Int32" EvaluationOrder="0">
+                                    <p:IndexOfString SearchValue="#" StartIndex="{x:Null}" Count="{x:Null}">
+                                      <p:IndexOfString.Input>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <ArgumentValue x:TypeArguments="x:String" ArgumentName="DueEmailContent" />
+                                        </InArgument>
+                                      </p:IndexOfString.Input>
+                                      <p:IndexOfString.Result>
+                                        <OutArgument x:TypeArguments="x:Int32" />
+                                      </p:IndexOfString.Result>
+                                    </p:IndexOfString>
+                                  </InArgument>
+                                </p:Add.Left>
+                                <p:Add.Right>
+                                  <InArgument x:TypeArguments="x:Int32" EvaluationOrder="1" Expression="1" />
+                                </p:Add.Right>
+                              </p:Add>
+                            </InArgument>
+                          </p:Substring.StartIndex>
+                        </p:Substring>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.OverdueEmailBody>
+                  <p1:SingleTask.OverdueEmailSubject>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="DueEmailContent.Substring(0, DueEmailContent.IndexOf(&quot;#&quot;))">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="DueEmailContent">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID17}" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="DueEmailContent1">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID17}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:Substring StartIndex="0">
+                          <p:Substring.Input>
+                            <InArgument x:TypeArguments="x:String">
+                              <ArgumentValue x:TypeArguments="x:String" ArgumentName="DueEmailContent" />
+                            </InArgument>
+                          </p:Substring.Input>
+                          <p:Substring.Length>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <p:IndexOfString SearchValue="#">
+                                <p:IndexOfString.Input>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <ArgumentValue x:TypeArguments="x:String" ArgumentName="DueEmailContent1" />
+                                  </InArgument>
+                                </p:IndexOfString.Input>
+                              </p:IndexOfString>
+                            </InArgument>
+                          </p:Substring.Length>
+                        </p:Substring>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.OverdueEmailSubject>
+                  <p1:SingleTask.RelatedContentLinkListId>
+                    <InArgument x:TypeArguments="s:Guid">
+                      <p:ExpressionContainerValue x:TypeArguments="s:Guid" DisplayName="CurrentListID">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="s:Guid" x:Key="CurrentListID">
+                            <VariableValue x:TypeArguments="s:Guid" Variable="{x:Reference __ReferenceID0}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="s:Guid" ArgumentName="CurrentListID" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.RelatedContentLinkListId>
+                  <p1:SingleTask.RelatedContentLinkListItemIntegerId>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <p:ExpressionContainerValue x:TypeArguments="x:Int32">
+                        <p1:GetCurrentItemId />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.RelatedContentLinkListItemIntegerId>
+                  <p1:SingleTask.TaskId>
+                    <OutArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="TaskListID">
+                        <p:ExpressionContainerReference.Arguments>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="TaskListID">
+                            <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID21}" />
+                          </InOutArgument>
+                        </p:ExpressionContainerReference.Arguments>
+                        <ArgumentReference x:TypeArguments="x:String" ArgumentName="TaskListID" />
+                      </p:ExpressionContainerReference>
+                    </OutArgument>
+                  </p1:SingleTask.TaskId>
+                  <p1:SingleTask.Title>
+                    <InArgument x:TypeArguments="x:String">
+                      <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="&quot;New Site (&quot; + SiteTitle + &quot;) has been updated.&quot;">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="SiteTitle">
+                            <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID2}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <p:ConcatString>
+                          <InArgument x:TypeArguments="x:String" EvaluationOrder="1">
+                            <p:ConcatString>
+                              <InArgument x:TypeArguments="x:String" EvaluationOrder="1" Expression="New Site (" />
+                              <InArgument x:TypeArguments="x:String" EvaluationOrder="2">
+                                <ArgumentValue x:TypeArguments="x:String" ArgumentName="SiteTitle" />
+                              </InArgument>
+                            </p:ConcatString>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" EvaluationOrder="2" Expression=") has been updated." />
+                        </p:ConcatString>
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </p1:SingleTask.Title>
+                </p1:SingleTask>
+                <Switch x:TypeArguments="x:Int32" DisplayName="TaskResultSwitch&lt;Int32&gt;">
+                  <Switch.Default>
+                    <p1:WriteToHistory Message="No outcome match" />
+                  </Switch.Default>
+                  <Switch.Expression>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <p:ExpressionContainerValue x:TypeArguments="x:Int32" DisplayName="ApproverTaskOutCome">
+                        <p:ExpressionContainerValue.Arguments>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="ApproverTaskOutCome">
+                            <VariableValue x:TypeArguments="x:Int32" Variable="{x:Reference __ReferenceID20}" />
+                          </InArgument>
+                        </p:ExpressionContainerValue.Arguments>
+                        <ArgumentValue x:TypeArguments="x:Int32" ArgumentName="ApproverTaskOutCome" />
+                      </p:ExpressionContainerValue>
+                    </InArgument>
+                  </Switch.Expression>
+                  <Sequence x:Key="0">
+                    <p1:SetField FieldValueDynamicValue="{x:Null}" DisplayName="SetFieldasApproved" FieldName="WorkflowStatus">
+                      <p1:SetField.FieldValue>
+                        <InArgument x:TypeArguments="x:Object">
+                          <p:ExpressionContainerValue x:TypeArguments="x:Object" DisplayName="&quot;Approved&quot;">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="Approved" />
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p1:SetField.FieldValue>
+                    </p1:SetField>
+                    <p1:SetField FieldValueDynamicValue="{x:Null}" DisplayName="SetRequestFieldasNew" FieldName="RequestStatus">
+                      <p1:SetField.FieldValue>
+                        <InArgument x:TypeArguments="x:Object">
+                          <p:ExpressionContainerValue x:TypeArguments="x:Object" DisplayName="&quot;New&quot;">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="New" />
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p1:SetField.FieldValue>
+                    </p1:SetField>
+                    <p1:WriteToHistory Message="Approved the site request" />
+                  </Sequence>
+                  <Sequence x:Key="1">
+                    <p1:SetField FieldValueDynamicValue="{x:Null}" DisplayName="SetFieldRejected" FieldName="WorkflowStatus">
+                      <p1:SetField.FieldValue>
+                        <InArgument x:TypeArguments="x:Object">
+                          <p:ExpressionContainerValue x:TypeArguments="x:Object" DisplayName="&quot;Rejected&quot;">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="Rejected" />
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p1:SetField.FieldValue>
+                    </p1:SetField>
+                    <p1:SetField FieldValueDynamicValue="{x:Null}" DisplayName="SetRequestFieldasPending" FieldName="RequestStatus">
+                      <p1:SetField.FieldValue>
+                        <InArgument x:TypeArguments="x:Object">
+                          <p:ExpressionContainerValue x:TypeArguments="x:Object" DisplayName="&quot;Pending&quot;">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="Pending" />
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p1:SetField.FieldValue>
+                    </p1:SetField>
+                    <p1:WriteToHistory Message="Site Request Rejected" />
+                  </Sequence>
+                  <Sequence x:Key="2">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="p:DynamicValue" x:Name="__ReferenceID22" Name="DueDateResponseConent" />
+                      <Variable x:TypeArguments="x:String" x:Name="__ReferenceID23" Name="DueDateCount" />
+                    </Sequence.Variables>
+                    <p1:SetField FieldValueDynamicValue="{x:Null}" DisplayName="SetFieldMoreinfo" FieldName="WorkflowStatus">
+                      <p1:SetField.FieldValue>
+                        <InArgument x:TypeArguments="x:Object">
+                          <p:ExpressionContainerValue x:TypeArguments="x:Object" DisplayName="&quot;MoreInfoRequired&quot;">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="MoreInfoRequired" />
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p1:SetField.FieldValue>
+                    </p1:SetField>
+                    <p1:WriteToHistory Message="More information required" />
+                    <p1:SetField FieldValueDynamicValue="{x:Null}" DisplayName="SetRequestFieldasPending" FieldName="RequestStatus">
+                      <p1:SetField.FieldValue>
+                        <InArgument x:TypeArguments="x:Object">
+                          <p:ExpressionContainerValue x:TypeArguments="x:Object" DisplayName="&quot;Pending&quot;">
+                            <p:Convert x:TypeArguments="x:String, x:Object" Input="Pending" />
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p1:SetField.FieldValue>
+                    </p1:SetField>
+                    <p1:WriteToHistory Message="Getting due date from Configuration." />
+                    <p:HttpSend DisplayName="GetDueDateCount" Method="GET">
+                      <p:HttpSend.RequestHeaders>
+                        <InArgument x:TypeArguments="p:DynamicValue">
+                          <p:SetDynamicValueProperties>
+                            <scg:Dictionary x:TypeArguments="x:String, InArgument">
+                              <InArgument x:TypeArguments="x:String" x:Key="Accept">application/json;odata=verbose</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="Authorization">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </scg:Dictionary>
+                          </p:SetDynamicValueProperties>
+                        </InArgument>
+                      </p:HttpSend.RequestHeaders>
+                      <p:HttpSend.ResponseContent>
+                        <OutArgument x:TypeArguments="p:DynamicValue">
+                          <p:ExpressionContainerReference x:TypeArguments="p:DynamicValue" DisplayName="DueDateResponseConent">
+                            <p:ExpressionContainerReference.Arguments>
+                              <InOutArgument x:TypeArguments="p:DynamicValue" x:Key="DueDateResponseConent">
+                                <VariableReference x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID22}" />
+                              </InOutArgument>
+                            </p:ExpressionContainerReference.Arguments>
+                            <ArgumentReference x:TypeArguments="p:DynamicValue" ArgumentName="DueDateResponseConent" />
+                          </p:ExpressionContainerReference>
+                        </OutArgument>
+                      </p:HttpSend.ResponseContent>
+                      <p:HttpSend.Uri>
+                        <InArgument x:TypeArguments="x:String">
+                          <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="string.Format(WorkflowSettingsListQuery, CurrentWebURL, &quot;DueDateCountKey&quot;)">
+                            <p:ExpressionContainerValue.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="WorkflowSettingsListQuery">
+                                <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID9}" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Object" x:Key="CurrentWebURL">
+                                <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID7}" />
+                              </InArgument>
+                            </p:ExpressionContainerValue.Arguments>
+                            <p:FormatString>
+                              <p:FormatString.Format>
+                                <InArgument x:TypeArguments="x:String">
+                                  <ArgumentValue x:TypeArguments="x:String" ArgumentName="WorkflowSettingsListQuery" />
+                                </InArgument>
+                              </p:FormatString.Format>
+                              <InArgument x:TypeArguments="x:Object">
+                                <ArgumentValue x:TypeArguments="x:Object" ArgumentName="CurrentWebURL" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Object">
+                                <p:Convert x:TypeArguments="x:String, x:Object" Input="DueDateCountKey" />
+                              </InArgument>
+                            </p:FormatString>
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p:HttpSend.Uri>
+                    </p:HttpSend>
+                    <p:GetDynamicValueProperty x:TypeArguments="x:String" PropertyName="d/results(0)/Value">
+                      <p:GetDynamicValueProperty.Result>
+                        <OutArgument x:TypeArguments="x:String">
+                          <p:ExpressionContainerReference x:TypeArguments="x:String" DisplayName="DueDateCount">
+                            <p:ExpressionContainerReference.Arguments>
+                              <InOutArgument x:TypeArguments="x:String" x:Key="DueDateCount">
+                                <VariableReference x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID23}" />
+                              </InOutArgument>
+                            </p:ExpressionContainerReference.Arguments>
+                            <ArgumentReference x:TypeArguments="x:String" ArgumentName="DueDateCount" />
+                          </p:ExpressionContainerReference>
+                        </OutArgument>
+                      </p:GetDynamicValueProperty.Result>
+                      <p:GetDynamicValueProperty.Source>
+                        <InArgument x:TypeArguments="p:DynamicValue">
+                          <p:ExpressionContainerValue x:TypeArguments="p:DynamicValue" DisplayName="DueDateResponseConent">
+                            <p:ExpressionContainerValue.Arguments>
+                              <InArgument x:TypeArguments="p:DynamicValue" x:Key="DueDateResponseConent">
+                                <VariableValue x:TypeArguments="p:DynamicValue" Variable="{x:Reference __ReferenceID22}" />
+                              </InArgument>
+                            </p:ExpressionContainerValue.Arguments>
+                            <ArgumentValue x:TypeArguments="p:DynamicValue" ArgumentName="DueDateResponseConent" />
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p:GetDynamicValueProperty.Source>
+                    </p:GetDynamicValueProperty>
+                    <p1:WriteToHistory>
+                      <p1:WriteToHistory.Message>
+                        <InArgument x:TypeArguments="x:String">
+                          <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="&quot;Due Date(days): &quot; + DueDateCount">
+                            <p:ExpressionContainerValue.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="DueDateCount">
+                                <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID23}" />
+                              </InArgument>
+                            </p:ExpressionContainerValue.Arguments>
+                            <p:ConcatString>
+                              <InArgument x:TypeArguments="x:String" EvaluationOrder="1" Expression="Due Date(days): " />
+                              <InArgument x:TypeArguments="x:String" EvaluationOrder="2">
+                                <ArgumentValue x:TypeArguments="x:String" ArgumentName="DueDateCount" />
+                              </InArgument>
+                            </p:ConcatString>
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p1:WriteToHistory.Message>
+                    </p1:WriteToHistory>
+                    <p1:SetField FieldValueDynamicValue="{x:Null}" DisplayName="SetDueDate" FieldName="JCIDueDate">
+                      <p1:SetField.FieldValue>
+                        <InArgument x:TypeArguments="x:Object">
+                          <p:ExpressionContainerValue x:TypeArguments="x:Object" DisplayName="System.DateTime.UtcNow.AddDays(Convert.ToDouble(DueDateCount))">
+                            <p:ExpressionContainerValue.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="DueDateCount">
+                                <VariableValue x:TypeArguments="x:String" Variable="{x:Reference __ReferenceID23}" />
+                              </InArgument>
+                            </p:ExpressionContainerValue.Arguments>
+                            <p:Convert x:TypeArguments="s:DateTime, x:Object">
+                              <InArgument x:TypeArguments="s:DateTime">
+                                <p:AddToDate>
+                                  <p:AddToDate.Input>
+                                    <InArgument x:TypeArguments="s:DateTime">
+                                      <p:CurrentDate Result="{x:Null}" />
+                                    </InArgument>
+                                  </p:AddToDate.Input>
+                                  <p:AddToDate.Days>
+                                    <InArgument x:TypeArguments="x:Double">
+                                      <p:ParseNumber x:TypeArguments="x:Double" CultureName="{x:Null}" NumberStyles="{x:Null}">
+                                        <p:ParseNumber.Result>
+                                          <OutArgument x:TypeArguments="x:Double" />
+                                        </p:ParseNumber.Result>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <ArgumentValue x:TypeArguments="x:String" ArgumentName="DueDateCount" />
+                                        </InArgument>
+                                      </p:ParseNumber>
+                                    </InArgument>
+                                  </p:AddToDate.Days>
+                                </p:AddToDate>
+                              </InArgument>
+                            </p:Convert>
+                          </p:ExpressionContainerValue>
+                        </InArgument>
+                      </p1:SetField.FieldValue>
+                    </p1:SetField>
+                  </Sequence>
+                </Switch>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <p1:WriteToHistory Message="Skip Workflow" />
+            </If.Else>
+          </If>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" x:Name="__ReferenceID24" Name="exception" />
+            </ActivityAction.Argument>
+            <p1:WriteToHistory>
+              <p1:WriteToHistory.Message>
+                <InArgument x:TypeArguments="x:String">
+                  <p:ExpressionContainerValue x:TypeArguments="x:String" DisplayName="&quot;Error Occured: &quot; + exception.ToString()">
+                    <p:ExpressionContainerValue.Arguments>
+                      <InArgument x:TypeArguments="x:Object" x:Key="exception">
+                        <DelegateArgumentValue x:TypeArguments="x:Object">
+                          <x:Reference>__ReferenceID24</x:Reference>
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p:ExpressionContainerValue.Arguments>
+                    <p:ConcatString>
+                      <InArgument x:TypeArguments="x:String" EvaluationOrder="1" Expression="Error Occured: " />
+                      <InArgument x:TypeArguments="x:String" EvaluationOrder="2">
+                        <p:ToString>
+                          <InArgument x:TypeArguments="x:Object">
+                            <ArgumentValue x:TypeArguments="x:Object" ArgumentName="exception" />
+                          </InArgument>
+                        </p:ToString>
+                      </InArgument>
+                    </p:ConcatString>
+                  </p:ExpressionContainerValue>
+                </InArgument>
+              </p1:WriteToHistory.Message>
+            </p1:WriteToHistory>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <p1:WriteToHistory Message="Site Request workflow Complete" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

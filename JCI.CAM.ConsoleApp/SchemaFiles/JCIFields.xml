@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!--Business Unit-->
+  <Field Type="Note"
+       DisplayName="JCI Business Unit_0"
+       StaticName="JCIBusinessUnitTaxHTField0"
+       Name="JCIBusinessUnitTaxHTField0"
+       ID="{59C93027-63AB-4B07-AF60-C20D164D7B18}"
+       ShowInViewForms="FALSE"
+       Required="FALSE"
+       Hidden="TRUE"
+       CanToggleHidden="TRUE"
+       RowOrdinal="0" />
+  <Field ID="{24D4F6E7-885D-4561-8381-5613B813A45F}"
+       Name="JCIBusinessUnit"
+       StaticName="JCIBusinessUnit"
+       DisplayName="JCI Business Unit"
+       Required="FALSE"
+       Type="TaxonomyFieldType"
+       Group="JCI.Foundation.Columns"
+       ShowField="Term1033"
+       AllowDeletion="TRUE">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{59C93027-63AB-4B07-AF60-C20D164D7B18}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+ 
+
+  <!--Location-->
+  <Field Type="Note"
+       DisplayName="JCI Location_0"
+       StaticName="JCILocationTaxHTField0"
+       Name="JCILocationTaxHTField0"
+       ID="{D801BC65-0C38-4A74-A6E4-22BF3CBE3C10}"
+       ShowInViewForms="FALSE"
+       Required="FALSE"
+       Hidden="TRUE"
+       CanToggleHidden="TRUE"
+       RowOrdinal="0" />
+  <Field ID="{617E4336-B4C5-4C11-A84A-563B34604034}"
+       Name="JCILocation"
+       StaticName="JCILocation"
+       DisplayName="JCI Location"
+       Required="FALSE"
+       Type="TaxonomyFieldType"
+       Group="JCI.Foundation.Columns"
+       ShowField="Term1033"
+       AllowDeletion="TRUE">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{D801BC65-0C38-4A74-A6E4-22BF3CBE3C10}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+ 
+
+  <!--Language-->
+  <Field Type="Note"
+       DisplayName="JCI Language_0"
+       StaticName="JCILanguageTaxHTField0"
+       Name="JCILanguageTaxHTField0"
+       ID="{0646B592-DD30-4B47-8382-B1FD7A615E1E}"
+       ShowInViewForms="FALSE"
+       Required="FALSE"
+       Hidden="TRUE"
+       CanToggleHidden="TRUE"
+       RowOrdinal="0" />
+  
+  <Field ID="{24F4BD7E-396C-4B09-A734-43AC5AD5D554}"
+       Name="JCILanguage"
+       StaticName="JCILanguage"
+       DisplayName="JCI Language"
+       Required="FALSE"
+       Type="TaxonomyFieldType"
+       Group="JCI.Foundation.Columns"
+       ShowField="Term1033"
+       AllowDeletion="TRUE">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{0646B592-DD30-4B47-8382-B1FD7A615E1E}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+ 
+
+  <!--Topic-->
+  <Field Type="Note"
+        DisplayName="Topic_0"
+        StaticName="TopicTaxHTField0"
+        Name="TopicTaxHTField0"
+        ID="{D87594FD-7821-4805-AEE9-BAC6E07655C4}"
+        ShowInViewForms="FALSE"
+        Required="FALSE"
+        Hidden="TRUE"
+        CanToggleHidden="TRUE"
+        RowOrdinal="0" />
+  <Field ID="{CC23096B-B68A-4AB9-BDBC-041CB02BAAE8}"
+       Name="Topic"
+       StaticName="Topic"
+       DisplayName="Topic"
+       Required="FALSE"
+       Type="TaxonomyFieldType"
+       Group="JCI.Foundation.Columns"
+       ShowField="Term1033"
+       AllowDeletion="TRUE">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{D87594FD-7821-4805-AEE9-BAC6E07655C4}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+  <!--Data Classification-->
+  <Field Type="Note"
+        DisplayName="Data Classification Level_0"
+        StaticName="DataClassificationLevelTaxHTField0"
+        Name="DataClassificationLevelTaxHTField0"
+        ID="{DB6B7E25-D249-48F8-85B6-C3ED140ACCF8}"
+        ShowInViewForms="FALSE"
+        Required="FALSE"
+        Hidden="TRUE"
+        CanToggleHidden="TRUE"
+        RowOrdinal="0" />
+  <Field ID="{6E650B06-AD35-42D8-9B98-3F3A368024D7}"
+       Name="DataClassificationLevel"
+       StaticName="DataClassificationLevel"
+       DisplayName="Data Classification Level"
+       Required="FALSE"
+       Type="TaxonomyFieldType"
+       Group="JCI.Foundation.Columns"
+       ShowField="Term1033"
+       AllowDeletion="TRUE">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{DB6B7E25-D249-48F8-85B6-C3ED140ACCF8}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+  
+
+  <!--Document Status-->
+  <Field Type="Note"
+        DisplayName="Document Status_0"
+        StaticName="DocumentStatusTaxHTField0"
+        Name="DocumentStatusTaxHTField0"
+        ID="{8F646568-3BF1-4827-B441-5F1ECF92443D}"
+        ShowInViewForms="FALSE"
+        Required="FALSE"
+        Hidden="TRUE"
+        CanToggleHidden="TRUE"
+        RowOrdinal="0" />
+  <Field ID="{B29795C2-4438-4433-960D-FFCEC2CBA1B6}"
+       Name="DocumentStatus"
+       StaticName="DocumentStatus"
+       DisplayName="Document Status"
+       Required="FALSE"
+       Type="TaxonomyFieldType"
+       Group="JCI.Foundation.Columns"
+       ShowField="Term1033"
+       AllowDeletion="TRUE">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{8F646568-3BF1-4827-B441-5F1ECF92443D}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+  
+
+  <!--Document Type-->
+ 
+  <Field Type="Note"
+        DisplayName="Document Type_0"
+        StaticName="DocumentTypeTaxHTField0"
+        Name="DocumentTypeTaxHTField0"
+        ID="{EEF3F05A-E153-4CB8-B630-7FBAD06FFC02}"
+        ShowInViewForms="FALSE"
+        Required="FALSE"
+        Hidden="TRUE"
+        CanToggleHidden="TRUE"
+        RowOrdinal="0" />
+  <Field ID="{92ACC605-BF97-42EA-A017-4E26F632A8FC}"
+       Name="DocumentType"
+       StaticName="DocumentType"
+       DisplayName="Document Type"
+       Required="FALSE"
+       Type="TaxonomyFieldType"
+       Group="JCI.Foundation.Columns"
+       ShowField="Term1033"
+       AllowDeletion="TRUE">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{EEF3F05A-E153-4CB8-B630-7FBAD06FFC02}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+  
+
+  <!--Project Phase-->
+  <Field Type="Note"
+       DisplayName="Project Phase_0"
+       StaticName="ProjectPhaseTaxHTField0"
+       Name="ProjectPhaseTaxHTField0"
+       ID="{61E948B9-451D-4D04-9B15-B7E9F338FD06}"
+       ShowInViewForms="FALSE"
+       Required="FALSE"
+       Hidden="TRUE"
+       CanToggleHidden="TRUE"
+       RowOrdinal="0" />
+  <Field ID="{01EDDBED-B732-48D4-9B60-5F149A0E56EB}"
+       Name="ProjectPhase"
+       StaticName="ProjectPhase"
+       DisplayName="Project Phase"
+       Type="TaxonomyFieldType"
+       Group="JCI.Foundation.Columns"
+       ShowField="Term1033"
+       AllowDeletion="TRUE">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{61E948B9-451D-4D04-9B15-B7E9F338FD06}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+  
+
+  <Field ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" Type="Text" Name="ProjectID" DisplayName="Project ID" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" AllowDeletion="TRUE" />
+  <Field ID="{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}" Type="Text" Name="ProjectName" DisplayName="Project Name" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" AllowDeletion="TRUE" />
+  <Field ID="{A5DE9600-B7A6-42DD-A05E-10D4F1500208}" Type="Text" Name="ProjectManager" DisplayName="Project Manager" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" AllowDeletion="TRUE" />
+  <Field ID="{F1A1715E-6C52-40DE-8403-E9AAFD0470D0}" Type="Text" Name="DocumentDescription" DisplayName="Document Description" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" AllowDeletion="TRUE" />
+
+  <!-- JCIWorkflowTaskContentType Field-->
+  <Field ID="{654878F6-5F94-47A9-909F-682602617E7E}" DisplayName="JCITaskOutcome" Name="JCITaskOutcome" Type="OutcomeChoice" Sealed="FALSE" Group="JCI.Foundation.Columns">
+    <CHOICES>
+      <CHOICE>Approved</CHOICE>
+      <CHOICE>Rejected</CHOICE>
+      <CHOICE>MoreInfoRequired</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <!-- ProjectChangeRequest Content type Fields -->
+  <Field ID="{017D705D-3F90-4FBD-AEB1-EDCCF5C93B23}" Type="TaxonomyFieldType" Name="JCIPriority" Required="TRUE" DisplayName="JCI Priority" ShowField="Term1033" EnforceUniqueValues="FALSE" Group="JCI.Foundation.Columns" StaticName="JCIPriority" AllowDeletion="TRUE" Hidden="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{90F06131-54A6-40EC-A81D-F7AC3B203C51}" Type="TaxonomyFieldType" Name="ChangeType" Required="TRUE" DisplayName="Change Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Group="JCI.Foundation.Columns" StaticName="ChangeType" AllowDeletion="TRUE" Hidden="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{D13619FD-7DAD-42CD-87A2-AAA8A4D780B1}" Type="DateTime" Description="" Name="DateIssued" DisplayName="Date Issued" Required="TRUE" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{35145188-C527-4153-A6BE-E44F3FDE5993}" Type="Note" Name="ProjectDescription" Group="JCI.Foundation.Columns" DisplayName="Project Description" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{58A540ED-D3DC-4E8F-8A87-1D8D1EEBFA14}" Type="Note" Name="Impact" DisplayName="Impact" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{1D3A8B2A-1375-41E1-8672-4F82E2A6FBD6}" Type="Note" Name="JCINotes" DisplayName="JCI Notes" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{DAC36C1C-032E-4F73-B0EC-8A96C8F11C49}" Type="User" Name="ApprovedBy" DisplayName="Approved By" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{EB273E76-D562-47D6-951D-2F4B9C0EA9EB}" Type="DateTime" Description="" Name="DeadLine" DisplayName="DeadLine" Required="TRUE" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{855D5649-576E-45FE-BCBC-CFEE918374B2}" Type="Boolean" Name="Done" DisplayName="Work Completed" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{BA6D9F76-01A7-4F33-A4DD-0F6685F26D94}" Type="Calculated" DisplayName="Change Request Status" ResultType="Text" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" ReadOnly="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" Customization="" StaticName="ChangeRequestStatus" Name="ChangeRequestStatus" ShowInEditForm="TRUE" ShowInViewForms="TRUE" ShowInListSettings="TRUE">
+    <Formula>=WorkflowStatus</Formula>
+    <FormulaDisplayNames>=WorkflowStatus</FormulaDisplayNames>
+    <FieldRefs>
+      <FieldRef Name="WorkflowStatus" />
+    </FieldRefs>
+  </Field>
+
+  <!-- SiteRequest Content type Fields -->
+  <Field ID="{3395033E-8E28-44E1-B551-04CC8E7D3ED0}" Type="Text" Name="BusinessUnit" DisplayName="Business Unit" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{AFF61243-3ADF-44A4-BAB8-496432E5D1C4}" Type="Text" Name="Region" DisplayName="Region" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{681DE620-AEDF-4463-B291-8B8AEB7064D2}" Type="Text" Name="Country" DisplayName="Country" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{161A9E2F-BA58-4F39-BA25-C97886B25EBD}" Type="Choice" Name="SiteType" DisplayName="Site Type" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3">
+    <CHOICES>
+      <CHOICE>STS0</CHOICE>
+      <CHOICE>PROJECTSITE0</CHOICE>
+      <CHOICE>COMMUNITY0</CHOICE>
+      <CHOICE>PARTNERSITE0</CHOICE>
+    </CHOICES>
+  </Field>
+  <Field ID="{AF30D79E-67C2-4CD6-ABE8-DC623FA30900}" Type="URL" Name="SiteUrl" DisplayName="Site URL" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{EEC78465-1C48-4882-AF45-9163500824D3}" Type="Choice" Name="ConfidentialityLevel" DisplayName="Confidentiality Level" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3">
+    <CHOICES>
+      <CHOICE>Public</CHOICE>
+      <CHOICE>Internal</CHOICE>
+      <CHOICE>Confidential</CHOICE>
+      <CHOICE>Restricted</CHOICE>
+    </CHOICES>
+  </Field>
+  <Field ID="{32C0472B-E17A-4470-A837-DA4851645E57}" Type="Text" Name="SiteDescription" DisplayName="Site Description" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{10E7201A-CB6B-4ABD-86C5-1C46015E8980}" Type="Text" Name="RequestorName" DisplayName="Requestor Name" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{1C508C2E-B7A8-474B-B1C5-67CA38C203C4}" Type="Text" Name="CostCenter" DisplayName="Cost Center" Hidden="True" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{C5CDD846-B092-4539-8827-CB158940DF79}" Type="Text" Name="RequestorEmail" DisplayName="Requestor Email" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{92572361-F7C7-4C25-AC4E-337832368569}" Type="Text" Name="RequestorDepartment" DisplayName="Requestor Department" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{69F4AC22-69BA-4460-9E5E-FE2066D7C4D3}" Type="Text" Name="RequestorFacility" DisplayName="Requestor Facility" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{B3354B8F-CDDF-40C6-98CC-E72F74F5A70F}" Type="Text" Name="RequestorGlobalId" DisplayName="Requestor Global Id" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{AF4457CC-26D2-47FD-9080-A4F450B1F337}" Type="User" Name="ManagerName" DisplayName="Manager Name" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{104B45FE-957D-43BE-B066-4CAB7B2EBC02}" Type="User" Name="PrimarySiteOwner" DisplayName="Primary Site Owner" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{84E9EBB0-CC2A-494B-8004-6A93724E3BAD}" Type="User" Name="SecondarySiteOwner" DisplayName="Secondary Site Owner" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{DAF7B037-5E0D-477E-A391-3ED4AD3D3EE0}" Type="User" Name="TertiarySiteOwner" DisplayName="Tertiary Site Owner" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{E43166CF-CA9D-4B4E-9E3B-46E2C325ABE4}" Type="Choice" Name="CommunitySiteType" DisplayName="Community Site Type" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3">
+    <CHOICES>
+      <CHOICE>Private</CHOICE>
+      <CHOICE>Public</CHOICE>
+      <CHOICE>Secured</CHOICE>
+    </CHOICES>
+  </Field>
+  <Field ID="{39FDF4BC-1389-42F3-A160-60A319871C0E}" Type="User" Name="Moderator" DisplayName="Moderator" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{F9FED763-EDF4-4579-9569-B288D1B395EC}" Type="UserMulti" Name="InitialMembersToProvision" DisplayName="Initial Members To Provision" Group="JCI.Foundation.Columns" Mult="TRUE" UserSelectionMode="0" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{1FDE51C2-F532-46B1-9AC3-59BBE0D62AE7}" Type="Text" Name="ClarityProjectNumber" DisplayName="Clarity Project Number" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+  <Field ID="{FBA67873-E8E6-4BDB-A029-317CFEA8EA4D}" Type="DateTime" Name="ProjectStartDate" DisplayName="Project Start Date" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{BFE6348E-A5F3-4DD5-B061-750E7E3B0B6A}" Type="DateTime" Name="AnticipatedProjectEndDate" DisplayName="Anticipated Project End Date" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{C0038396-90D1-41DD-B3A6-27F04D320C41}" Type="Text" Name="AdditionalInfo" DisplayName="Additional Info" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{B09805BB-33FB-4B7D-B648-2FA7C8B13B3A}" Type="Boolean" Name="IsTestSite" DisplayName="Is Test Site" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{88E7C39A-EE85-4155-8D88-1D539DDEFDE7}" Type="Choice" Name="WorkflowStatus" DisplayName="Workflow Status" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3">
+    <Default>New</Default>
+    <CHOICES>
+      <CHOICE>New</CHOICE>
+      <CHOICE>Approved</CHOICE>
+      <CHOICE>Rejected</CHOICE>
+      <CHOICE>Pending</CHOICE>
+      <CHOICE>MoreInfoRequired</CHOICE>
+      <CHOICE>InformationProvided</CHOICE>
+      <CHOICE>Exception</CHOICE>
+    </CHOICES>
+  </Field>
+  <Field ID="{29B33FE2-95F7-4A11-9D15-ACF53401B145}" Type="Choice" Name="RequestStatus" DisplayName="Request Status" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3">
+    <CHOICES>
+      <CHOICE>New</CHOICE>
+      <CHOICE>Successful</CHOICE>
+      <CHOICE>Rejected</CHOICE>
+      <CHOICE>Pending</CHOICE>
+      <CHOICE>Exception</CHOICE>
+    </CHOICES>
+  </Field>
+  <Field ID="{DEAB539D-7D5E-4288-AF05-B65427DD0F26}" Type="DateTime" Name="JCIDueDate" DisplayName="JCIDueDate" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+  <Field ID="{8D2FC616-1C1E-4F3E-8489-8609621E8DCA}" DisplayName="Requester Phone" Name="RequesterPhone" Sealed="TRUE" Type="Text" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3"/>
+  <Field ID="{973CBFCC-89C9-406E-922D-296FD45843CF}" Type="Text" Name="RequestStatusTimestamp" DisplayName="Request Status Timestamp" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+
+</Elements>

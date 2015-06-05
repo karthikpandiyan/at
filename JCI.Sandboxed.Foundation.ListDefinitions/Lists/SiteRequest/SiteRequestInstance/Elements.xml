@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="SiteRequest" OnQuickLaunch="FALSE" TemplateType="10050" Url="Lists/SiteRequest" Description="List to store the Site Requests" Hidden="TRUE"></ListInstance>
+</Elements>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Links List" OnQuickLaunch="FALSE" TemplateType="103" FeatureId="00bfea71-2062-426c-90bf-714c59600103" Url="Lists/ProjectLinks" Description="Project Links"></ListInstance>
+</Elements>

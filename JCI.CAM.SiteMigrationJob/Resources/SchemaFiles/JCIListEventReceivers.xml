@@ -1,0 +1,61 @@
+﻿<Receivers>
+  <Receiver TemplateType="10003">
+    <Name>AutoTaggingServiceItemAdding</Name>
+    <Type>ItemAdding</Type>
+    <SequenceNumber>10000</SequenceNumber>
+    <Url>https://~webSiteHostName/listprovisioning/Services/AutoTaggingService.svc</Url>
+    <Synchronization>Synchronous</Synchronization>
+  </Receiver>
+  <Receiver TemplateType="10003">
+    <Name>AutoTaggingServiceItemAdded</Name>
+    <Type>ItemAdded</Type>
+    <SequenceNumber>10001</SequenceNumber>
+    <Url>https://~webSiteHostName/listprovisioning/Services/AutoTaggingService.svc</Url>
+    <Synchronization>Asynchronous</Synchronization>
+  </Receiver>
+  <Receiver TemplateType="10004">
+    <Name>AutoTaggingServiceItemAdding</Name>
+    <Type>ItemAdding</Type>
+    <SequenceNumber>10000</SequenceNumber>
+    <Url>https://~webSiteHostName/listprovisioning/Services/AutoTaggingService.svc</Url>
+    <Synchronization>Synchronous</Synchronization>
+  </Receiver>
+  <Receiver TemplateType="10004">
+    <Name>AutoTaggingServiceItemAdded</Name>
+    <Type>ItemAdded</Type>
+    <SequenceNumber>10001</SequenceNumber>
+    <Url>https://~webSiteHostName/listprovisioning/Services/AutoTaggingService.svc</Url>
+    <Synchronization>Asynchronous</Synchronization>
+  </Receiver>
+  <Receiver TemplateType="10005">
+    <Name>AutoTaggingServiceItemAdding</Name>
+    <Type>ItemAdding</Type>
+    <SequenceNumber>10000</SequenceNumber>
+    <Url>https://~webSiteHostName/listprovisioning/Services/AutoTaggingService.svc</Url>
+    <Synchronization>Synchronous</Synchronization>
+  </Receiver>
+  <Receiver TemplateType="10005">
+    <Name>AutoTaggingServiceItemAdded</Name>
+    <Type>ItemAdded</Type>
+    <SequenceNumber>10001</SequenceNumber>
+    <Url>https://~webSiteHostName/listprovisioning/Services/AutoTaggingService.svc</Url>
+    <Synchronization>Asynchronous</Synchronization>
+  </Receiver>
+  <!-- Template 101 consider only Shared Documents library -->
+  <Receiver TemplateType="101" ListTitle="Shared_x0020_Documents">
+    <Name>AutoTaggingServiceItemAdding</Name>
+    <Type>ItemAdding</Type>
+    <SequenceNumber>10000</SequenceNumber>
+    <Url>https://~webSiteHostName/listprovisioning/Services/AutoTaggingService.svc</Url>
+    <Synchronization>Synchronous</Synchronization>
+  </Receiver>
+  <Receiver TemplateType="101" ListTitle="Shared_x0020_Documents">
+    <Name>AutoTaggingServiceItemAdded</Name>
+    <Type>ItemAdded</Type>
+    <SequenceNumber>10001</SequenceNumber>
+    <Url>https://~webSiteHostName/listprovisioning/Services/AutoTaggingService.svc</Url>
+    <Synchronization>Asynchronous</Synchronization>
+  </Receiver>
+</Receivers>
+
+

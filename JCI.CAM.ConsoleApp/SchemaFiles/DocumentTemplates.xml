@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DocumentTemplates>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00538623D3DB9D451190C0F215A55018D4"
+    Path="DT As Is Documentation\PM2_06_SDLC_01_Proposal_AsIsDocumentation.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C009DDFCDA3AFA74621ACF6E7F350A25612"
+    Path="DT Communication Plan\PM2_03_MonitorandControl_CommunicationPlan.docx"></DocumentTemplate>
+ 
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00C3BDF94BD185401B8CA34922C1A60D5C"
+                    Path="DT Complexity Assessment\1_PM2_Initiation_Phase_Complexity_Assessment_V1.0.xlsm"></DocumentTemplate>
+
+
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00107636937A7E44449BCF35C88F34AC07"
+   Path="DT Detailed Functional Specification\PM2_06_SDLC_02_Design_DetailedFunctionalRequirements.docx"></DocumentTemplate>
+
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C000166F8022F35411A8C0FB7E0A7871545"
+    Path="DT Disaster Recovery Plan\DisasterRecoveryPlanTemplate_v6_2.docx"></DocumentTemplate>
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00EC3FD72012284471A4C3655923FBD780"
+                    Path="DT External Statement of Work\2_PM2_Proposal_Phase_SOW_V4.docx"></DocumentTemplate>
+
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00BC4483335ACB4E22A724C13C83837AA6"
+   Path="DT Gap Analysis\PM2_06_SDLC_01_Proposal_GapAnalysis.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C0010CB332187EF4E1FBEE18E0BB05C754B"
+    Path="DT Implementation plan\PM2_04_Execution_ImplementationPlan.docx"></DocumentTemplate>
+
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00854DA11E61C34AD382FE4F37C9756539"
+                    Path="DT Internal Statement of Work\2_PM2_Proposal_Phase_Internal_Statement_of_Work_V1.2.docx"></DocumentTemplate>
+
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700E2616887C9CA46A68EB2B6CB63D4D390"
+   Path="DT JCIDocumentExcel\JCI_Document_Excel.xltx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD2437006A6FABED10C54632AD4D118B640A67BD"
+   Path="DT JCIDocumentPowerPoint\JCI_Document_PowerPoint.potx"></DocumentTemplate>
+
+  <!-- Doc not updated-->
+ <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD2437001AA0C7DF0AF14AE6B3FCF07D05373CB4005E93DFD602B54EB293C032E448B1F7C4"
+                   Path="DT JCIGeneralDocumentExcel\JCI_GeneralDoc_Excel.xlsx"></DocumentTemplate>
+
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD2437001AA0C7DF0AF14AE6B3FCF07D05373CB400998984F59CF34E99AF08B2C6D698CDB6"
+               Path="DT JCIGeneralDocumentPowerPoint\JCI_GeneralDoc_PowerPoint.pptx"></DocumentTemplate>
+  
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C007A9509B7932F4E129CB2514E9AF85AEE"
+                  Path="DT JCIITDocumentExcel\JCI_ITDoc_Excel.xlsx"></DocumentTemplate>
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C004332EDEC049F42FB839212C19E5A691D"
+                  Path="DT JCIITDocumentPowerPoint\JCI_ITDoc_PowerPoint.pptx"></DocumentTemplate>
+
+  <!--<DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700D50D6C39A0A440B6B60B00255B3040A8"
+                  Path="DT Presentation - PowerPoint 2003\JC_PPT_Template_03_aug2_2012.ppt"></DocumentTemplate>-->
+  <!--<DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD24370090B70FEE6CE44600A5B7F56A301A347C"
+                  Path="DT Presentation - PowerPoint 2003 Wide\PowerPoint_03_template_Widescreen_16x9.ppt"></DocumentTemplate>-->
+  <!--<DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD2437005CC0B5E18DB04CBA80DC316ABBC76512"
+                  Path="DT Presentation - PowerPoint 2007\JC_PPT_Template_07Aug2012.pptx"></DocumentTemplate>-->
+  <!--<DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD2437006B4FDBA1CF134FCFA3F9019CF7E9FADC"
+                  Path="DT Presentation - PowerPoint 2007 Wide\PowerPoint_07_template_Widescreen_16x9.potx"></DocumentTemplate>-->
+  
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00D67206035FEB4E1586AAEB76CFC11C6F"
+                 Path="DT Project Assessment\PM2_05_Close_ProjectClosureReport.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00DBD6BF23A7734696B9908C52061D5F9D"
+                  Path="DT Project Budget Plan\PM2_02_Proposal_ProjectBudget.xlsx"></DocumentTemplate>
+
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00B9B0F320DF8A4E828002F8B6FD643EEC"
+                  Path="DT Project Charter\PM2_01_Initiation_ProjectCharter.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00AB26336D8FF9464C8AA3D0CD55EC0A18"
+                  Path="DT Roles and Responsibility Matrix\PM2_02_Proposal_RequirementsTraceabilityMatrix.xls"></DocumentTemplate>
+  
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00D96685E4463347219329BA1FFFA855D0"
+                  Path="DT Security Self Service Questions\3_PM2_Execution_Design_Phase_Security_Self_Service_Questions_10_24_12.xlsx"></DocumentTemplate>
+
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00AA2C59E02D514964B0A58AF8B01C910B"
+                  Path="DT Solution Delivery Proposal\PM2_02_Proposal_SolutionProposal.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00AB0F349A2716411EB0F498A8C9802A0E"
+                  Path="DT Sponsor Survey\PM2_05_Close_ProjectSponsorSurvey.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00B622AF6A69AC4E1497D73A24A72CCCBF"
+                  Path="DT Statement of Requirements\PM2_02_Proposal_Statement_of_Requirements(SOR).docx"></DocumentTemplate>
+
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00BE75C0B9F85243769EEEBBDC26A9FD5D"
+                  Path="DT Statement of Work Training\PM2_02_Proposal_Statement_of_Work(SOW).docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C004003388CE6E647E087DD35EAF6CDCED4"
+                  Path="DT Support process and Help Desk Readiness\PM2_06_SDLC_04_Validation_SupportProcessandHelpDeskReadiness.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00DA9CA8378143496E9DB02DBF00973095"
+                  Path="DT System test Specification\PM2_06_SDLC_03_Development_SystemTestSpecification.docx"></DocumentTemplate>
+
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C0083FB2D4CBCB140E9B1F7B68C0AE2CE80"
+                  Path="DT Team Survey\PM2_05_Close_ProjectTeamSurvey.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00C2B7CBFEF042473E82091C0BCE2B46BE"
+                  Path="DT Testing Strategy\PM2_06_SDLC_02_Design_Testing_Strategy.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00FA41095C8C134375906ACAFE199219A6"
+                  Path="DT To Be Documentation\PM2_06_SDLC_01_Proposal_ToBeDocumentation.docx"></DocumentTemplate>
+
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00BD08BD37B4344172843FACAB4EE48F07"
+                  Path="DT Training Strategy\PM2_06_SDLC_03_Development_TrainingStrategy.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C002112705639CE4882AA128A352A6BE646"
+                  Path="DT Unit Test Specification\PM2_06_SDLC_03_Development_Unit_Test_Specification.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C0023980A7E6989405E95509B8A8C114329"
+                  Path="DT Use Case\PM2_06_SDLC_01_Proposal_UseCases.docx"></DocumentTemplate>
+  
+  <!-- Doc not updated-->
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00DF2CC00B88BB4E25A52797D0806591D0"
+                  Path="DT Use Case Guideline\2_PM2_Proposal_Phase_Use_Case_Guidelines_V1.0.docx"></DocumentTemplate>
+  
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00CBCFE647BE8346349D0850C3AB9D592C"
+                  Path="DT User Acceptance Test Specification\PM2_06_SDLC_03_Development_UserAcceptanceTest_Specification.docx"></DocumentTemplate>
+  <DocumentTemplate ContentTypeId="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00626D8F063EC34E53B35369BBDCFD55FE"
+                  Path="DT User Work Instructions\PM2_06_SDLC_03_Development_UserWorkInstructions.docx"></DocumentTemplate>
+</DocumentTemplates>

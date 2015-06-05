@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="ProjectChangeRequest" OnQuickLaunch="TRUE" TemplateType="10006" Url="Lists/ProjectChangeRequest" Description="ProjectChangeRequest List"></ListInstance>
+</Elements>

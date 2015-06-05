@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="SiteApprover" OnQuickLaunch="FALSE" TemplateType="10002" Url="Lists/SiteApprover" Description="Site Approver List"></ListInstance>
+</Elements>

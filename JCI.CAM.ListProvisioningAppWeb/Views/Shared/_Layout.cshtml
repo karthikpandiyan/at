@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - List creation </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required : false)
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+        @*<div id="task_progress" class="mainLayout">
+            <img id="loading_img" class="preLoader" src="~/Content/images/progress_bar.gif" />
+            <div class="preLoader1">
+                <h2 id="progressText">Loading...</h2>
+            </div>
+        </div>*@
+    </div>
+</body>
+</html>

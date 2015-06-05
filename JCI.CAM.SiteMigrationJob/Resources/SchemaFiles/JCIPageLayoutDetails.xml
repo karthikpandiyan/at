@@ -1,0 +1,160 @@
+﻿<PageLayouts>
+  <PageLayout HomePage="TeamHome.aspx" WebTemplate="STS" Name="AddWebParts" Url="Pages" OldPageLayout ="/_catalogs/masterpage/JCI.Foundation.TeamHomePagelayout.aspx" NewPageLayout="/_catalogs/masterpage/BlankWebPartPage.aspx,Blank Web Part page">
+    <ListViewWebPart>
+      <![CDATA[
+              <webParts>
+               <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+                <metaData>
+                 <type name="Microsoft.SharePoint.WebPartPages.XsltListViewWebPart,Microsoft.SharePoint,Version=15.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" />
+                 <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+                </metaData>
+                <data>
+                 <properties>
+                  <property name="AllowConnect" type="bool">False</property>
+                  <property name="ChromeType" type="chrometype">TitleOnly</property>
+                  <property name="Title" type="string">{0}</property>
+                  <property name="ListId" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">{1}</property>
+                 </properties>
+                </data>
+               </webPart>
+            </webParts>
+          ]]>
+    </ListViewWebPart>
+    <File Name="TeamHome.aspx" Url="TeamHome.aspx">
+      <Property Name="Title" Value="Team Announcements"/>
+      <Property Name="ListTitle" Value="Team Announcements"/>
+      <Property Name="ZoneId" Value="RightColumn"/>
+      <Property Name="ZoneIndex" Value="0"/>
+    </File>
+    <File Name="TeamHome.aspx" Url="TeamHome.aspx">
+      <Property Name="Title" Value="Team Discussions"/>
+      <Property Name="ListTitle" Value="Team Discussions"/>
+      <Property Name="ZoneId" Value="Header"/>
+      <Property Name="ZoneIndex" Value="0"/>
+    </File>
+    <File Name="TeamHome.aspx" Url="TeamHome.aspx">
+      <Property Name="Title" Value="Documents"/>
+      <Property Name="ListTitle" Value="Documents"/>
+      <Property Name="ZoneId" Value="Header"/>
+      <Property Name="ZoneIndex" Value="1"/>
+    </File>
+    <File Name="TeamHome.aspx" Url="TeamHome.aspx">
+      <Property Name="Title" Value="Project Assignments"/>
+      <Property Name="ListTitle" Value="Project Assignments"/>
+      <Property Name="ZoneId" Value="RightColumn"/>
+      <Property Name="ZoneIndex" Value="1"/>
+    </File>
+  </PageLayout>
+  <PageLayout HomePage="CommunityHome.aspx" WebTemplate="COMMUNITY" Name="AddWebParts" Url="Pages" OldPageLayout ="/_catalogs/masterpage/JCI.Foundation.CommunityHomePagelayout.aspx" NewPageLayout="/_catalogs/masterpage/BlankWebPartPage.aspx,Blank Web Part page">
+    <ListViewWebPart>
+      <![CDATA[
+              <webParts>
+               <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+                <metaData>
+                 <type name="Microsoft.SharePoint.WebPartPages.XsltListViewWebPart,Microsoft.SharePoint,Version=15.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" />
+                 <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+                </metaData>
+                <data>
+                 <properties>
+                  <property name="AllowConnect" type="bool">False</property>
+                  <property name="ChromeType" type="chrometype">TitleOnly</property>
+                  <property name="Title" type="string">{0}</property>
+                  <property name="ListId" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">{1}</property>
+                 </properties>
+                </data>
+               </webPart>
+            </webParts>
+          ]]>
+    </ListViewWebPart>
+    <File Name="CommunityHome.aspx" Url="CommunityHome.aspx">
+      <Property Name="Title" Value="Join"/>
+      <Property Name="ListTitle" Value="Join"/>
+      <Property Name="ZoneId" Value="RightColumn"/>
+      <Property Name="ZoneIndex" Value="1"/>
+    </File>
+    <File Name="CommunityHome.aspx" Url="CommunityHome.aspx">
+      <Property Name="Title" Value="Community Tools"/>
+      <Property Name="ListTitle" Value="Community Tools"/>
+      <Property Name="ZoneId" Value="RightColumn"/>
+      <Property Name="ZoneIndex" Value="0"/>
+    </File>
+    <File Name="CommunityHome.aspx" Url="CommunityHome.aspx">
+      <Property Name="Title" Value="Community Announcements"/>
+      <Property Name="ListTitle" Value="Community Announcements"/>
+      <Property Name="ZoneId" Value="RightColumn"/>
+      <Property Name="ZoneIndex" Value="2"/>
+    </File>
+    <File Name="CommunityHome.aspx" Url="CommunityHome.aspx">
+      <Property Name="Title" Value="Community What Happening"/>
+      <Property Name="ListTitle" Value="Community What Happening"/>
+      <Property Name="ZoneId" Value="RightColumn"/>
+      <Property Name="ZoneIndex" Value="3"/>
+    </File>
+    <File Name="CommunityHome.aspx" Url="CommunityHome.aspx">
+      <Property Name="Title" Value="Community Members"/>
+      <Property Name="ListTitle" Value="Community Members"/>
+      <Property Name="ZoneId" Value="RightColumn"/>
+      <Property Name="ZoneIndex" Value="4"/>
+    </File>    
+    <File Name="CommunityHome.aspx" Url="CommunityHome.aspx">
+      <Property Name="Title" Value="Discussions List"/>
+      <Property Name="ListTitle" Value="Discussions List"/>
+      <Property Name="ZoneId" Value="Header"/>
+      <Property Name="ZoneIndex" Value="0"/>
+    </File>
+    <File Name="CommunityHome.aspx" Url="CommunityHome.aspx">
+      <Property Name="Title" Value="Community Links"/>
+      <Property Name="ListTitle" Value="Community Links"/>
+      <Property Name="ZoneId" Value="Header"/>
+      <Property Name="ZoneIndex" Value="1"/>
+    </File>
+    <File Name="CommunityHome.aspx" Url="CommunityHome.aspx">
+      <Property Name="Title" Value="Promoted Links"/>
+      <Property Name="ListTitle" Value="Promoted Links"/>
+      <Property Name="ZoneId" Value="Header"/>
+      <Property Name="ZoneIndex" Value="2"/>
+    </File>
+  </PageLayout>
+  <PageLayout HomePage="ProjectHome.aspx" WebTemplate="PROJECTSITE" Name="AddWebParts" Url="Pages"  OldPageLayout ="/_catalogs/masterpage/JCI.Foundation.ProjectHomePagelayout.aspx" NewPageLayout="/_catalogs/masterpage/BlankWebPartPage.aspx,Blank Web Part page">
+    <ListViewWebPart>
+      <![CDATA[
+              <webParts>
+               <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+                <metaData>
+                 <type name="Microsoft.SharePoint.WebPartPages.XsltListViewWebPart,Microsoft.SharePoint,Version=15.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" />
+                 <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+                </metaData>
+                <data>
+                 <properties>
+                  <property name="AllowConnect" type="bool">False</property>
+                  <property name="ChromeType" type="chrometype">TitleOnly</property>
+                  <property name="Title" type="string">{0}</property>
+                  <property name="ListId" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">{1}</property>
+                 </properties>
+                </data>
+               </webPart>
+            </webParts>
+          ]]>
+    </ListViewWebPart>
+    <File Name="ProjectHome.aspx" Url="ProjectHome.aspx">
+      <Property Name="Title" Value="Project Summary"/>
+      <Property Name="ListTitle" Value="Project Summary"/>
+      <Property Name="ZoneId" Value="Header"/>
+      <Property Name="ZoneIndex" Value="0"/>
+    </File>
+    <File Name="ProjectHome.aspx" Url="ProjectHome.aspx">
+      <Property Name="Title" Value="Announcements"/>
+      <Property Name="ListTitle" Value="Announcements"/>
+      <Property Name="ZoneId" Value="Header"/>
+      <Property Name="ZoneIndex" Value="1"/>
+    </File>
+    <File Name="ProjectHome.aspx" Url="ProjectHome.aspx">
+      <Property Name="Title" Value="Links List"/>
+      <Property Name="ListTitle" Value="Links List"/>
+      <Property Name="ZoneId" Value="Header"/>
+      <Property Name="ZoneIndex" Value="2"/>
+    </File>
+  </PageLayout>
+</PageLayouts>
+  
+

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="JCI.CAM.ListProvisioningAppWeb.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
+  <WebRole name="JCI.CAM.ListProvisioningAppWeb" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="Endpoint1" />
+        <Binding name="AppEndpoint" endpointName="AppEndpoint" /></Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+    <InputEndpoint name="AppEndpoint" protocol="https" port="443" /></Endpoints>
+  </WebRole>
+</ServiceDefinition>

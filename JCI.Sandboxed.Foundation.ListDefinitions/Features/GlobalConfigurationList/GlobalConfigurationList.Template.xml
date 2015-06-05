@@ -1,0 +1,6 @@
+﻿<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="JCI.Foundation.Core.GlobalConfigurationList" Description="Provisions Xml Document for Global Configuration List" Id="c722c66d-1f14-4533-904f-f2486d7240b7" Scope="Web">
+  <ElementManifests>
+    <ElementManifest Location="GlobalConfigurationList\Elements.xml" />
+    <ElementFile Location="GlobalConfigurationList\Schema.xml" />  
+  </ElementManifests>
+</Feature>

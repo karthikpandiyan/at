@@ -1,0 +1,10 @@
+﻿<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="JCI.Foundation.Collaboration.BaseDocumentLibrary" Description="Provisions JCIBaseDocumentLibrary Definition" Id="056ee638-9c10-4eb6-83f7-a34dcb4c1de8" Scope="Web">
+  <ElementManifests>
+    <ElementFile Location="JCIBaseMetadataDocumentLibrary\EditDlg.htm" />
+    <ElementManifest Location="JCIBaseMetadataDocumentLibrary\Elements.xml" />
+    <ElementFile Location="JCIBaseMetadataDocumentLibrary\FileDlg.htm" />
+    <ElementFile Location="JCIBaseMetadataDocumentLibrary\Repair.aspx" />
+    <ElementFile Location="JCIBaseMetadataDocumentLibrary\Schema.xml" />
+    <ElementFile Location="JCIBaseMetadataDocumentLibrary\Upload.aspx" />
+  </ElementManifests>
+</Feature>

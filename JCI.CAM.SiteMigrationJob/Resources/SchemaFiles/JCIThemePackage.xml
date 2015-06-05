@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThemePackage Name="JCITheme"
+                  ColorFile="\Resources\Themes\JCITheme\JCIPalette.spcolor"
+                  FontFile=""
+                  BackgroundFile=""
+                  MasterPage=""
+                  AlternateCSS=""
+                  SiteLogo=""
+                  Version="1" >
+</ThemePackage>

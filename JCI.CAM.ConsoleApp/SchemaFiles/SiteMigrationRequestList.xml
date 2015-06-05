@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Lists>
+  <List Title="Site Migration Request" FolderCreation="FALSE" Direction="Direction" Url="Lists/SiteMigrationRequest" BaseType="0" >
+    <ContentTypes>
+      <ContentType ID="0x0100F6DDE48A98464946BCD474B02FFE0781" Name="SiteMigrationRequest" Group="JCI Foundation Content Types">
+        <FieldRefs>
+          <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
+          <FieldRef ID="{6C66DC32-A41E-4C6A-9D4A-C46CE0D0C64C}" Name="JCISiteUrl" />
+          <FieldRef ID="{76ECEF8B-E6D5-41D4-AA7A-6E91E1A2FEFE}" Name="JCISiteOwners" />
+          <FieldRef ID="{F7196721-F9BC-487F-AC70-3A1E0B5C425F}" Name="JCISiteMigrationStatus" />
+          <FieldRef ID="{E5813FF3-0B56-4258-9F3F-1FDD5AA1E435}" Name="JCISiteMigrationLog"/>
+          <FieldRef ID="{66C9B007-4C73-4357-9E4F-2C3626B811E6}" Name="JCISiteScheduleStartDate"/>
+        </FieldRefs>
+      </ContentType>
+    
+    </ContentTypes>
+    <Fields>
+      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Site Title" Required="TRUE" Indexed="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+      <Field ID="{6C66DC32-A41E-4C6A-9D4A-C46CE0D0C64C}" Type="URL" Name="JCISiteUrl" DisplayName="Site URL" Required="TRUE"  Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" MaxLength="255" />
+      <Field ID="{76ECEF8B-E6D5-41D4-AA7A-6E91E1A2FEFE}" Type="UserMulti" Mult="TRUE" Name="JCISiteOwners" DisplayName="Site Owners" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+      <Field ID="{F7196721-F9BC-487F-AC70-3A1E0B5C425F}" Type="Choice" Name="JCISiteMigrationStatus" Indexed="TRUE" DisplayName="Site Migration Status"  Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3">
+        <FieldBody>
+          <![CDATA[  
+        <CHOICES>
+          <CHOICE>Not Started</CHOICE>
+          <CHOICE>Pending</CHOICE>
+          <CHOICE>Failed</CHOICE>
+          <CHOICE>Ignore</CHOICE>
+          <CHOICE>Success</CHOICE>          
+        </CHOICES>
+         ]]>
+        </FieldBody>
+      </Field>
+      <Field ID="{E5813FF3-0B56-4258-9F3F-1FDD5AA1E435}" Type="Note" Name="JCISiteMigrationLog" Group="JCI.Foundation.Columns" DisplayName="Site Migration Log" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+      <Field ID="{66C9B007-4C73-4357-9E4F-2C3626B811E6}" Type="DateTime" Name="JCISiteScheduleStartDate" Group="JCI.Foundation.Columns" DisplayName="Schedule Start Date" Required="FALSE" Format="DateOnly" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+    </Fields>
+    <Views>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="Request View"  RowLimit="30" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png" Url="AllItems.aspx">
+        <ViewFields>
+          <FieldRef Name="Title" />
+          <FieldRef Name="JCISiteMigrationStatus" />
+        </ViewFields>
+        <Query>
+          <![CDATA[
+          <OrderBy>
+            <FieldRef Name="ID"></FieldRef>
+          </OrderBy>
+          ]]>
+        </Query>
+      </View>
+    </Views>
+  </List>
+ 
+</Lists>

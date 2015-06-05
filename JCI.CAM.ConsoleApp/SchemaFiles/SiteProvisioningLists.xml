@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Lists>
+  <List Title="SiteApprover" FolderCreation="FALSE" Direction="Direction" Url="Lists/SiteApprover" BaseType="0">
+      <ContentTypes>
+          <ContentType ID="0x01007a2b705fa5e442bebcaad1214189b5e4" Name="ListFieldsContentType">
+            <FieldRefs>
+              <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
+              <FieldRef ID="{05469edb-67da-4786-90a1-8e219ff23d06}" Name="SiteTemplate" />
+              <FieldRef ID="{e806bf47-9dd1-431e-993b-c038fa6f73c8}" Name="Region1" />
+              <FieldRef ID="{4be66b6b-9837-4bea-9175-7d7bc4de0833}" Name="BusinessUnitAdmin" />
+              <FieldRef ID="{1413b169-f77d-4c91-ae99-39d1f11f5d25}" Name="BusinessUnit1" />
+              <FieldRef ID="{E584358C-8B22-4059-9EDA-8AE88F1600AB}" Name="BusinessUnitAdminEmail"/>
+            </FieldRefs>
+          </ContentType>
+       
+      </ContentTypes>
+      <Fields>
+        <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Title" Required="TRUE" Group="JCI.Foundation.Columns" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+        <Field Name="SiteTemplate" ID="{05469edb-67da-4786-90a1-8e219ff23d06}" DisplayName="SiteTemplate" Type="Choice" Group="JCI.Foundation.Columns" Required="TRUE" >
+          <FieldBody>
+          <![CDATA[  
+          <CHOICES>
+            <CHOICE>STS0</CHOICE>
+            <CHOICE>PROJECTSITE0</CHOICE>
+            <CHOICE>COMMUNITY0</CHOICE>
+            <CHOICE>PARTNERSITE0</CHOICE>
+          </CHOICES>
+           ]]>
+          </FieldBody>
+        </Field>
+        <Field Name="Region1" ID="{e806bf47-9dd1-431e-993b-c038fa6f73c8}" DisplayName="Region" Type="Choice" Required="TRUE" Group="JCI.Foundation.Columns" >
+          <FieldBody>
+            <![CDATA[  
+          <CHOICES>
+              <CHOICE>All</CHOICE>
+              <CHOICE>Asia Pacific</CHOICE>
+              <CHOICE>Europe</CHOICE>
+              <CHOICE>L.America</CHOICE>
+              <CHOICE>Middle East</CHOICE>
+              <CHOICE>N.America</CHOICE>
+              <CHOICE>S.America</CHOICE>
+              <CHOICE>Southeast Asia</CHOICE>
+          </CHOICES>
+          ]]>
+          </FieldBody>
+        </Field>
+        <Field Name="BusinessUnitAdmin" ID="{4be66b6b-9837-4bea-9175-7d7bc4de0833}" DisplayName="BusinessUnitAdmin" Type="User" Required="TRUE" Group="JCI.Foundation.Columns" />
+        <Field Name="BusinessUnit1" ID="{1413b169-f77d-4c91-ae99-39d1f11f5d25}" DisplayName="BusinessUnit" Type="Choice" Required="TRUE" Group="JCI.Foundation.Columns" >
+          <FieldBody>
+          <![CDATA[
+          <CHOICES>
+            <CHOICE>AEI</CHOICE>
+            <CHOICE>AS</CHOICE>
+            <CHOICE>BE</CHOICE>
+            <CHOICE>CORP</CHOICE>
+            <CHOICE>Enterprise</CHOICE>
+            <CHOICE>GWS</CHOICE>
+            <CHOICE>PS</CHOICE>
+            <CHOICE>All AE</CHOICE>
+            <CHOICE>Corporate</CHOICE>
+          </CHOICES>
+          ]]>
+          </FieldBody>
+        </Field>
+        <Field ID="{E584358C-8B22-4059-9EDA-8AE88F1600AB}" Type="Text" Name="BusinessUnitAdminEmail" DisplayName="BusinessUnitAdminEmail" Required="FALSE" Group="JCI.Foundation.Columns"  StaticName="BusinessUnitAdminEmail" MaxLength="255" />
+      </Fields>
+  </List>
+  
+  <List Title="SiteRequest" FolderCreation="FALSE" EnableContentTypes="TRUE" Direction="Direction" Url="Lists/SiteRequest" BaseType="0">
+    <ContentTypes>
+        <ContentTypeRef ID="0x0100797366CFE3F84BD49203366B1D80752F" />
+      </ContentTypes>
+      <Fields></Fields>
+      <Views>       
+        <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="Site Request View" RowLimit="30" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png" Url="AllItems.aspx">
+         <ViewFields>
+            <FieldRef Name="BusinessUnit" />
+            <FieldRef Name="Region" />
+            <FieldRef Name="Country" />
+            <FieldRef Name="SiteType" />
+            <FieldRef Name="ConfidentialityLevel" />
+            <FieldRef Name="CostCenter" />
+           </ViewFields>
+          <Query>
+            <![CDATA[
+            <OrderBy>
+              <FieldRef Name="ID"></FieldRef>
+            </OrderBy>
+            ]]>
+          </Query>
+        </View>
+      </Views>
+  </List>
+  
+  <List Title="WorkflowConfiguration" FolderCreation="FALSE" Direction="Direction" Url="Lists/WorkflowConfiguration" BaseType="0">
+      <ContentTypes>
+        <ContentType ID="0x01009c1c9bb059774166bd1558366b2a92b1" Name="WorkflowConfigurationListFieldsContentType">
+          <FieldRefs>
+            <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
+            <FieldRef ID="{b0c1c952-c811-4f82-9895-9139fcd97280}" Name="Value" />
+          </FieldRefs>
+        </ContentType>       
+      </ContentTypes>
+      <Fields>
+        <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Key" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" Group="JCI.Foundation.Columns"/>
+        <Field Name="Value" ID="{b0c1c952-c811-4f82-9895-9139fcd97280}" DisplayName="Value" Type="Note" Group="JCI.Foundation.Columns"/>
+      </Fields>
+  </List>
+</Lists>

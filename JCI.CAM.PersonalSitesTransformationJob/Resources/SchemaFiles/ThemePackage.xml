@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Branding>
+  
+<ThemePackage Name="JCITheme"
+                  ColorFile="\Resources\Themes\JCITheme\JCIPalette.spcolor"
+                  FontFile=""
+                  BackgroundFile=""
+                  MasterPage=""
+                  AlternateCSS=""
+                  SiteLogo=""
+                  Version="1" >
+</ThemePackage>
+
+<CustomAction Name="JCI_CAM_HeaderFooterInjection"
+                    Description="Header footer customization"
+                    Group="ScriptLink"
+                    Location="ScriptLink"
+                    Title="Branding Customization Injection"
+                    ScriptSrc=""
+                    Sequence="1002"
+                    Url=""
+                    Rights="31"
+                    Enabled="true"
+                    Remove="true">
+    <ScriptBlock>
+      <![CDATA[      
+ 
+          var JCI_CAM_BrandingCustomizationApp_AppWeb = 'https://~webSiteHostName/branding';
+   
+          var headID = document.getElementsByTagName('head')[0]; 
+          var JCIMasterCSS = document.createElement('link');
+          JCIMasterCSS.rel = 'stylesheet'; 
+          JCIMasterCSS.href = JCI_CAM_BrandingCustomizationApp_AppWeb + '/Styles/CSS/JCIMaster.css';
+          JCIMasterCSS.type = 'text/css';
+          headID.appendChild(JCIMasterCSS);
+          var brandingNavigation = document.createElement('script');
+          brandingNavigation.type = 'text/javascript';
+          brandingNavigation.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/InjectBrandingNavigation.js';
+          headID.appendChild(brandingNavigation);        
+          var JCIMaster = document.createElement('script'); JCIMaster.type = 'text/javascript';
+          JCIMaster.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JCIMaster.js';
+          headID.appendChild(JCIMaster);
+          var JCIGlobalNavigation = document.createElement('script');
+          JCIGlobalNavigation.type = 'text/javascript';
+          JCIGlobalNavigation.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JCIGlobalNavigation.js';
+          headID.appendChild(JCIGlobalNavigation);
+          var jQueryWaterMark = document.createElement('script');
+          jQueryWaterMark.type = 'text/javascript';
+          jQueryWaterMark.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JQuery.WaterMark.js';
+          headID.appendChild(jQueryWaterMark);
+          var directAccess = document.createElement('script');
+          directAccess.type = 'text/javascript';
+          directAccess.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/DirectAccess.js';
+          headID.appendChild(directAccess);
+          var webtrendsLoad = document.createElement('script');
+          webtrendsLoad.type = 'text/javascript';
+          webtrendsLoad.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/webtrends.load.js'; 
+          headID.appendChild(webtrendsLoad);
+         
+        ]]>
+    </ScriptBlock>
+  </CustomAction>
+    
+</Branding>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="6f22a5f8-31a7-46dd-a951-e6c6f5334282" solutionId="6f22a5f8-31a7-46dd-a951-e6c6f5334282" resetWebServer="false" sharePointProductVersion="16.0" name="JCI.CAM.SiteProvisioningApp" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="5c4dd497-8687-4dae-aa09-6c426e23eb24" />
+  </features>
+</package>

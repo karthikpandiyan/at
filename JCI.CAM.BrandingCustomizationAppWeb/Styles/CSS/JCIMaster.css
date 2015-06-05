@@ -1,0 +1,466 @@
+/*-----------------------------------------------------------------------
+// <copyright file="JCIMaster.css" company="Microsoft Corporation &amp; Johnson Controls Inc.">
+// Copyright (c) Microsoft Corporation &amp; Johnson Controls Inc.
+// All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------*/
+
+
+/* Classes */
+span.LightBlue {
+    color: #18bde2 !important;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+span.DarkBlue {
+    padding: 0;
+    margin: 0;
+    color: #052890 !important;
+}
+
+.Hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.PageTitle {
+    font-weight: normal;
+    font-size: 45px;
+    padding-bottom:10px;
+    font-family:"Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif !important;
+}
+
+.LeftNavigationText {
+    font-size: 12px;
+    color: #08338f;
+}
+
+.NormalText {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.TileSingle {
+    width: 145px;
+    height: 145px;
+    overflow: hidden;
+}
+
+.TitleBarDouble {
+    width: 300px;
+    height: 32px;
+    overflow: hidden;
+}
+
+.TitleBarSingle {
+    width: 145px;
+    height: 32px;
+    overflow: hidden;
+}
+
+.FeaturedContent {
+    width: 609px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.BorderBottom {
+    border-bottom: 3px solid #00c8ff;
+}
+
+.SteelGray {
+    background-color: #ddd;
+}
+
+/*#region Generics */
+
+.JCIContainer {
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+
+/*#region Ribbon */
+
+div.UtilityNavigation {
+    position: relative;
+    height: auto;
+    min-height:28px;
+}
+
+.Messages {
+    position: relative;
+    top: 10px;
+    margin-top: 6px;
+}
+
+/*#region Global Navigation */
+
+.TopNavigation {
+    list-style: none;
+    margin: 0px;
+    float: left;
+    padding-left: 0px;
+    display: block;
+}
+
+    .TopNavigation li {
+        display: block;
+        float: left;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+
+.JCITopNavigationLinks {
+    font-size: 10pt;
+    padding: 6px 10px;
+}
+
+.TopNavigation li a {
+    text-decoration: none;
+    color: #666;
+    display: inline-block;
+    -webkit-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+}
+
+    .TopNavigation li a:hover {
+        text-decoration: none;
+        background-color:#00c8ff;
+        color:#fff;
+    }
+
+#TopNavigationCustom .InActiveLinks:hover {
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+div.GlobalNavigation ul#MainNavigation {
+    list-style-type: none;
+    height: 80px;
+}
+
+    div.GlobalNavigation ul#MainNavigation li {
+        background-image: url('../Images/Chevron.png');
+        background-position: right;
+        background-repeat: no-repeat;
+        padding-right: 23px;
+        margin-right: 25px;
+        margin-left: 0;
+    }
+
+        div.GlobalNavigation ul#MainNavigation li a {
+            display: block;
+            line-height: 80px;
+            text-decoration: none;
+            color: #404040;
+            margin-left: 0;
+        }
+
+#HeaderNav {
+    font-weight: normal;
+    margin: 0 auto;
+    /*min-width: 920px;*/
+    max-width: 1280px;
+    position: relative;
+    background-color: transparent;
+}
+
+    #HeaderNav a {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    #HeaderNav li {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    #HeaderNav ul {
+        border: 0;
+        padding: 0;
+        position: relative;
+    }
+
+        #HeaderNav ul:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    #HeaderNav:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    #HeaderNav a {
+        color: #000;
+        display: inline-block;
+        line-height: 40px;
+        padding: 0px 18px 0px 20px;
+        text-decoration: none;
+        font-weight: normal;
+    }
+
+    .TopNavigation {
+    list-style: none;
+    margin: 0px;
+    float: left;
+}
+
+    #HeaderNav ul {
+        list-style: none;
+    }
+
+    #HeaderNav > ul {
+    }
+
+        #HeaderNav > ul > li {
+            float: left;
+        }
+
+            #HeaderNav > ul > li:hover {
+                color: #000;
+            }
+
+    #HeaderNav .has-sub {
+        z-index: 1;
+    }
+
+    #HeaderNav .has-sub1 a {
+        background-image: none;
+        padding-right: 0px;
+    }
+
+.headUl li {
+    margin-right: 20px !important;
+}
+
+#HeaderNav li > a {
+    background-image: url('../Images/Chevron.png');
+    background-repeat: no-repeat;
+    background-position: right 18px;
+    margin-right: 13px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+#HeaderNav .has-sub ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    float: left;
+    width: 100%;
+}
+
+.globalNav {
+    display: block;
+    margin: 0 30%;
+    width: 100%;
+}
+#suiteBar {
+    border-bottom: 1px solid #ccc;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.headUl {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    padding: 3px 10px 3px 0;
+    /*z-index: 100;*/
+}
+
+#HeaderNav ul {
+    margin-left: -10px !important;
+}
+
+.JCIHeaderLinks {
+}
+
+    .JCIHeaderLinks:hover {
+        text-decoration: underline !important;
+    }
+
+.JCISubHeaderLinks:hover {
+    text-decoration: underline !important;
+}
+
+.JCISubHeaderLinks{
+    font-size:15px !important;
+    font-family:"Segoe UI Bold",Arial,sans-serif !important;
+}
+
+.InActiveLinks:hover {
+    text-decoration: none !important;
+}
+
+.JCIHeaderMainLinks:hover {
+    text-decoration: none !important;
+}
+
+.JCIHeaderSingleMainLinks:hover {
+    text-decoration: underline !important;
+}
+
+.JCIHeaderMainLinks {
+    padding-left: 10px !important;
+    font-size: 20px !important;
+}
+
+.JCIHeaderSingleMainLinks {
+    padding-left: 10px !important;
+    font-size: 20px !important;
+}
+
+/* End Global Navigation */
+
+
+.JCIFooterLinks{
+	margin-top: 0px !important;
+}
+
+/* Footer */
+/*
+**  Footer section Begin
+**  Footer is fixed to bottom of the screen, with edge to edge background and centered content based on 960 - 1280 width.  
+*/
+
+/* Footer */
+#footer {
+    width: 100%;
+    float: left;
+    margin-top: 18px;
+    background-color: #ddd;
+    border-top: 8px solid #00c8ff;
+    clear: both;
+    overflow: hidden;
+    position:relative;
+    bottom:0;
+    left:0;
+}
+
+    #footer > .JCIContainer {
+        margin-top: 20px;
+    }
+
+    #footer a {
+        text-decoration: none;
+        color: #404040;
+        font-weight: normal;
+    }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+
+    #footer h2,
+    #footer h2 a
+    {
+        line-height: normal;
+        font-family:"Segoe UI Semilight","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif !important;
+    }
+
+.FooterColumn {
+    color: #404040;
+    float: left;
+    margin-right: 30px;
+    max-width: 25%;
+	width:auto;
+}
+
+h2.FooterColumnTitle {
+    color: #404040;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+
+.JCIFooterLinks a {
+    font-size: 12px !important;
+    padding: 5px 0px 5px 0px;
+}
+
+#footer, 
+.push {
+    /* .push must be the same height as .footer */
+    height: 200px;
+    /* Multicolumn Layout With Sticky Footer */
+    clear: both;
+}
+/* End Footer */
+
+
+
+/*--UI Bug 121932 Fix--*/
+/*.JCIContainer div#globalNavBox
+{
+filter:none;
+}
+.JCIContainer div#globalNavBox div.NoBottomBorder
+{
+	border-bottom:none;
+}
+*/
+/*--UI Bug 121932 Fix--*/
+/*.JCIContainer div#globalNavBox
+{
+filter:none;
+}
+.JCIContainer div#globalNavBox div.NoBottomBorder
+{
+	border-bottom:none;
+}
+*/
+
+#contentRow
+{
+    min-height:470px!important;
+}
+
+.ms-dialog div#s4-bodyContainer #contentRow,
+.ms-dialog div#s4-bodyContainer #contentBox
+{
+min-width:100px!important;
+}
+
+
+/* Make Ribbon container transparent to better accommodate suitebar  */
+#globalNavBox {
+	background-color:transparent;
+}
+
+/* myJCI logo style */
+.logoText { 
+	font-size: 16pt;
+    margin-left: 20px;
+	font-family:"Segoe UI Semilight","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+}
+.cyan {color:#00C8FF}
+.blue {color:#08338f}

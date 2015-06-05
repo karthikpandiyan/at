@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EditRequestWebPart_AdditionalInfoAlphaNumericError_Text" xml:space="preserve">
+    <value>Additional information can contain alphabetic and numeric characters only. No special characters allowed.</value>
+    <comment>Additional information validation for special characters.</comment>
+  </data>
+  <data name="EditRequestWebPart_AdditionalInfoMaxLengthError_Text" xml:space="preserve">
+    <value>Additional Information cannot exceed 255 characters.</value>
+    <comment>Additional inforamtion for number of characters.</comment>
+  </data>
+  <data name="EditRequestWebPart_AdditionalInfoToolTip_Text" xml:space="preserve">
+    <value>Enter any additional information that is needed before this site can be approved and created. Additional Information cannot exceed 255 characters.</value>
+    <comment>Additional information cannot be blank</comment>
+  </data>
+  <data name="EditRequestWebPart_AdditionalInfo_HeaderText" xml:space="preserve">
+    <value>Enter any additional information below for site request</value>
+    <comment>Additional information Header</comment>
+  </data>
+  <data name="EditRequestWebPart_AdditionalInfo_LabelText" xml:space="preserve">
+    <value>Additional Information</value>
+    <comment>Additional information from the user, if more information requested from the BU Admin on the site approval.</comment>
+  </data>
+  <data name="EditRequestWebPart_Cancel_Text" xml:space="preserve">
+    <value>The request for this site collection cannot be updated. Please contact Administrator for more details.</value>
+    <comment>Tool tip for cancel webpart.</comment>
+  </data>
+  <data name="EditRequestWebPart_EnterAdditionalInfoError_Text" xml:space="preserve">
+    <value>Enter additional information</value>
+    <comment>Validation for additional information</comment>
+  </data>
+  <data name="EditRequestWebPart_Information_HeaderText" xml:space="preserve">
+    <value>Edit Site Request</value>
+    <comment>Header Text for Edit SiteRequest</comment>
+  </data>
+  <data name="EditRequestWebPart_Success_Text" xml:space="preserve">
+    <value>The request has been updated successfully</value>
+    <comment>Text for sucess update.</comment>
+  </data>
+  <data name="EditRequestWebPart_WebApplication_LabelText" xml:space="preserve">
+    <value>Site collection URL</value>
+    <comment>Site Collection URL  Label</comment>
+  </data>
+  <data name="EditRequestWebPart_WebApplication_SiteRequestSuccessfullText" xml:space="preserve">
+    <value>The site request has been updated successfully.</value>
+    <comment>Site Request sucess text</comment>
+  </data>
+  <data name="EditSiteRequestWebPart_WizardMainFinishButtonClick_CannotEdit" xml:space="preserve">
+    <value>The current request cannot be updated.</value>
+    <comment>Cannot update the request text</comment>
+  </data>
+  <data name="ErrorBindingManagedMetadata_Text" xml:space="preserve">
+    <value>Error in binding managed metadata values. Please make sure these managed metadata terms exist -  "JCIBusinessUnit","JCILocation" and "JCICountry". Please contact the Johnson Controls help desk and have them submit a support ticket to the appropriate business unit support team.</value>
+    <comment>Error binding Metadata for Auto-tagging</comment>
+  </data>
+  <data name="ErrorBindingUserProfile_Text" xml:space="preserve">
+    <value>Error in mapping user profile properties. Please make sure these custom user profile properties are available- "JCI-BusinessOrg" and "JCI-Country". Please contact the Johnson Controls help desk and have them submit a support ticket to the appropriate business unit support team.</value>
+    <comment>Error binding user profile for Site Provisioning UI</comment>
+  </data>
+  <data name="ErrorSiteFeatureConfigurationList_Text" xml:space="preserve">
+    <value>System cannot find the SiteFeaturesConfiguration list information.It can be either this page has been timed out or Content type hub site is down.  Please close the browser and start again and if you still having problem, please contact the Johnson Controls help desk and have them submit a support ticket to the appropriate business unit support team.</value>
+    <comment>Time out error or MMS is down</comment>
+  </data>
+  <data name="ErrorSystemAccountUserProfile_Text" xml:space="preserve">
+    <value>System account does not have the user profile properties. Please login with another user account. Please contact the Johnson Controls help desk and have them submit a support ticket to the appropriate business unit support team.</value>
+    <comment>Access issue for accessing User Profile Properties.</comment>
+  </data>
+  <data name="RejectRequestWebPart_btnCloseRequest_Text" xml:space="preserve">
+    <value>Site Collection request cannot be rejected.</value>
+    <comment>Text to "Cannot reject site request"</comment>
+  </data>
+  <data name="RejectRequestWebPart_Cancel_Text" xml:space="preserve">
+    <value>Site request for this site collection cannot be rejected.</value>
+    <comment>Text to "cannot reject this site collection"</comment>
+  </data>
+  <data name="RejectRequestWebPart_Information_HeaderText" xml:space="preserve">
+    <value>Cancel Site Request</value>
+    <comment>Cancel web part header</comment>
+  </data>
+  <data name="RejectRequestWebPart_Notice_Text" xml:space="preserve">
+    <value>Are you sure you want to continue? Click on Yes below.</value>
+    <comment>Confirmation for cancellation</comment>
+  </data>
+  <data name="RejectRequestWebPart_RejectNotice_LabelText" xml:space="preserve">
+    <value>Cancel Notice</value>
+    <comment>Cancel notice</comment>
+  </data>
+  <data name="RejectRequestWebPart_Success_Text" xml:space="preserve">
+    <value>&lt;p&gt;Site request for this site collection is rejected.&lt;/p&gt;</value>
+    <comment>Site Request rejected</comment>
+  </data>
+  <data name="RejectRequestWebPart_WebApplication_LabelText" xml:space="preserve">
+    <value>Site collection URL</value>
+    <comment>Site collection URL Label</comment>
+  </data>
+  <data name="RejectRequestWebPart_WebApplication_SiteRequestCancelledText" xml:space="preserve">
+    <value>The site request has been cancelled successfully.</value>
+    <comment>Site Request Cancel Text</comment>
+  </data>
+  <data name="SitePolicyException" xml:space="preserve">
+    <value>Exception occurred in the SitePolicy at ApplyPolicy Method.</value>
+    <comment>Site Policy Exception Text</comment>
+  </data>
+  <data name="SiteRequestList_AdditionalInfo_Field" xml:space="preserve">
+    <value>Additional Information</value>
+    <comment>Additional information label</comment>
+  </data>
+  <data name="SiteRequestList_BusinessOpportunity_Field" xml:space="preserve">
+    <value>Business Opportunity</value>
+    <comment>Business Opportunity Label</comment>
+  </data>
+  <data name="SiteRequestList_BusinessUnit_Field" xml:space="preserve">
+    <value>Business Unit</value>
+    <comment>Business Unit Label</comment>
+  </data>
+  <data name="SiteRequestList_ClarityProjectNumber_Field" xml:space="preserve">
+    <value>Clarity Project Number</value>
+    <comment>Clarity Project Number Label</comment>
+  </data>
+  <data name="SiteRequestList_ConfidentialityLevel_Field" xml:space="preserve">
+    <value>Confidentiality Level </value>
+    <comment>Confidentitality Level  Label</comment>
+  </data>
+  <data name="SiteRequestList_ContactEmail_Field" xml:space="preserve">
+    <value>Contact Email</value>
+    <comment>Contact Email Label</comment>
+  </data>
+  <data name="SiteRequestList_ContactName_Field" xml:space="preserve">
+    <value>Contact Name</value>
+    <comment>Contact Name Label</comment>
+  </data>
+  <data name="SiteRequestList_ContactPhone_Field" xml:space="preserve">
+    <value>Contact Phone</value>
+    <comment>Contact Phone Label</comment>
+  </data>
+  <data name="SiteRequestList_CostCenter_Field" xml:space="preserve">
+    <value>Cost Center</value>
+    <comment>Cost Center Label</comment>
+  </data>
+  <data name="SiteRequestList_ErrorMessage_Field" xml:space="preserve">
+    <value>Error Message</value>
+    <comment>Error Message Label</comment>
+  </data>
+  <data name="SiteRequestList_InitialMemberstoProvision_Field" xml:space="preserve">
+    <value>Initial Members to Provision</value>
+    <comment>Initial Members to Provision Label</comment>
+  </data>
+  <data name="SiteRequestList_Language_Field" xml:space="preserve">
+    <value>Language</value>
+    <comment>Language Label</comment>
+  </data>
+  <data name="SiteRequestList_ManagerName_Field" xml:space="preserve">
+    <value>Manager Name</value>
+    <comment>Manager Name Label</comment>
+  </data>
+  <data name="SiteRequestList_PrimaryOwner_Field" xml:space="preserve">
+    <value>Primary Owner</value>
+    <comment>Primary Owner Label</comment>
+  </data>
+  <data name="SiteRequestList_Region_Field" xml:space="preserve">
+    <value>Region</value>
+    <comment>Region Label</comment>
+  </data>
+  <data name="SiteRequestList_RequestorDepartment_Field" xml:space="preserve">
+    <value>Requestor Department</value>
+    <comment>Requestor Department Label</comment>
+  </data>
+  <data name="SiteRequestList_RequestorEmail_Field" xml:space="preserve">
+    <value>Requestor Email</value>
+    <comment>Requestor Email Label</comment>
+  </data>
+  <data name="SiteRequestList_RequestorFacility_Field" xml:space="preserve">
+    <value>Requestor Facility</value>
+    <comment>Requestor Facility Label</comment>
+  </data>
+  <data name="SiteRequestList_RequestorGlobalID_Field" xml:space="preserve">
+    <value>Requestor Global ID</value>
+    <comment>Requestor Global ID Label</comment>
+  </data>
+  <data name="SiteRequestList_RequestorName_Field" xml:space="preserve">
+    <value>Requestor Name</value>
+    <comment>Requestor Name Label</comment>
+  </data>
+  <data name="SiteRequestList_SecondaryOwner_Field" xml:space="preserve">
+    <value>Secondary Owner</value>
+    <comment>Secondary Owner Label</comment>
+  </data>
+  <data name="SiteRequestList_SiteDescription_Field" xml:space="preserve">
+    <value>Site Description</value>
+    <comment>Site Description Label</comment>
+  </data>
+  <data name="SiteRequestList_SitePurpose_Field" xml:space="preserve">
+    <value>Site Purpose</value>
+    <comment>Site Purpose Label</comment>
+  </data>
+  <data name="SiteRequestList_SiteTitle_Field" xml:space="preserve">
+    <value>Site Title</value>
+    <comment>Site Title Label</comment>
+  </data>
+  <data name="SiteRequestList_SiteType_Field" xml:space="preserve">
+    <value>Site Type</value>
+    <comment>Site Type Label</comment>
+  </data>
+  <data name="SiteRequestList_SiteURL_Field" xml:space="preserve">
+    <value>Site URL </value>
+    <comment>Site URL Label</comment>
+  </data>
+  <data name="SiteRequestList_StartDate_Field" xml:space="preserve">
+    <value>Start Date</value>
+    <comment>Start Date Label</comment>
+  </data>
+  <data name="SiteRequestList_Status_Field" xml:space="preserve">
+    <value>Status</value>
+    <comment>Status Label</comment>
+  </data>
+  <data name="SiteRequestList_TentativeEndDate_Field" xml:space="preserve">
+    <value>Tentative End Date</value>
+    <comment>Tentative End Date Label</comment>
+  </data>
+  <data name="SiteRequestList_TertiaryOwner_Field" xml:space="preserve">
+    <value>Tertiary Owner</value>
+    <comment>Tertiary Owner Label</comment>
+  </data>
+  <data name="SiteRequestList_TimeZone_Field" xml:space="preserve">
+    <value>Time Zone</value>
+    <comment>Time Zone Label</comment>
+  </data>
+  <data name="SiteRequestList_UsagePolicyCheckList_Field" xml:space="preserve">
+    <value>Usage Policy Checklist </value>
+    <comment>Useage Policy Checklist Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_AccessInformation_HeaderText" xml:space="preserve">
+    <value>Access Information</value>
+    <comment>Access Information Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_AdditionalInformation_HeaderText" xml:space="preserve">
+    <value>Additional Information</value>
+    <comment>Additional information Hearder</comment>
+  </data>
+  <data name="SiteRequestWebPart_AdditionalInfoToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter any other additional information&lt;/p&gt;</value>
+    <comment>Tool Tip for Additional information</comment>
+  </data>
+  <data name="SiteRequestWebPart_AdditionalInfo_LabelText" xml:space="preserve">
+    <value>Additional Info</value>
+    <comment>Additional Info Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_AdditionalOwnersResolveError_Text" xml:space="preserve">
+    <value>Please resolve the users in additional owners</value>
+    <comment>error if all additional owners are not resolved</comment>
+  </data>
+  <data name="SiteRequestWebPart_AdditionalOwnerToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Optionally specify a additional site administrator. security groups are not supported. &lt;/p&gt;</value>
+    <comment>tool tip for additional owners</comment>
+  </data>
+  <data name="SiteRequestWebPart_AdditionalOwner_LabelText" xml:space="preserve">
+    <value>Add additional owners (everyone needs a backup)</value>
+    <comment>Additional owner label</comment>
+  </data>
+  <data name="SiteRequestWebPart_BusinessOpportunityToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter the business opportunity&lt;/p&gt;</value>
+    <comment>Business opportunity tool tip</comment>
+  </data>
+  <data name="SiteRequestWebPart_BusinessOpportunity_LabelText" xml:space="preserve">
+    <value>Business Opportunity</value>
+    <comment>Business opportunity Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_BusinessUnitToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select the Business Unit&lt;/p&gt;</value>
+    <comment>Tool tip for Business unit</comment>
+  </data>
+  <data name="SiteRequestWebPart_BusinessUnitURLError_Text" xml:space="preserve">
+    <value>Business Unit cannot contain the characters: ~ # $ % &amp; * + | } { " : ? &gt; &lt; = \ ' / ;</value>
+    <comment>Validation for Business unit</comment>
+  </data>
+  <data name="SiteRequestWebPart_BusinessUnit_LabelText" xml:space="preserve">
+    <value>Site Business Unit</value>
+    <comment>Site Business Unit Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_BU_HelpText" xml:space="preserve">
+    <value>Select the Business Unit</value>
+    <comment>Help text for business unit</comment>
+  </data>
+  <data name="SiteRequestWebPart_ClarityId_LabelText" xml:space="preserve">
+    <value>Project Number</value>
+    <comment>Project Number Label text</comment>
+  </data>
+  <data name="SiteRequestWebPart_ClarityProjectNumberToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;If this is an IT project please enter the Clarity Project Number.  If this is a non-IT project then please enter the related project number for your project.&lt;/p&gt;</value>
+    <comment>Tooltip forclarity project number</comment>
+  </data>
+  <data name="SiteRequestWebPart_Click_Text" xml:space="preserve">
+    <value>I understand JCI instructions and agree to the &lt;a target="_blank" href="http://my.johnsoncontrols.com/public/terms.html"&gt;terms&lt;/a&gt; of use.</value>
+    <comment>Click label</comment>
+  </data>
+  <data name="SiteRequestWebPart_CommunitySiteDescription_LabelText" xml:space="preserve">
+    <value>Communities are well suited for mass collaboration initiatives, where a large group of users participate in sharing knowledge and learning from other people across organizational and hierarchical boundaries. They are a persistent form of knowledge collection and storage.</value>
+    <comment>Community site description label</comment>
+  </data>
+  <data name="SiteRequestWebPart_CommunitySiteOptions_HelpText" xml:space="preserve">
+    <value>&lt;b&gt;Public: &lt;/b&gt;All Johnson Controls employees and contractors will have read access to the site. They can Join the community and begin to contribute immediately.  The site will require a Site Moderator.&lt;br /&gt;
+&lt;b&gt;Private:  &lt;/b&gt;All Johnson Controls employees and contractors will have read access to the site. They can request to Join the community, and that request will need to be Approved or Rejected by the Site Approver. The site will require a Site Moderator, and a Site Approver.  &lt;br /&gt;
+&lt;b&gt;Secure: &lt;/b&gt;Only specified members can view and contribute to the Community.  The site will require a Site Moderator.</value>
+    <comment>Help text for community site options</comment>
+  </data>
+  <data name="SiteRequestWebPart_CommunitySite_LabelText" xml:space="preserve">
+    <value>Community Site</value>
+    <comment>Community site Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_CommunityToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt; Select Community type &lt;/p&gt;</value>
+    <comment>Tool tip to select commuinity type</comment>
+  </data>
+  <data name="SiteRequestWebPart_Community_LabelText" xml:space="preserve">
+    <value>Community Type</value>
+    <comment>Community type label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ComponentTitleThanks_LabelText" xml:space="preserve">
+    <value>Thanks</value>
+    <comment>Thanks message on step 5</comment>
+  </data>
+  <data name="SiteRequestWebPart_ComponentTitle_LabelText" xml:space="preserve">
+    <value>Create a Site</value>
+    <comment>ComponentTitle</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelClosed_LabelText" xml:space="preserve">
+    <value>Closed</value>
+    <comment>Closed label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelConfidential_LabelText" xml:space="preserve">
+    <value>Confidential</value>
+    <comment>Confidential label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelInternal_LabelText" xml:space="preserve">
+    <value>Internal</value>
+    <comment>Options for "Confidentiality level"  Internal label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelOpen_LabelText" xml:space="preserve">
+    <value>Open</value>
+    <comment>Options for "Confidentiality level"  Open label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelPrivate_LabelText" xml:space="preserve">
+    <value>Private</value>
+    <comment>Options for "Confidentiality level"  Private label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelPublic_LabelText" xml:space="preserve">
+    <value>Public</value>
+    <comment>Options for "Confidentiality level"  public label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelRestricted_LabelText" xml:space="preserve">
+    <value>Restricted</value>
+    <comment>Options for "Confidentiality level"  Restricted label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelSecured_LabelText" xml:space="preserve">
+    <value>Secured</value>
+    <comment>Options for "Confidentiality level"  Secured label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevelToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select Confidentiality Level as open if this site is  available for all users&lt;/p&gt;</value>
+    <comment>tool tip for confidentialty level</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityLevel_LabelText" xml:space="preserve">
+    <value>Confidentiality and Security Level</value>
+    <comment>Confidentiality Level label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityTypeConfidentialToolTip_Text" xml:space="preserve">
+    <value>Available to Johnson Control\'s employees, partners and contractors that have authorized access to the Johnson Controls network and have been granted privileges to the information</value>
+    <comment>tool tip for confidentiality </comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityTypeInternalToolTip_Text" xml:space="preserve">
+    <value>Available to Johnson Control\'s employees, partners and contractors that have authorized access to the Johnson Controls network</value>
+    <comment>Tool tip for internal - confidentiality level</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityTypePublicToolTip_Text" xml:space="preserve">
+    <value>Available to the public without any special restrictions</value>
+    <comment>Tool tip for internal - public level</comment>
+  </data>
+  <data name="SiteRequestWebPart_ConfidentialityTypeRestrictedToolTip_Text" xml:space="preserve">
+    <value>Available to only those Johnson Control\'s employees, partners and contractors that have be provided highly restrictive distribution/access privileges to the information</value>
+    <comment>Tool tip for internal - Private level</comment>
+  </data>
+  <data name="SiteRequestWebPart_Confidentiality_HelpText" xml:space="preserve">
+    <value>&lt;b&gt;Internal: &lt;/b&gt;Available to Johnson Control’s employees, partners, and contractors who have authorized access to the Johnson Controls network.  &lt;b&gt;All Johnson Controls employees and contractors will have read access to the site.&lt;/b&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;b&gt;Confidential: &lt;/b&gt;Available to Johnson Control’s employees, partners, and contractors who have authorized access to the Johnson Controls network &lt;b&gt;and&lt;/b&gt; have been granted privileges to the information.  &lt;b&gt;Access is restricted so that only JCI Employees and contractors specifically added to the site groups by the site owners or administrators will have access to the site.&lt;/b&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;b&gt;Restricted: &lt;/b&gt;Same as Confidential, but special care must be taken to ensure data is secured.  Site Owners and Administrators must be conscious the site contains sensitive information when granting access to the site, or to information contained within the site.
+&lt;br /&gt;&lt;br /&gt;
+&lt;b&gt;Partner sites: &lt;/b&gt;Access for non-Johnson Control’s employees, partners, and contractors will be available on Partner sites only, and only if specifically added to the site access list, no matter which Confidentiality Level is chosen.</value>
+    <comment>Help text for confidentiality</comment>
+  </data>
+  <data name="SiteRequestWebPart_Confidentiality_LabelText" xml:space="preserve">
+    <value>Confidentiality and Security Level</value>
+    <comment>Confidentiality level label</comment>
+  </data>
+  <data name="SiteRequestWebPart_CostCenter_LabelText" xml:space="preserve">
+    <value>Cost Center</value>
+    <comment>Cost center label</comment>
+  </data>
+  <data name="SiteRequestWebPart_CountryToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select the country&lt;/p&gt;</value>
+    <comment>Tool tip for the select the country</comment>
+  </data>
+  <data name="SiteRequestWebPart_CountryURLError_Text" xml:space="preserve">
+    <value>Country cannot contain the characters: ~ # $ % &amp; * + | } { " : ? &gt; &lt; = \ ' / ;</value>
+    <comment>Country url validation</comment>
+  </data>
+  <data name="SiteRequestWebPart_Country_HelpText" xml:space="preserve">
+    <value>Select the Country</value>
+    <comment>Help text for country</comment>
+  </data>
+  <data name="SiteRequestWebPart_Country_LabelText" xml:space="preserve">
+    <value>Site Country</value>
+    <comment>Site Country text</comment>
+  </data>
+  <data name="SiteRequestWebPart_DurationInvalid_HelpText" xml:space="preserve">
+    <value>End date cannot be before start date</value>
+    <comment>error for project duration</comment>
+  </data>
+  <data name="SiteRequestWebPart_EndDateToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select tentative End Date of the Project.&lt;/p&gt;</value>
+    <comment>Tool tip for End date</comment>
+  </data>
+  <data name="SiteRequestWebPart_EndDate_HelpText" xml:space="preserve">
+    <value>Select tentative End Date of the Project.</value>
+    <comment>Help text for end date</comment>
+  </data>
+  <data name="SiteRequestWebPart_EndDate_LabelText" xml:space="preserve">
+    <value>Tentative End Date</value>
+    <comment>Tenative End date Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteDescriptionAlphaNumericError_Text" xml:space="preserve">
+    <value>Length of the site description cannot exceed 200 characters</value>
+    <comment>Site Description Validation</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteDescriptionError_Text" xml:space="preserve">
+    <value>Enter site description.</value>
+    <comment>Site Description error</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteLanguageError_Text" xml:space="preserve">
+    <value>Select a language</value>
+    <comment>Langauage error text</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteSiteTitleLengthError_Text" xml:space="preserve">
+    <value>Length of the site title cannot exceed 100 characters</value>
+    <comment>Site cannot exceed 100 characters</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteTitleAlphaNumericError_Text" xml:space="preserve">
+    <value>Site title cannot contain the characters : " # % &amp; * : &lt; &gt; ? \\ / { } ~ | +</value>
+    <comment>Site title validation</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteTitleError_Text" xml:space="preserve">
+    <value>Enter site title</value>
+    <comment>Site Title error, if not entered</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteUrlError_Text" xml:space="preserve">
+    <value>Enter site url</value>
+    <comment>Site URL error, if not entered</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteUrlLengthError_Text" xml:space="preserve">
+    <value>Length of the site url cannot exceed 100 characters</value>
+    <comment>Site URL validation on characters</comment>
+  </data>
+  <data name="SiteRequestWebPart_EnterSiteUrlSpecialCharacterSpacesError_Text" xml:space="preserve">
+    <value>Site URL can contain alphabetic and numeric characters only. No spaces allowed. </value>
+    <comment>Site url special character validation</comment>
+  </data>
+  <data name="SiteRequestWebPart_ErrorTitle_Text" xml:space="preserve">
+    <value>Oops!</value>
+    <comment>Error Title</comment>
+  </data>
+  <data name="SiteRequestWebPart_FinalMessage_LabelText" xml:space="preserve">
+    <value>You are about to submit your request.</value>
+    <comment>Message before submission</comment>
+  </data>
+  <data name="SiteRequestWebPart_FinishButton_Text" xml:space="preserve">
+    <value>Finish</value>
+    <comment>Finish button text</comment>
+  </data>
+  <data name="SiteRequestWebPart_Finish_ButtonText" xml:space="preserve">
+    <value>Finish</value>
+    <comment>Finish button text</comment>
+  </data>
+  <data name="SiteRequestWebPart_GlobalId_LabelText" xml:space="preserve">
+    <value>Global ID</value>
+    <comment>Global Id Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_HelpClarityProjectNo_HelpText" xml:space="preserve">
+    <value>If this is an IT project please enter the Clarity Project Number.  If this is a non-IT project then please enter the related project number for your project.</value>
+    <comment>Help text for project number</comment>
+  </data>
+  <data name="SiteRequestWebPart_Here_Text" xml:space="preserve">
+    <value>terms</value>
+    <comment>Text  "here"</comment>
+  </data>
+  <data name="SiteRequestWebPart_HideOptions_HelpText" xml:space="preserve">
+    <value>Hide Options &gt;&gt;</value>
+    <comment>Text for options</comment>
+  </data>
+  <data name="SiteRequestWebPart_InitialMembers_LabelText" xml:space="preserve">
+    <value>Initial Members to Provision</value>
+    <comment>Members to provision Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_InitialMemberToProvisionToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt; Optionally specify Initial Members to Provision. All these users will be added as members with contribute access to the site. &lt;/p&gt;</value>
+    <comment>Tool tip for intial members provision</comment>
+  </data>
+  <data name="SiteRequestWebPart_IsTestSiteToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt; Select if the site is for test purpose. The test site will be deleted after 90 days from the date of creation. &lt;/p&gt;</value>
+    <comment>Tool tip for Test site.</comment>
+  </data>
+  <data name="SiteRequestWebPart_IsTestSite_LabelText" xml:space="preserve">
+    <value>Is this a test site?</value>
+    <comment>Test site Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_IsTest_HelpText" xml:space="preserve">
+    <value>If you do not check this box then this request will go through an approval process before the site is actually created.&lt;br/&gt;You will be notified via email concerning approval, rejection, or if more information is needed.&lt;br/&gt;If you check the box then the site will bypass the approval process and be created that day.&lt;br/&gt;Be aware that this test site WILL BE DELETED after 90 days.&lt;br/&gt;This test site CANNOT be migrated to a permanent site later.</value>
+    <comment>Help text for is test site</comment>
+  </data>
+  <data name="SiteRequestWebPart_LanguageToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select the language&lt;/p&gt;</value>
+    <comment>Language tool tip</comment>
+  </data>
+  <data name="SiteRequestWebPart_Language_LabelText" xml:space="preserve">
+    <value>Site Owner Language</value>
+    <comment>Site owner Language Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_Manager_LabelText" xml:space="preserve">
+    <value>Manager</value>
+    <comment>Manager Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ModeratorError_Text" xml:space="preserve">
+    <value>Please resolve the users in moderator</value>
+    <comment>error if moderator is not resolved</comment>
+  </data>
+  <data name="SiteRequestWebPart_ModeratorToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt; This user will be added as a private community moderator &lt;/p&gt;</value>
+    <comment>Tool tip for private community moderator</comment>
+  </data>
+  <data name="SiteRequestWebPart_Moderator_HelpText" xml:space="preserve">
+    <value>This user will be added as a private community moderator</value>
+    <comment>Help text for moderator</comment>
+  </data>
+  <data name="SiteRequestWebPart_Moderator_LabelText" xml:space="preserve">
+    <value>Community Site Moderator</value>
+    <comment>Community Site moderator LAbel</comment>
+  </data>
+  <data name="SiteRequestWebPart_NextButton_Text" xml:space="preserve">
+    <value>Next</value>
+    <comment>Next button Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_Next_ButtonText" xml:space="preserve">
+    <value>Next</value>
+    <comment>Next button LAbel</comment>
+  </data>
+  <data name="SiteRequestWebPart_No_LabelText" xml:space="preserve">
+    <value>No</value>
+    <comment>"No" text </comment>
+  </data>
+  <data name="SiteRequestWebPart_Page1Title_LabelText" xml:space="preserve">
+    <value>Select a site template</value>
+    <comment>Title of Step 1</comment>
+  </data>
+  <data name="SiteRequestWebPart_Page2Title_LabelText" xml:space="preserve">
+    <value>Site Configuration</value>
+    <comment>Title of Step 2</comment>
+  </data>
+  <data name="SiteRequestWebPart_Page3Title_LabelText" xml:space="preserve">
+    <value>Site Configuration</value>
+    <comment>Title of Step 3</comment>
+  </data>
+  <data name="SiteRequestWebPart_Page4Title_LabelText" xml:space="preserve">
+    <value>Site Configuration</value>
+    <comment>Title of Step 4</comment>
+  </data>
+  <data name="SiteRequestWebPart_PreviousButton_Text" xml:space="preserve">
+    <value>Previous</value>
+    <comment>"Previous " button text</comment>
+  </data>
+  <data name="SiteRequestWebPart_Previous_ButtonText" xml:space="preserve">
+    <value>Previous</value>
+    <comment>"Previous " button text</comment>
+  </data>
+  <data name="SiteRequestWebPart_PrimaryOwnerMoreThanOneError_Text" xml:space="preserve">
+    <value>You are only allowed to enter one item.</value>
+    <comment>Validation Error</comment>
+  </data>
+  <data name="SiteRequestWebPart_PrimaryOwnerNullError_Text" xml:space="preserve">
+    <value>Please enter a primary owner</value>
+    <comment>error if primary owner is null</comment>
+  </data>
+  <data name="SiteRequestWebPart_PrimaryOwnerResolveError_Text" xml:space="preserve">
+    <value>Please resolve Primary Owner</value>
+    <comment>error if primary owner is not resolved</comment>
+  </data>
+  <data name="SiteRequestWebPart_PrimaryOwnerToolTip_Text" xml:space="preserve">
+    <value>Specify the administrator for this site. Only one user login can be provided; security groups are not supported.</value>
+    <comment>Tool tip for primary owner</comment>
+  </data>
+  <data name="SiteRequestWebPart_PrimaryOwner_LabelText" xml:space="preserve">
+    <value>Primary Owner</value>
+    <comment>Primary owner label</comment>
+  </data>
+  <data name="SiteRequestWebPart_PrivateCommunityToolTip_Text" xml:space="preserve">
+    <value>Private community.  Everyone can view the content of the site, but only members who have approved requests for membership can contribute.</value>
+    <comment>tool tip for private community</comment>
+  </data>
+  <data name="SiteRequestWebPart_ProjectSiteDescription_LabelText" xml:space="preserve">
+    <value>Project sites are well suited for distinct groups of users who are working together on a specific project, although these users might span organizational hierarchies. They generally exist only for the life of a project, and might be discarded or archived when the project is completed.</value>
+    <comment>Project site description</comment>
+  </data>
+  <data name="SiteRequestWebPart_ProjectSite_LabelText" xml:space="preserve">
+    <value>Project Site</value>
+    <comment>Project site label</comment>
+  </data>
+  <data name="SiteRequestWebPart_PublicCommunityToolTip_Text" xml:space="preserve">
+    <value>Public community. Everyone can contribute to the community.</value>
+    <comment>Tool tip for public community</comment>
+  </data>
+  <data name="SiteRequestWebPart_RegionToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt; Select the Region&lt;/p&gt;</value>
+    <comment>tool tip for regional </comment>
+  </data>
+  <data name="SiteRequestWebPart_RegionURLError_Text" xml:space="preserve">
+    <value>Region cannot contain the characters: ~ # $ % &amp; * + | } { " : ? &gt; &lt; = \ ' / ;</value>
+    <comment>Regional url validation</comment>
+  </data>
+  <data name="SiteRequestWebPart_Region_HelpText" xml:space="preserve">
+    <value>Select the Region</value>
+    <comment>Help text for region</comment>
+  </data>
+  <data name="SiteRequestWebPart_Region_LabelText" xml:space="preserve">
+    <value>Site Region</value>
+    <comment>Site Region label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ReqAlreadyRaised_Text" xml:space="preserve">
+    <value>Site Collection Request already raised</value>
+    <comment>error for site collection request already raised</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorCostCenterToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter the cost center id of requestor&lt;/p&gt;</value>
+    <comment>Tool tip for Cost center - obselete it now.</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorDepartmentToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter Requestor Department&lt;/p&gt;</value>
+    <comment>Requestion department tool tip</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorDepartment_LabelText" xml:space="preserve">
+    <value>Requestor Department</value>
+    <comment>Requestor Department label</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorEmailToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter E-mail ID of the requestor&lt;/p&gt;</value>
+    <comment>Tool tip Requestor email </comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorEmail_LabelText" xml:space="preserve">
+    <value>Requestor E-mail</value>
+    <comment>Requestor e-Mail label</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorFacilityToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter the facility name of the requestor &lt;/p&gt;</value>
+    <comment>Tool tip for the faciliaty name of the requestor</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorFacility_LabelText" xml:space="preserve">
+    <value>Requestor Facility</value>
+    <comment>Requestor Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorGlobalIdToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter the global id of requestor&lt;/p&gt;</value>
+    <comment>Tool tip for the global id</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorManagerToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter the requestor's manager name&lt;/p&gt;</value>
+    <comment>tool tip for the requesto's manager name</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorNameToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter Requestor Name&lt;/p&gt;</value>
+    <comment>Tool tip for requestor name</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorName_LabelText" xml:space="preserve">
+    <value>Requestor Name</value>
+    <comment>Requestor name LAbel</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorPhoneToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter the phone number of requestor&lt;/p&gt;</value>
+    <comment>Tool tip for the Phone number of the requestor</comment>
+  </data>
+  <data name="SiteRequestWebPart_RequestorPhone_LabelText" xml:space="preserve">
+    <value>Requestor Phone</value>
+    <comment>Requestor Phone label</comment>
+  </data>
+  <data name="SiteRequestWebPart_SecondaryOwnerToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Optionally specify a secondary site administrator. Only one user login can be provided; security groups are not supported. &lt;/p&gt;</value>
+    <comment>tool tip for secondary owner</comment>
+  </data>
+  <data name="SiteRequestWebPart_SecondaryOwner_LabelText" xml:space="preserve">
+    <value>Secondary Owner</value>
+    <comment>Secondary owner label</comment>
+  </data>
+  <data name="SiteRequestWebPart_SecuredCommunityToolTip_Text" xml:space="preserve">
+    <value>Secured community. Available to only specified members.</value>
+    <comment>Secured community Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_ShowOptions_HelpText" xml:space="preserve">
+    <value>Show Options &gt;&gt;</value>
+    <comment>Text for options</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteAlreadyRaised_Text" xml:space="preserve">
+    <value>Site Name already exists</value>
+    <comment>error message if site collection already exists</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteCustomersEmpty_Text" xml:space="preserve">
+    <value>Please specify customer/partner </value>
+  </data>
+  <data name="SiteRequestWebPart_SiteCustomersNotValid_Text" xml:space="preserve">
+    <value>Customer/Partner name(s)  cannot be resolved</value>
+    <comment>Customer name error</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteCustomers_HelpText" xml:space="preserve">
+    <value>Please select Customer/ Partner Name(s).</value>
+    <comment>Help info for site customers</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteCustomers_LabelText" xml:space="preserve">
+    <value>Customer/Partner Name(s)</value>
+    <comment>Site Customer label</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteDescriptionToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter site description. Site description cannot exceed 200 characters.&lt;/p&gt;</value>
+    <comment>Tool tip for site description</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteDescription_HelpText" xml:space="preserve">
+    <value>Enter site description. Site description cannot exceed 200 characters.</value>
+    <comment>Help info for site description</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteDescription_LabelText" xml:space="preserve">
+    <value>Give it a description [200 chars]</value>
+    <comment>Description Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteDirectoryToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select Yes if you have searched site directory for a similar site&lt;/p&gt;</value>
+    <comment>Site Directory tool tpe</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteDirectory_LabelText" xml:space="preserve">
+    <value>Have you searched the site directory?</value>
+    <comment>Site Directory Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteInformation_HeaderText" xml:space="preserve">
+    <value>Site Owner Information</value>
+    <comment>Site owner Header</comment>
+  </data>
+  <data name="SiteRequestWebPart_SitePrimaryOwner_HelpText" xml:space="preserve">
+    <value>Specify the administrator for this site. Only one user login can be provided; security groups are not supported.</value>
+    <comment>help info for primary owners</comment>
+  </data>
+  <data name="SiteRequestWebPart_SitePurposeToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Enter the purpose of the site&lt;/p&gt;</value>
+    <comment>Site purpose tool tipe</comment>
+  </data>
+  <data name="SiteRequestWebPart_SitePurpose_LabelText" xml:space="preserve">
+    <value>Site Purpose</value>
+    <comment>site purpose label</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteSecondaryOwner_HelpText" xml:space="preserve">
+    <value>Optionally specify additional site administrator(s). security groups are not supported.</value>
+    <comment>help info for secondary owners</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTitleToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Site title can contain alphabetic and numeric characters. The following characters are not allowed: "#%&amp;*:&lt;&gt;?\/{}~|+&lt;/p&gt;</value>
+    <comment>Site Title special character validation</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTitle_HelpText" xml:space="preserve">
+    <value>Site title can contain alphabetic and numeric characters. The following characters are not allowed: "#%&amp;*:&lt;&gt;?\/{}~|+</value>
+    <comment>Help info for site title</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTitle_LabelText" xml:space="preserve">
+    <value>Give it a name</value>
+    <comment>Site title label</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTitle_TitleValidation" xml:space="preserve">
+    <value>You cannot start a site name with an underscore (_) character or with the period (.) character or period character consecutively in the middle of a site name.</value>
+    <comment>Site title validation</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTitle_TitleValidationEndingWithPeriod" xml:space="preserve">
+    <value>You cannot end a site name with a period(.)</value>
+    <comment>error message for site title or url when it ends with a period</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTitle_TitleValidationforUnderscore" xml:space="preserve">
+    <value>You cannot start a site name with an underscore (_)</value>
+    <comment>error message for site title or url when it begins with underscore</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTitle_TitleValidationStartingWithDoublePeriod" xml:space="preserve">
+    <value>Site name cannot contain periods (..) consecutively</value>
+    <comment>error message for site title or url when it begins with two periods</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTitle_TitleValidationStartingWithPeriod" xml:space="preserve">
+    <value>You cannot start a site name with the period (.)</value>
+    <comment>error message for site title or url when it begins with a period</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteTypeToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select Site Type&lt;/p&gt;</value>
+    <comment>Tool tip for Site type</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteType_LabelText" xml:space="preserve">
+    <value>Site Type</value>
+    <comment>Site type Label</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteUrlToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt; Site Url can contain alphabetic and numeric characters only. The following characters are not allowed: " # % &amp; * : &lt; &gt; ? \\ / { } ~ | + &lt;/p&gt;</value>
+    <comment>Site url tool tip</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteUrl_HelpText" xml:space="preserve">
+    <value>Site URL can contain alphabetic and numeric characters only. No spaces allowed.</value>
+    <comment>help info for site url</comment>
+  </data>
+  <data name="SiteRequestWebPart_SiteUrl_LabelText" xml:space="preserve">
+    <value>Site Url</value>
+    <comment>Site Url LAbel</comment>
+  </data>
+  <data name="SiteRequestWebPart_StartDateToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select Start Date of the Project.&lt;/p&gt;</value>
+    <comment>Tool tip for start date</comment>
+  </data>
+  <data name="SiteRequestWebPart_StartDate_HelpText" xml:space="preserve">
+    <value>Select Start Date of the Project. </value>
+    <comment>Help text for start date</comment>
+  </data>
+  <data name="SiteRequestWebPart_StartDate_LabelText" xml:space="preserve">
+    <value>Start Date</value>
+    <comment>Start date LAbel</comment>
+  </data>
+  <data name="SiteRequestWebPart_SuccessMessage_Part3_Text" xml:space="preserve">
+    <value>to create new request.</value>
+    <comment>New request text</comment>
+  </data>
+  <data name="SiteRequestWebPart_SuccessMessage_Text" xml:space="preserve">
+    <value>The site request has been submitted successfully.</value>
+    <comment>sucessful text</comment>
+  </data>
+  <data name="SiteRequestWebPart_TeamSiteDescription_LabelText" xml:space="preserve">
+    <value>Team sites are well suited for distinct groups of users to collaborate and store information that is common to the team, such as documents and calendars. They are generally used within organizational hierarchies, and generally have more permanence than project sites.</value>
+    <comment>Team site description</comment>
+  </data>
+  <data name="SiteRequestWebPart_TeamSite_LabelText" xml:space="preserve">
+    <value>Team Site</value>
+    <comment>Team site label</comment>
+  </data>
+  <data name="SiteRequestWebPart_TemplateInformation_HeaderText" xml:space="preserve">
+    <value>Site Information</value>
+    <comment>Site information Header</comment>
+  </data>
+  <data name="SiteRequestWebPart_TertiaryOwnerBusinessUnitToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt; Optionally specify a tertiary owner. Only one user login can be provided; security groups are not supported. &lt;/p&gt;</value>
+    <comment>Tool tip for tertiary owner business unit</comment>
+  </data>
+  <data name="SiteRequestWebPart_TertiaryOwner_LabelText" xml:space="preserve">
+    <value>Tertiary Owner</value>
+    <comment>Tertiary owner label</comment>
+  </data>
+  <data name="SiteRequestWebPart_TimeZoneToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Select the time zone of the requestor&lt;/p&gt;</value>
+    <comment>Tool tip for time zone - obselete</comment>
+  </data>
+  <data name="SiteRequestWebPart_TimeZone_LabelText" xml:space="preserve">
+    <value>Time Zone</value>
+    <comment>Time Zone label</comment>
+  </data>
+  <data name="SiteRequestWebPart_UpdateButton_Text" xml:space="preserve">
+    <value>Update</value>
+    <comment>update button</comment>
+  </data>
+  <data name="SiteRequestWebPart_UrlSameAsManagedPath_Text" xml:space="preserve">
+    <value>You cannot use strings that were already used to name managed paths.</value>
+    <comment>error message if url entered is same as managed paths</comment>
+  </data>
+  <data name="SiteRequestWebPart_UsagePolicyError_Text" xml:space="preserve">
+    <value>You have to agree on terms of use</value>
+    <comment>Usage policy acceptance error</comment>
+  </data>
+  <data name="SiteRequestWebPart_UsagePolicyToolTip_Text" xml:space="preserve">
+    <value>&lt;p&gt;Check if you are aware of the usage policy&lt;/p&gt;</value>
+    <comment>tool tip for the user policy</comment>
+  </data>
+  <data name="SiteRequestWebPart_UsagePolicy_LabelText" xml:space="preserve">
+    <value>Site Policy</value>
+    <comment>usage policy  label -old</comment>
+  </data>
+  <data name="SiteRequestWebPart_UsagePolicy_Text" xml:space="preserve">
+    <value> of use.</value>
+    <comment>Usage policy label</comment>
+  </data>
+  <data name="SiteRequestWebPart_UsageTerms_HelpText" xml:space="preserve">
+    <value>Usage terms need to be accepted to proceed with the request.</value>
+    <comment>usage terms exception</comment>
+  </data>
+  <data name="SiteRequestWebPart_UserInformation_HeaderText" xml:space="preserve">
+    <value>Requestor information</value>
+    <comment>Request information header</comment>
+  </data>
+  <data name="SiteRequestWebPart_WizardMain_NextButtonClick_Primary_User_ResolveError" xml:space="preserve">
+    <value>Primary user entry cannot be resolved</value>
+    <comment>Wizard primary button</comment>
+  </data>
+  <data name="SiteRequestWebPart_WizardMain_NextButtonClick_Secondary_User_Error" xml:space="preserve">
+    <value>Secondary user entry cannot be resolved</value>
+    <comment>Wizard Secondary button </comment>
+  </data>
+  <data name="SiteRequestWebPart_WizardStep1_Text" xml:space="preserve">
+    <value>Site Template Information</value>
+    <comment>Site request wizare step1</comment>
+  </data>
+  <data name="SiteRequestWebPart_WizardStep2_Text" xml:space="preserve">
+    <value>Site Owner Information</value>
+    <comment>Site request wizare step2</comment>
+  </data>
+  <data name="SiteRequestWebPart_WizardStep3_Text" xml:space="preserve">
+    <value>Additional Information</value>
+    <comment>Site request wizare step3</comment>
+  </data>
+  <data name="SiteRequestWebPart_WizardStepComplete_Text" xml:space="preserve">
+    <value>Site Provisioned</value>
+    <comment>Site request complete label</comment>
+  </data>
+  <data name="SiteRequestWebPart_Yes_LabelText" xml:space="preserve">
+    <value>Yes</value>
+    <comment>Site Request Yes label</comment>
+  </data>
+  <data name="SiteUrlExistsText" xml:space="preserve">
+    <value>Site Url already exists</value>
+    <comment>Site URL already exists validation</comment>
+  </data>
+  <data name="SystemError" xml:space="preserve">
+    <value>There is an error on the page. Errors are logged in the ULS Log. Please contact the Johnson Controls help desk and have them submit a support ticket to the appropriate business unit support team.</value>
+    <comment>System error</comment>
+  </data>
+  <data name="SiteUrlAvailableText" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="SiteRequestWebPart_SubmitWait_Text" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="LoadingText" xml:space="preserve">
+    <value>Working on it</value>
+  </data>
+  <data name="CancelRequestText" xml:space="preserve">
+    <value>Are you sure you want to cancel this site request?</value>
+  </data>
+  <data name="CancelRequestHeaderText" xml:space="preserve">
+    <value>Cancel this request</value>
+  </data>
+  <data name="JCICustomerPlaceHolder" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="PartnerSite_CustomerName_HelpText" xml:space="preserve">
+    <value>Please enter Customer Name, it can contain only alphanumeric characters, underscore and hyphen</value>
+  </data>
+</root>

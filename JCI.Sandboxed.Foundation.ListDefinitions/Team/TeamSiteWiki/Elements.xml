@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Team Site Wiki" OnQuickLaunch="FALSE" TemplateType="119" FeatureId="00bfea71-c796-4402-9f2f-0eb9a6e71b18" Url="Lists/TeamSiteWiki" Description="Library to manage wiki pages"></ListInstance>
+</Elements>

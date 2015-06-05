@@ -1,0 +1,6 @@
+﻿<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="JCI.Foundation.Collaboration.TeamProjectAssignments" AlwaysForceInstall="TRUE" Description="Provisions Team project assignments Web Part alongs with required lists" Id="e32afde8-7b9f-4c59-9de2-d64f2514fcdd" Scope="Web">
+  <ElementManifests>
+    <ElementManifest Location="TeamProjectAssignments\Elements.xml" />
+    <ElementFile Location="TeamProjectAssignments\Schema.xml" />   
+  </ElementManifests>
+</Feature>

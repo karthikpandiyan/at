@@ -1,0 +1,16 @@
+﻿<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="JCI.Foundation.Collaboration.ProjectDocumentLibrary" Description="Provisions JCIGeneralProjectDocumentLibrary &amp; JCIITProjectDocumentLibrary Definitions" Id="b1894cf6-f138-452d-be02-7785c158bb01" Scope="Web">
+  <ElementManifests>
+    <ElementFile Location="JCIGeneralProjectDocumentLibrary\EditDlg.htm" />
+    <ElementManifest Location="JCIGeneralProjectDocumentLibrary\Elements.xml" />
+    <ElementFile Location="JCIGeneralProjectDocumentLibrary\FileDlg.htm" />
+    <ElementFile Location="JCIGeneralProjectDocumentLibrary\Repair.aspx" />
+    <ElementFile Location="JCIGeneralProjectDocumentLibrary\Schema.xml" />
+    <ElementFile Location="JCIGeneralProjectDocumentLibrary\Upload.aspx" />
+    <ElementFile Location="JCIITProjectDocumentLibrary\EditDlg.htm" />
+    <ElementManifest Location="JCIITProjectDocumentLibrary\Elements.xml" />
+    <ElementFile Location="JCIITProjectDocumentLibrary\FileDlg.htm" />
+    <ElementFile Location="JCIITProjectDocumentLibrary\Repair.aspx" />
+    <ElementFile Location="JCIITProjectDocumentLibrary\Schema.xml" />
+    <ElementFile Location="JCIITProjectDocumentLibrary\Upload.aspx" />
+  </ElementManifests>
+</Feature>

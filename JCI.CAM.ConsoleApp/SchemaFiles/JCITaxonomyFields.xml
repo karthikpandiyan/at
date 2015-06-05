@@ -1,0 +1,12 @@
+﻿<TaxonomyFields>
+  <MMSField FieldGuid="CC23096B-B68A-4AB9-BDBC-041CB02BAAE8" MMSGroupName="JCI.Foundation.Terms" TermSet="Topic"></MMSField>
+  <MMSField FieldGuid="617E4336-B4C5-4C11-A84A-563B34604034" MMSGroupName="JCI.Foundation.Terms" TermSet="JCILocation"></MMSField>
+  <MMSField FieldGuid="6E650B06-AD35-42D8-9B98-3F3A368024D7" MMSGroupName="JCI.Foundation.Terms" TermSet="DataClassificationLevel"></MMSField>
+  <MMSField FieldGuid="24F4BD7E-396C-4B09-A734-43AC5AD5D554" MMSGroupName="JCI.Foundation.Terms" TermSet="JCILanguage"></MMSField>
+  <MMSField FieldGuid="B29795C2-4438-4433-960D-FFCEC2CBA1B6" MMSGroupName="JCI.Foundation.Terms" TermSet="DocumentStatus"></MMSField>
+  <MMSField FieldGuid="92ACC605-BF97-42EA-A017-4E26F632A8FC" MMSGroupName="JCI.Foundation.Terms" TermSet="DocumentType"></MMSField>
+  <MMSField FieldGuid="01EDDBED-B732-48D4-9B60-5F149A0E56EB" MMSGroupName="JCI.Foundation.Terms" TermSet="ProjectPhase"></MMSField>
+  <MMSField FieldGuid="017D705D-3F90-4FBD-AEB1-EDCCF5C93B23" MMSGroupName="JCI.Foundation.Terms" TermSet="JCIPriority"></MMSField>
+  <MMSField FieldGuid="90F06131-54A6-40EC-A81D-F7AC3B203C51" MMSGroupName="JCI.Foundation.Terms" TermSet="ChangeType"></MMSField>
+  <MMSField FieldGuid="24D4F6E7-885D-4561-8381-5613B813A45F" MMSGroupName="JCI.Foundation.Terms" TermSet="JCIBusinessUnit"></MMSField>
+</TaxonomyFields>

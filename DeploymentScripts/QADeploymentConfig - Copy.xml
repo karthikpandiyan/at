@@ -1,0 +1,188 @@
+<DeploymentConfig>
+  <!-- Change PublishSite to name of the target website -->
+  <PublishSite name="jciqa" />
+  <!-- Change PublishProfile path to full path of publish profile path -->
+  <PublishProfile path="E:\Deploy\Artifacts\PSScripts\jciqa.PublishSettings" />
+  <!--  This will be the path where webapps packages are present -->
+  <PackageRoot path="E:\Deploy\Artifacts\AppWeb" />
+  <Apps>
+    <App name="SiteRequest Application" description="Site Request App">
+      <!-- Empty VirtualDirectory means deploy in site root -->
+      <VirtualDirectory></VirtualDirectory>
+      <Package>SiteRequest</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="0db99a97-eff2-4dba-9f3e-4192299f5948" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="Xlxu+Pp5Xqk0HT8uiGUDdd5VV+HckktA0o0rGlVhmpU=" file="web.config" />
+        <config name="TenantAdminUrl" path="/configuration/appSettings/add" value="https://qa.jciqa.com/admin" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <file name="WebApp Path" fileName="SiteTemplates\Templates.config" path="/TemplateConfiguration/Templates/Template" key="ID" keyValue="PROJECTSITE0" Attr="WebAppPath"  value="http://qa.jciqa.com/" />
+        <file name="WebApp Path" fileName="SiteTemplates\Templates.config" path="/TemplateConfiguration/Templates/Template" key="ID" keyValue="STS0" Attr="WebAppPath" value="http://qa.jciqa.com/" />
+        <file name="WebApp Path" fileName="SiteTemplates\Templates.config" path="/TemplateConfiguration/Templates/Template" key="ID" keyValue="COMMUNITY0" Attr="WebAppPath" value="http://qa.jciqa.com/" />
+        <file name="WebApp Path" fileName="SiteTemplates\Templates.config" path="/TemplateConfiguration/Templates/Template" key="ID" keyValue="PARTNER0" Attr="WebAppPath" value="http://qa.jciqa.com/" />
+      </Replace>
+    </App>
+    <App name="SubSite Provisioning App" description="SubSite Provisioning App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>subsiteprovisioning</VirtualDirectory>
+      <Package>SubSiteProvisioning</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="62ed4f22-e93c-4bea-a7da-7d576ae46d1b" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="e/nlXzvPlB3PaX+cycoQrDZ0wKboYmUbT1CJL6/i+EE=" file="web.config" />       
+      </AppConfig>
+      <Replace>
+      </Replace>
+    </App>
+        
+    <App name="BrandingApp" description="Branding App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>Branding</VirtualDirectory>
+      <Package>Branding</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="dde67f2e-c5a9-4854-9f42-b042cc67b879" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="L7UTLIe3TalNpu5AmVO+R5U6Q6HO9kZEFT8OIa8uf08=" file="web.config" />
+      </AppConfig>
+      <Replace>
+      </Replace>
+    </App>
+
+    <App name="List Provisioning App" description="list provisioning App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>listprovisioning</VirtualDirectory>
+      <Package>listprovisioning</Package>
+      <AppConfig>        
+        <config name="ClientId" path="/configuration/appSettings/add" value="206a5d15-2e15-4efe-a0d1-76a9765602e2" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="efDob6DB0jgH4xoJHwKhzSs8cTN60vwLNDq9GajWwYU=" file="web.config" />
+      </AppConfig>
+      <Replace>
+      </Replace>
+    </App>
+
+    <App name="PersonalSitesCustomization" description="personal sites customization App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>personalsitescustomization</VirtualDirectory>
+      <Package>personalsitescustomization</Package>
+      <AppConfig>       
+        <config name="ClientId" path="/configuration/appSettings/add" value="b8c6786b-982a-412d-834c-5cfb1e65f9cd" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="uPlQj0iOVDCttItMHSz+NUIhEPpfDICoLNlo6PsC6XM=" file="web.config" />
+      </AppConfig>
+      <Replace>
+      </Replace>
+    </App>
+
+    <App name="Test Site Banner App" description="test site banner App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>testsitebanner</VirtualDirectory>
+      <Package>testsitebanner</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="d487b5e1-9f2a-461a-ae06-faefe4106a49" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="lnc3cF6ZMa5Z9WllilNeTmqOVLE4FY3Kv0G7miKIGME=" file="web.config" />
+      </AppConfig>
+      <Replace>
+      </Replace>
+    </App>
+    
+    <App name="SPD Settings App" description="SPD Settings App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>SPDSettings</VirtualDirectory>
+      <Package>SPDSettings</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="e5996d29-71f7-4ea7-b47e-bbd7d75df595" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="5yGEfIK/hfxI3KAXUS9BE6azom/A2B7CUKZfdo4sn7Y=" file="web.config" />
+      </AppConfig>
+      <Replace>
+      </Replace>
+    </App>
+    
+  </Apps>
+  <Jobs>
+    <!-- Any valid string name -->
+    <JobCollectionName name="JCICAMAppsJobs" />
+    <!-- Frequency = Valid Values (Minute, Hour) -->
+    <!-- Interval = any  valid integer -->
+    <!-- Path = Full path to the job folder without the terminating slash -->
+    <Job name="SiteMigrationJob" path="E:\Deploy\Artifacts\WebJobs\SiteMigrationJob" frequency="Minute" interval="20" >
+      <custom>
+        <file name="Config.ServiceBus.SiteMigrationConnection" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.SiteMigrationConnection" Attr="value" value="Endpoint=sb://jciftccamapps9.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=LLeLD0tzl8WcorzWdIDIyWnD3lP3+uqy2ZK0GxY4Whc=" />
+        <file name="Config.ServiceBus.SiteMigrationRequestQueue" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.SiteMigrationRequestQueue" Attr="value" value="sp_site_migration_request_queue_JCI_qa" />
+        <file name="Config.ClientId" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="3e1731ca-1378-4793-adac-bc0c77ca6a6c" />
+        <file name="Config.ClientSecret" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="o1qO+KZFwnbz/Ogwq8hc5BPU50BIjtO7m1VaAf2KXcY=" />
+        <file name="Config.TenantAdminUrl" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="TenantAdminUrl" Attr="value" value="http://qa.jciqa.com/admin" />
+        <file name="Config.SharePointOnPremises" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SharePointOnPremises" Attr="value" value="false" />
+        <file name="Config.MigrationRequestSiteUrl" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="MigrationRequestSiteUrl" Attr="value" value="http://qa.jciqa.com/sites/SitePro2106" />
+        <file name="Config.SiteProvisioningSiteUrl" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SiteProvisioningSiteUrl" Attr="value" value="http://qa.jciqa.com/sites/SitePro2106" />
+        <file name="Config.ContentTypeHubSiteUrl" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ContentTypeHubSiteUrl" Attr="value" value="http://apps.jciqa.com/sites/contentTypeHub" />        
+      </custom>
+    </Job>
+    <Job name="SiteMigrationRequestJob" path="E:\Deploy\Artifacts\WebJobs\SiteMigrationRequestJob" frequency="Minute" interval="10" >
+      <custom>               
+        <file name="Config.ServiceBus.SiteMigrationConnection" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.SiteMigrationConnection" Attr="value" value="Endpoint=sb://jciftccamapps9.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=LLeLD0tzl8WcorzWdIDIyWnD3lP3+uqy2ZK0GxY4Whc=" />
+        <file name="Config.ServiceBus.SiteMigrationRequestQueue" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.SiteMigrationRequestQueue" Attr="value" value="sp_site_migration_request_queue_JCI_qa" />
+        <file name="Config.ClientId" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="8da0581c-7ff6-4c46-8687-32f51177d76b" />
+        <file name="Config.ClientSecret" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="K5nEMo9u7BPIeUSrxPbYN7Jy3YKw9QBtDw1FAg6e69E=" />
+        <file name="Config.TenantAdminUrl" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="TenantAdminUrl" Attr="value" value="http://qa.jciqa.com/admin" />
+        <file name="Config.MigrationRequestSiteUrl" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="MigrationRequestSiteUrl" Attr="value" value="http://qa.jciqa.com/sites/sitepro2106" />
+        <file name="Config.SiteProvisioningSiteUrl" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SiteProvisioningSiteUrl" Attr="value" value="http://qa.jciqa.com/sites/sitepro2106" />
+        <file name="Config.ContentTypeHubSiteUrl" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ContentTypeHubSiteUrl" Attr="value" value="http://apps.jciqa.com/sites/contentTypeHub" />
+      </custom>
+    </Job>
+    <Job name="SiteProvisioningJob" path="E:\Deploy\Artifacts\WebJobs\SiteProvisioningJob" frequency="Minute" interval="20" >
+      <custom>
+        <file name="Config.ServiceBus.Connection" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.Connection" Attr="value" value="Endpoint=sb://jciftccamapps9.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=LLeLD0tzl8WcorzWdIDIyWnD3lP3+uqy2ZK0GxY4Whc=" />
+        <file name="Config.ServiceBus.RequestQueue" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.RequestQueue" Attr="value" value="SP_SITE_REQUEST_QUEUE_QA" />
+        <file name="Config.ContentTypeHubUrl" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ContentTypeHubUrl" Attr="value" value="http://apps.jciqa.com/Sites/Contenttypehub/" />
+        <file name="Config.ClientId" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="16510758-aab6-482d-baaf-2f5a83376d7f" />
+        <file name="Config.ClientSecret" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="A1Zs63Ffx+56JwOMqVSVBr2dpoEK321QzWKHSVviqUA=" />
+        <file name="Config.SPHost" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SPHost" Attr="value" value="http://qa.jciqa.com/sites/SitePro2106" />
+        <file name="Config.SupportTeamNotificationEmail" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SupportTeamNotificationEmail" Attr="value" value="kishore@spoazure.onmicrosoft.com" />
+        <file name="Config.TenantAdminUrl" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="TenantAdminUrl" Attr="value" value="http://qa.jciqa.com/admin" />
+        <file name="Config.SharePointOnPremises" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SharePointOnPremises" Attr="value" value="false" />
+      </custom>
+    </Job>
+    <Job name="SiteRequestJob" path="E:\Deploy\Artifacts\WebJobs\SiteRequestJob" frequency="Minute" interval="10" >
+      <custom>
+        <file name="Config.ClientID" fileName="JCI.CAM.SiteRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="eacfa475-0ea1-41ef-b181-c550e0b9708f" />
+        <file name="Config.ClientSecret" fileName="JCI.CAM.SiteRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="um9yXahLeKulfuuvAXk17787QzN+yYKQMJT3pMi9Ktk=" />
+        <file name="Config.SPHost" fileName="JCI.CAM.SiteRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SPHost" Attr="value" value="http://qa.jciqa.com/sites/SitePro2106" />
+        <file name="Config.TenantAdminUrl" fileName="JCI.CAM.SiteRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="TenantAdminUrl" Attr="value" value="http://qa.jciqa.com/admin" />
+        <file name="Config.ServiceBus.RequestQueue" fileName="JCI.CAM.SiteRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.RequestQueue" Attr="value" value="SP_SITE_REQUEST_QUEUE_QA" />
+        <file name="Config.ServiceBus.Connection" fileName="JCI.CAM.SiteRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.Connection" Attr="value" value="Endpoint=sb://jciftccamapps9.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=LLeLD0tzl8WcorzWdIDIyWnD3lP3+uqy2ZK0GxY4Whc=" />
+      </custom>
+    </Job>
+    <Job name="PersonalSitesTransformationRequestJob" path="E:\Deploy\Artifacts\WebJobs\PersonalSiteRequestJob" frequency="Hours" interval="" >
+      <custom>
+        <file name="Config.ClientId" fileName="JCI.CAM.PersonalSitesRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="57583bd6-4173-4a91-bf95-0fb1f36b9f74" />
+        <file name="Config.ClientSecret" fileName="JCI.CAM.PersonalSitesRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="G7DJvhNLgxOi90NryMgme+NomzLM4ay2heLk8IO/huc=" />
+        <file name="Config.TenantAdminUrl" fileName="JCI.CAM.PersonalSitesRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="TenantAdminUrl" Attr="value" value="http://qa.jciqa.com/admin" />
+        <file name="Config.PersonalSitesTransformationTableName" fileName="JCI.CAM.PersonalSitesRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="PersonalSitesTransformationTableName" Attr="value" value="PersonalSitesTransformationList" />
+        <file name="Config.UserProfilesWebApplicationUrl" fileName="JCI.CAM.PersonalSitesRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="UserProfilesWebApplicationUrl" Attr="value" value="http://mysites.jciqa.com" />
+        <file name="Config.UserName" fileName="JCI.CAM.PersonalSitesRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="UserName" Attr="value" value="ms-svc-sa" />
+        <file name="Config.Password" fileName="JCI.CAM.PersonalSitesRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="Password" Attr="value" value="Microsoft~1" />
+        <file name="Config.Domain" fileName="JCI.CAM.PersonalSitesRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="Domain" Attr="value" value="jciqa" />        
+      </custom>
+    </Job>
+    <Job name="PersonalSitesTransformationJob" path="E:\Deploy\Artifacts\WebJobs\PersonalSitesTransformationJob" frequency="Hours" interval="">
+      <custom>        
+        <file name="Config.ClientId" fileName="JCI.CAM.PersonalSitesTransformationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="57583bd6-4173-4a91-bf95-0fb1f36b9f74" />
+        <file name="Config.ClientSecret" fileName="JCI.CAM.PersonalSitesTransformationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="G7DJvhNLgxOi90NryMgme+NomzLM4ay2heLk8IO/huc=" />
+        <file name="Config.TenantAdminUrl" fileName="JCI.CAM.PersonalSitesTransformationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="TenantAdminUrl" Attr="value" value="http://qa.jciqa.com/admin" />
+        <file name="Config.MySiteTenantAdminUrl" fileName="JCI.CAM.PersonalSitesTransformationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="MySiteTenantAdminUrl" Attr="value" value="http://qa.jciqa.com/admin" />
+        <file name="Config.PersonalSitesTransformationTableName" fileName="JCI.CAM.PersonalSitesTransformationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="PersonalSitesTransformationTableName" Attr="value" value="PersonalSitesTransformationList" />
+        <file name="Config.SharePointOnPremises" fileName="JCI.CAM.PersonalSitesTransformationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SharePointOnPremises" Attr="value" value="false" />
+        <file name="Config.SiteProvisioningSiteUrl" fileName="JCI.CAM.PersonalSitesTransformationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SiteProvisioningSiteUrl" Attr="value" value="http://qa.jciqa.com/sites/SitePro2106" />
+        <file name="Config.ContentTypeHubSiteUrl" fileName="JCI.CAM.PersonalSitesTransformationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ContentTypeHubSiteUrl" Attr="value" value="http://apps.jciqa.com/sites/contenttypehub" />
+      </custom>
+    </Job>
+    <Job name="Post Transformation Activities Job" path="E:\Deploy\Artifacts\WebJobs\PostTransformationActivitiesJob" frequency="Hours" interval="">
+      <custom>        
+        <file name="Config.ClientId" fileName="JCI.CAM.PostTransformationActivitiesJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="8da0581c-7ff6-4c46-8687-32f51177d76b" />
+        <file name="Config.ClientSecret" fileName="JCI.CAM.PostTransformationActivitiesJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="K5nEMo9u7BPIeUSrxPbYN7Jy3YKw9QBtDw1FAg6e69E=" />
+        <file name="Config.Service Bus" fileName="JCI.CAM.PostTransformationActivitiesJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.SiteMigrationConnection" Attr="value" value="Endpoint=sb://jciftccamapps9.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=LLeLD0tzl8WcorzWdIDIyWnD3lP3+uqy2ZK0GxY4Whc=" />
+        <file name="Config.ServiceBus.SiteMigrationRequestQueue" fileName="JCI.CAM.PostTransformationActivitiesJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ServiceBus.SiteMigrationRequestQueue" Attr="value" value="sp_site_migration_request_queue_JCI_qa" />
+        <file name="Config.TenantAdminUrl" fileName="JCI.CAM.PostTransformationActivitiesJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="TenantAdminUrl" Attr="value" value="http://qa.jciqa.com/admin" />
+        <file name="Config.PersonalSitesTransformationTableName" fileName="JCI.CAM.PostTransformationActivitiesJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="MigrationRequestSiteUrl" Attr="value" value="http://qa.jciqa.com/sites/SitePro2106" />
+        <file name="Config.SharePointOnPremises" fileName="JCI.CAM.PostTransformationActivitiesJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="SharePointOnPremises" Attr="value" value="true" />
+      </custom>
+    </Job>
+  </Jobs>
+</DeploymentConfig>

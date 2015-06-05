@@ -1,0 +1,5 @@
+<Features>
+  <Feature Name="JCI.Foundation.Branding.MySiteBranding" GUID="1b55539b-717b-4270-a7ce-72dca0536179" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.SetBlogMasterPages" GUID="007b3107-03e8-407d-97e6-eba51672db10" Scope="Web" />
+  <Feature Name="JCI.Foundation.Branding.BlogSiteBranding" GUID="25ddba6c-dc38-4a9a-8101-5f51bc2b2f23" Scope="Web" />
+</Features>

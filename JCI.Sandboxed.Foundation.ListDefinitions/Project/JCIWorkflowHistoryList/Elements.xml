@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="JCIWorkflowHistoryList"
+                OnQuickLaunch="FALSE"
+                TemplateType="140"
+                FeatureId="{00bfea71-4ea5-48d4-a4ad-305cf7030140}"
+                Url="Lists/JCIWorkflowHistoryList"
+                Description="Workflow History List used to store the workflow history"
+                Hidden="TRUE">
+  </ListInstance>
+</Elements>

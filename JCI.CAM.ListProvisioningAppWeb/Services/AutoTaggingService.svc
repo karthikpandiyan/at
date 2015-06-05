@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="JCI.CAM.AutoTaggingAppWeb.Services.AutoTaggingService" CodeBehind="AutoTaggingService.svc.cs" %>

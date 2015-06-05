@@ -1,0 +1,5 @@
+<ListDefinition>
+  <ListTemplate SourceType="10003" TargetType="101"/>
+  <ListTemplate SourceType="10004" TargetType="101"/>
+  <ListTemplate SourceType="10005" TargetType="101"/>
+</ListDefinition>

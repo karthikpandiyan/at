@@ -1,0 +1,148 @@
+<DeploymentConfig>
+  <!-- Change PublishSite to name of the target website -->
+  <PublishSite name="area53" />
+  <!-- Change PublishProfile path to full path of publish profile path -->
+  <PublishProfile path="C:\Build\Deploy\area53.PublishSettings" />
+  <!--  This will be the path where webapps packages are present -->
+  <PackageRoot path="E:\Deploy\Artifacts\AppWeb" />
+  <Apps>
+    <App name="SiteRequestApp" description="Site Request App">
+      <!-- Empty VirtualDirectory means deploy in site root -->
+      <VirtualDirectory></VirtualDirectory>
+      <Package>SiteRequest</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="2a7ac1af-9480-4132-8843-cc7881c2169c" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="E7l1tc7dwPXhNu4XkxW8EgA4ClVecLDoS8/vkVnqX0g=" file="web.config" />
+        <config name="TenantAdminUrl" path="/configuration/appSettings/add" value="http://qa.jciqa.com/admin" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <file name="WebApp Path" fileName="SiteTemplates\Templates.config" path="/TemplateConfiguration/Templates/Template" value="http://qa.jciqa.com/" key="ID" keyValue="PROJECTSITE0" Attr="WebAppPath" />
+        <file name="WebApp Path" fileName="SiteTemplates\Templates.config" path="/TemplateConfiguration/Templates/Template" value="http://qa.jciqa.com/" key="ID" keyValue="STS0" Attr="WebAppPath" />
+        <file name="WebApp Path" fileName="SiteTemplates\Templates.config" path="/TemplateConfiguration/Templates/Template" value="http://qa.jciqa.com/" key="ID" keyValue="COMMUNITY0" Attr="WebAppPath" />
+        <file name="WebApp Path" fileName="SiteTemplates\Templates.config" path="/TemplateConfiguration/Templates/Template" value="http://qa.jciqa.com/" key="ID" keyValue="PARTNER0" Attr="WebAppPath" />
+      </Replace>
+    </App>
+    <App name="SubSite Provisioning App" description="SubSite Provisioning App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>subsiteprovisioning</VirtualDirectory>
+      <Package>SubSiteProvisioning</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="2a7ac1af-9480-4132-8843-cc7881c2169c" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="E7l1tc7dwPXhNu4XkxW8EgA4ClVecLDoS8/vkVnqX0g=" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <!-- <file name="WebApp Path" path="SiteTemplates\Templates.config" token="{%WebApp%}" value="http://qa.jciqa.com/" />
+                <file name="Managed Path" path="SiteTemplates\Templates.config" token="{%ManagedPath%}" value="sites" /> -->
+      </Replace>
+    </App>
+    <App name="AutoTagging App" description="AutoTagging App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>AutoTagging</VirtualDirectory>
+      <Package>AutoTagging</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="2a7ac1af-9480-4132-8843-cc7881c2169c" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="E7l1tc7dwPXhNu4XkxW8EgA4ClVecLDoS8/vkVnqX0g=" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <!-- <file name="WebApp Path" path="SiteTemplates\Templates.config" token="{%WebApp%}" value="http://qa.jciqa.com/" />
+                <file name="Managed Path" path="SiteTemplates\Templates.config" token="{%ManagedPath%}" value="sites" /> -->
+      </Replace>
+    </App>
+    <App name="Branding App" description="Branding App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>Branding</VirtualDirectory>
+      <Package>Branding</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="2a7ac1af-9480-4132-8843-cc7881c2169c" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="E7l1tc7dwPXhNu4XkxW8EgA4ClVecLDoS8/vkVnqX0g=" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <!-- <file name="WebApp Path" path="SiteTemplates\Templates.config" token="{%WebApp%}" value="http://qa.jciqa.com/" />
+                <file name="Managed Path" path="SiteTemplates\Templates.config" token="{%ManagedPath%}" value="sites" /> -->
+      </Replace>
+    </App>
+    <App name="List provisioning App" description="list provisioning App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>listprovisioning</VirtualDirectory>
+      <Package>listprovisioning</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="2a7ac1af-9480-4132-8843-cc7881c2169c" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="E7l1tc7dwPXhNu4XkxW8EgA4ClVecLDoS8/vkVnqX0g=" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <!-- <file name="WebApp Path" path="SiteTemplates\Templates.config" token="{%WebApp%}" value="http://qa.jciqa.com/" />
+                <file name="Managed Path" path="SiteTemplates\Templates.config" token="{%ManagedPath%}" value="sites" /> -->
+      </Replace>
+    </App>
+    <App name="Personal sites customization" description="personal sites customization App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>personalsitescustomization</VirtualDirectory>
+      <Package>personalsitescustomization</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="2a7ac1af-9480-4132-8843-cc7881c2169c" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="E7l1tc7dwPXhNu4XkxW8EgA4ClVecLDoS8/vkVnqX0g=" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <!-- <file name="WebApp Path" path="SiteTemplates\Templates.config" token="{%WebApp%}" value="http://qa.jciqa.com/" />
+                <file name="Managed Path" path="SiteTemplates\Templates.config" token="{%ManagedPath%}" value="sites" /> -->
+      </Replace>
+    </App>
+    <App name="Test site banner App" description="test site banner App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>testsitebanner</VirtualDirectory>
+      <Package>testsitebanner</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="2a7ac1af-9480-4132-8843-cc7881c2169c" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="E7l1tc7dwPXhNu4XkxW8EgA4ClVecLDoS8/vkVnqX0g=" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <!-- <file name="WebApp Path" path="SiteTemplates\Templates.config" token="{%WebApp%}" value="http://qa.jciqa.com/" />
+                <file name="Managed Path" path="SiteTemplates\Templates.config" token="{%ManagedPath%}" value="sites" /> -->
+      </Replace>
+    </App>
+    <App name="SPD Settings App" description="SPD Settings App">
+      <!-- Empty means site root -->
+      <VirtualDirectory>SPDSettings</VirtualDirectory>
+      <Package>SPDSettings</Package>
+      <AppConfig>
+        <config name="ClientId" path="/configuration/appSettings/add" value="2a7ac1af-9480-4132-8843-cc7881c2169c" file="web.config" />
+        <config name="ClientSecret" path="/configuration/appSettings/add" value="E7l1tc7dwPXhNu4XkxW8EgA4ClVecLDoS8/vkVnqX0g=" file="web.config" />
+      </AppConfig>
+      <Replace>
+        <!-- <file name="WebApp Path" path="SiteTemplates\Templates.config" token="{%WebApp%}" value="http://qa.jciqa.com/" />
+                <file name="Managed Path" path="SiteTemplates\Templates.config" token="{%ManagedPath%}" value="sites" /> -->
+      </Replace>
+    </App>
+  </Apps>
+  <Jobs>
+    <!-- Any valid string name -->
+    <JobCollectionName name="JCICAMAppsJobs" />
+    <!-- Frequency = Valid Values (Minute, Hour) -->
+    <!-- Interval = any  valid integer -->
+    <!-- Path = Full path to the job folder without the terminating slash -->
+    <Job name="SiteMigrationJob" path="E:\Deploy\Artifacts\AppWeb\WebJobs\SiteMigrationJob" frequency="Minute" interval="45" >
+        <custom>
+            <file name="Config.ClientID" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="85f5af63-64d6-4d91-9a04-5015d5c730fb" />
+            <file name="Config.ClientSecret" fileName="JCI.CAM.SiteMigrationJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="CaKXbTCNfm8YDwW2EJm5FvXTETvm69fKT0xz5X8AdxM=" />
+        </custom>
+    </Job>
+    <Job name="SiteMigrationRequestJob" path="E:\Deploy\Artifacts\AppWeb\WebJobs\SiteMigrationRequestJob" frequency="Minute" interval="15" >
+        <custom>
+            <file name="Config.ClientID" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="85f5af63-64d6-4d91-9a04-5015d5c730fb" />
+            <file name="Config.ClientSecret" fileName="JCI.CAM.SiteMigrationRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="CaKXbTCNfm8YDwW2EJm5FvXTETvm69fKT0xz5X8AdxM=" />
+        </custom>
+    </Job>
+    <Job name="SiteProvisioningJob" path="E:\Deploy\Artifacts\AppWeb\WebJobs\SiteProvisioningJob" frequency="Minute" interval="45" >
+        <custom>
+            <file name="Config.ClientID" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="85f5af63-64d6-4d91-9a04-5015d5c730fb" />
+            <file name="Config.ClientSecret" fileName="JCI.CAM.SiteProvisioningJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="CaKXbTCNfm8YDwW2EJm5FvXTETvm69fKT0xz5X8AdxM=" />
+        </custom>
+    </Job>
+    <Job name="SiteRequestJob" path="E:\Deploy\Artifacts\AppWeb\WebJobs\SiteRequestJob" frequency="Minute" interval="15" >
+        <custom>
+            <file name="Config.ClientID" fileName="JCI.CAM.SiteRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientId" Attr="value" value="85f5af63-64d6-4d91-9a04-5015d5c730fb" />
+            <file name="Config.ClientSecret" fileName="JCI.CAM.SiteRequestJob.exe.config" path="/configuration/appSettings/add" key="key" keyValue="ClientSecret" Attr="value" value="cakcak" />
+        </custom>
+    </Job>
+  </Jobs>
+</DeploymentConfig>

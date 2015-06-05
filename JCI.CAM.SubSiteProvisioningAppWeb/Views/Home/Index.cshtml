@@ -1,0 +1,199 @@
+﻿@model JCI.CAM.SubSiteProvisioningAppWeb.Models.SiteViewModel
+
+@{
+    ViewBag.Title = "Sub Site Creation";
+    ViewBag.SPURL = Request.QueryString["SPHostUrl"];
+}
+
+<script type="text/javascript">
+    "use strict";
+
+    var hostweburl;
+    var appweburl;
+
+    //load the SharePoint resources
+    $(document).ready(function () {
+        //Get the URI decoded URL.
+        hostweburl = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
+        appweburl = decodeURIComponent(getQueryStringParameter("SPAppWebUrl"));
+        // The SharePoint js files URL are in the form:
+        // web_url/_layouts/15/resource
+        var scriptbase = hostweburl + "/_layouts/15/";
+
+        // Load the js file and continue to the
+        //   success handler
+        $.getScript(scriptbase + "SP.UI.Controls.js", renderChrome)
+    });
+
+    // Callback for the onCssLoaded event defined
+    //  in the options object of the chrome control
+    function chromeLoaded() {
+        // When the page has loaded the required
+        //  resources for the chrome control,
+        //  display the page body.
+        $("body").show();
+    }
+
+    //Function to prepare the options and render the control
+    function renderChrome() {
+        // The Help, Account and Contact pages receive the
+        //   same query string parameters as the main page
+        // var imageBase = hostweburl + "/_layouts/15/images/";
+
+        if (appweburl == "undefined") {
+            appweburl = document.URL.toLowerCase();
+            appweburl = appweburl.split("?", 1)[0];
+            var homeString = "/Home/Create";
+            homeString = homeString.toLowerCase();
+
+            if (appweburl.toLowerCase().indexOf(homeString) > -1) {
+                appweburl = appweburl.split(homeString, 1)[0];
+            }
+        }
+
+        var options = {
+            "appIconUrl": appweburl + '/Content/images/JohnsonControlsLogo.png', // imageBase + "siteicon.png",
+            "appTitle": "New SharePoint Site",
+            "appHelpPageUrl": "Help.html?" + document.URL.split("?")[1],
+            // The onCssLoaded event allows you to
+            //  specify a callback to execute when the
+            //  chrome resources have been loaded.
+            "onCssLoaded": "chromeLoaded()",
+            "settingsLinks": [
+                {
+                    "linkUrl": "Account.html?" + document.URL.split("?")[1],
+                    "displayName": "Account settings"
+                },
+                {
+                    "linkUrl": "Contact.html?" + document.URL.split("?")[1],
+                    "displayName": "Contact us"
+                }
+            ]
+        };
+
+        var nav = new SP.UI.Controls.Navigation("chrome_ctrl_placeholder", options);
+        nav.setVisible(true);
+    }
+
+    // Function to retrieve a query string value.
+    // For production purposes you may want to use
+    //  a library to handle the query string.
+    function getQueryStringParameter(paramToRetrieve) {
+        var params =
+            document.URL.split("?")[1].split("&");
+        var strParams = "";
+        for (var i = 0; i < params.length; i = i + 1) {
+            var singleParam = params[i].split("=");
+            if (singleParam[0] == paramToRetrieve)
+                return singleParam[1];
+        }
+    }
+
+    function cancel() {
+        window.location = hostweburl;
+    }
+
+    function wait() {
+        $("#frmSubSiteCreate").data("validator").settings.submitHandler = function (form) {
+            $("#btnSiteCreate").attr("disabled", true).val("Working");
+            form.submit();
+        }
+    }
+</script>
+<!-- The body is initally hidden. The onCssLoaded callback allows you to display the content after the required resources for the chrome control have been loaded.  -->
+<body style="display:none;overflow:auto">
+    @using (Html.BeginForm("Create", "Home", new { SPHostUrl = @ViewBag.SPURL }, FormMethod.Post, new { id="frmSubSiteCreate", enctype = "multipart/form-data" }))
+    {
+        <!-- Chrome control placeholder -->
+        <div id="chrome_ctrl_placeholder"></div>
+        @Html.ValidationMessage("error", new { @class = "help-inline", @style="color:red" })
+
+        <div class="col-md-12 control-group">
+            <div class="row">
+                <div class="form-group col-xs-6">
+                    <h5 class="col-md-12 caption">
+                        Title and Description
+                    </h5>
+                </div>
+                <div class="form-group col-xs-6">
+                    Title:
+                    @Html.TextBoxFor(m => m.Title, new { maxlength = 100, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Title, String.Empty, new { maxlength = 100, @class = "help-inline", @style="color:red" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6">
+                </div>
+                <div class="form-group col-xs-6">
+                    Description:
+                    @Html.TextAreaFor(m => m.Description, new { rows = 6, columns = 30, @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6">
+                    <h5 class="col-md-12 caption">Web Site Address</h5>
+                </div>
+                <div class="form-group col-xs-6">
+                    <span>URL name: </span><br />
+                    <div class="form-group col-xs-12" style="overflow:hidden;text-overflow:ellipsis">@ViewBag.SPURL/</div>
+                    <div class="form-group col-xs-12">
+                        @Html.TextBoxFor(m => m.URLName, new {  maxlength = 100, @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.URLName, String.Empty, new { @class = "help-inline", @style="color:red" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6">
+                    <h5 class="col-md-12 caption">Template Selection</h5>
+                </div>
+                <div class="form-group col-xs-6">
+                    <span>
+                        Select a language:
+                    </span>
+                    @Html.DropDownListFor(m => m.LCID, new SelectList(Model.Languages, "Value", "Text"), new { @class = "form-control" })
+                    <span>
+                        Select a template:
+                    </span>
+                    @Html.DropDownListFor(m => m.SiteTemplate, new SelectList(Model.SiteTemplates, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SiteTemplate, String.Empty, new { @class = "help-inline", @style="color:red" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6">
+                    <h5 class="col-md-12 caption">Permissions</h5>
+                    <h6 class="col-md-10 ms-descriptiontext ms-inputformdescription">
+                        You can give permission to access your new site to the same users who have access to this parent site, or you can give permission to a unique set of users.
+                        <br /><br />
+                        Note: If you select <b>Use same permissions as parent site</b>, one set of user permissions is shared by both sites. Consequently, you cannot change user permissions on your new site unless you are an administrator of this parent site.
+                    </h6>
+                </div>
+                <div class="form-group col-xs-6">
+                    <div>
+                        User Permissions:
+                    </div>
+                    <h6 class="col-md-12">
+                        @Html.RadioButtonFor(m => m.IsParentSitePermission, "true") <span>Use same permissions as parent site </span>
+                    </h6>
+                    <h6 class="col-md-12">
+                        @Html.RadioButtonFor(m => m.IsParentSitePermission, "false") <span> Use unique permissions </span>
+                    </h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-inline row">
+                    <div class="form-group col-xs-7">
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <input type="submit" id="btnSiteCreate" name="Create" value="Create" onclick="wait();" />
+                        <input type="button" id="btnCancel" name="Cancel" value="Cancel" onclick="cancel();" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

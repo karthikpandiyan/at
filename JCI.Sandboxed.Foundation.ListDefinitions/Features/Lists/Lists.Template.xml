@@ -1,0 +1,12 @@
+﻿<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="JCI.Foundation.SiteProvisioning.Lists" AlwaysForceInstall="TRUE" Description="Provision the list required for site provisioning" Id="af29ce8e-5307-4cd7-a904-a61616c654f3" Scope="Web">
+  <ElementManifests>
+    <ElementManifest Location="SiteApprover\Elements.xml" />
+    <ElementFile Location="SiteApprover\Schema.xml" />   
+    <ElementManifest Location="SiteFeaturesConfiguration\Elements.xml" />
+    <ElementFile Location="SiteFeaturesConfiguration\Schema.xml" />    
+    <ElementManifest Location="SiteRequest\Elements.xml" />
+    <ElementFile Location="SiteRequest\Schema.xml" />   
+    <ElementManifest Location="WorkflowConfiguration\Elements.xml" />
+    <ElementFile Location="WorkflowConfiguration\Schema.xml" />     
+  </ElementManifests>
+</Feature>

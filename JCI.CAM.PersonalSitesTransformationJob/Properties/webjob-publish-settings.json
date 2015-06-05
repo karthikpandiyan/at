@@ -1,0 +1,9 @@
+﻿{
+  "$schema": "http://schemastore.org/schemas/json/webjob-publish-settings.json",
+  "webJobName": "PersonalSitesTransformationJob",
+  "startTime": "2015-03-30T22:00:00-08:00",
+  "endTime": "2018-06-12T00:00:00-08:00",
+  "jobRecurrenceFrequency": "Minute",
+  "interval": 45,
+  "runMode": "Scheduled"
+}

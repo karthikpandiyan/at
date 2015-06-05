@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Document (0x0101) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD2437" Name="JCI Document" Group="JCI Foundation Content Types" Description="JCI Document" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{59C93027-63AB-4B07-AF60-C20D164D7B18}" DisplayName="JCI Business Unit_0" Name="JCIBusinessUnitTaxHTField0"/>
+      <FieldRef ID="{24D4F6E7-885D-4561-8381-5613B813A45F}" Name="JCIBusinessUnit" DisplayName="JCI Business Unit" />
+
+      <FieldRef ID="{D801BC65-0C38-4A74-A6E4-22BF3CBE3C10}" DisplayName="JCI Location_0" Name="JCILocationTaxHTField0"/>
+      <FieldRef ID="{617E4336-B4C5-4C11-A84A-563B34604034}" Name="JCILocation" DisplayName="JCI Location" />
+
+      <FieldRef ID="{0646B592-DD30-4B47-8382-B1FD7A615E1E}" DisplayName="JCI Language_0" Name="JCILanguageTaxHTField0"/>
+      <FieldRef ID="{24F4BD7E-396C-4B09-A734-43AC5AD5D554}" Name="JCILanguage" DisplayName="JCI Language" />
+
+      <FieldRef ID="{D87594FD-7821-4805-AEE9-BAC6E07655C4}" DisplayName="Topic_0" Name="TopicTaxHTField0"/>
+      <FieldRef ID="{CC23096B-B68A-4AB9-BDBC-041CB02BAAE8}" Name="Topic" DisplayName="Topic"/>
+
+      <FieldRef ID="{DB6B7E25-D249-48F8-85B6-C3ED140ACCF8}" DisplayName="Data Classification Level_0" Name="DataClassificationLevelTaxHTField0"/>
+      <FieldRef ID="{6E650B06-AD35-42D8-9B98-3F3A368024D7}" Name="DataClassificationLevel" DisplayName="Data Classification Level"  />
+      
+    </FieldRefs>
+  </ContentType>
+  <!-- Parent ContentType: Item BaseMetaData (0x010100EA254AAEB50D427F87E6DD3EC4BD2437) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD2437001AA0C7DF0AF14AE6B3FCF07D05373CB4" Name="JCI General Project Document" Group="JCI Foundation Content Types" Description="General Project Document Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" Name="ProjectID" DisplayName="Project ID" />
+      <FieldRef ID="{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}" Name="ProjectName" DisplayName="Project Name" />
+      <FieldRef ID="{A5DE9600-B7A6-42DD-A05E-10D4F1500208}" Name="ProjectManager" DisplayName="Project Manager" />
+      <FieldRef ID="{F1A1715E-6C52-40DE-8403-E9AAFD0470D0}" Name="DocumentDescription" DisplayName="Document Description" />
+
+      <FieldRef ID="{8F646568-3BF1-4827-B441-5F1ECF92443D}" Name="Document Status_0" DisplayName="DocumentStatusTaxHTField0" />
+      <FieldRef ID="{B29795C2-4438-4433-960D-FFCEC2CBA1B6}" Name="DocumentStatus" DisplayName="Document Status" />
+
+      <FieldRef ID="{EEF3F05A-E153-4CB8-B630-7FBAD06FFC02}" Name="Document Type_0" DisplayName="DocumentTypeTaxHTField0" />
+      <FieldRef ID="{92ACC605-BF97-42EA-A017-4E26F632A8FC}" Name="DocumentType" DisplayName="Document Type" />     
+
+    </FieldRefs>
+  </ContentType>
+  <!-- Parent ContentType: Item BaseMetaData (0x010100EA254AAEB50D427F87E6DD3EC4BD2437) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C" Name="JCI IT Project Document" Group="JCI Foundation Content Types" Description="IT Project Docuemnt Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" Name="ProjectID" DisplayName="Project ID" />
+      <FieldRef ID="{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}" Name="ProjectName" DisplayName="Project Name" />
+
+      <FieldRef ID="{61E948B9-451D-4D04-9B15-B7E9F338FD06}" Name="Project Phase_0" DisplayName="ProjectPhaseTaxHTField0"/>
+      <FieldRef ID="{01EDDBED-B732-48D4-9B60-5F149A0E56EB}" Name="ProjectPhase" DisplayName="Project Phase"/>
+      
+
+      <FieldRef ID="{A5DE9600-B7A6-42DD-A05E-10D4F1500208}" Name="ProjectManager" DisplayName="Project Manager" />
+      <FieldRef ID="{F1A1715E-6C52-40DE-8403-E9AAFD0470D0}" Name="DocumentDescription" DisplayName="Document Description" />
+
+      <FieldRef ID="{8F646568-3BF1-4827-B441-5F1ECF92443D}" Name="Document Status_0" DisplayName="DocumentStatusTaxHTField0" />
+      <FieldRef ID="{B29795C2-4438-4433-960D-FFCEC2CBA1B6}" Name="DocumentStatus" DisplayName="Document Status" />
+
+      <FieldRef ID="{EEF3F05A-E153-4CB8-B630-7FBAD06FFC02}" Name="Document Type_0" DisplayName="DocumentTypeTaxHTField0" />
+      <FieldRef ID="{92ACC605-BF97-42EA-A017-4E26F632A8FC}" Name="DocumentType" DisplayName="Document Type" />
+      
+    </FieldRefs>
+  </ContentType>
+  <!-- Parent ContentType: Task (0x0108) -->
+  <ContentType ID="0x01080005645F3F85164FDFBA882E93A3F91C65"
+      Name="JCIWorkflowTaskContentType"
+      Group="JCI Foundation Content Types"
+      Description="JCI Foundation Workflow Task Content Type"
+      BaseType="0x0108"
+      Version="0" Inherits="TRUE" >
+    <FieldRefs>
+      <FieldRef ID="{52578FC3-1F01-4f4d-B016-94CCBCF428CF}" Name="_Comments" Sealed="false" Sortable="FALSE" />
+      <FieldRef ID="{654878F6-5F94-47A9-909F-682602617E7E}" DisplayName="JCITaskOutcome" Name="JCITaskOutcome" Sealed="FALSE" />
+      <FieldRef ID="{1F30D200-0D4E-4C8A-A7EB-2E49815BF2BE}" Name="WorkflowInstanceId"/>
+    </FieldRefs>
+  </ContentType>
+  <!-- Parent ContentType: Item (0x010) -->
+  <ContentType ID="0x01008A0D4AE55A3A4DA7AE0C93739366B32A" Name="ProjectChangeRequest" Group="JCI Foundation Content Types" Description="Project Change Request Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" Name="ProjectID" Required="TRUE" />
+      <FieldRef ID="{017D705D-3F90-4FBD-AEB1-EDCCF5C93B23}" Name="JCIPriority" Required="TRUE" />
+      <FieldRef ID="{90F06131-54A6-40EC-A81D-F7AC3B203C51}" Name="ChangeType" Required="TRUE" />
+      <FieldRef ID="{D13619FD-7DAD-42CD-87A2-AAA8A4D780B1}" Name="DateIssued" Required="TRUE" />
+      <FieldRef ID="{35145188-C527-4153-A6BE-E44F3FDE5993}" Name="ProjectDescription" />
+      <FieldRef ID="{58A540ED-D3DC-4E8F-8A87-1D8D1EEBFA14}" Name="Impact" />
+      <FieldRef ID="{1D3A8B2A-1375-41E1-8672-4F82E2A6FBD6}" Name="JCINotes" />
+      <FieldRef ID="{DAC36C1C-032E-4F73-B0EC-8A96C8F11C49}" Name="ApprovedBy" Required="TRUE" />
+      <FieldRef ID="{EB273E76-D562-47D6-951D-2F4B9C0EA9EB}" Name="DeadLine" Required="TRUE"/>
+      <FieldRef ID="{88E7C39A-EE85-4155-8D88-1D539DDEFDE7}" Name="WorkflowStatus" Hidden="TRUE" />
+      <FieldRef ID="{855D5649-576E-45FE-BCBC-CFEE918374B2}" Name="Done" />
+      <FieldRef ID="{BA6D9F76-01A7-4F33-A4DD-0F6685F26D94}" Name="ChangeRequestStatus"/>
+    </FieldRefs>
+  </ContentType>
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x0100797366CFE3F84BD49203366B1D80752F" Name="SiteRequest" Group="JCI Foundation Content Types" Description="Site Request Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{3395033E-8E28-44E1-B551-04CC8E7D3ED0}" Name="BusinessUnit" />
+      <FieldRef ID="{AFF61243-3ADF-44A4-BAB8-496432E5D1C4}" Name="Region" />
+      <FieldRef ID="{681DE620-AEDF-4463-B291-8B8AEB7064D2}" Name="Country" />
+      <FieldRef ID="{161A9E2F-BA58-4F39-BA25-C97886B25EBD}" Name="SiteType" />
+      <FieldRef ID="{AF30D79E-67C2-4CD6-ABE8-DC623FA30900}" Name="SiteUrl" />
+      <FieldRef ID="{EEC78465-1C48-4882-AF45-9163500824D3}" Name="ConfidentialityLevel" />
+      <FieldRef ID="{10E7201A-CB6B-4ABD-86C5-1C46015E8980}" Name="RequestorName" />
+      <FieldRef ID="{C5CDD846-B092-4539-8827-CB158940DF79}" Name="RequestorEmail" />
+      <FieldRef ID="{32C0472B-E17A-4470-A837-DA4851645E57}" Name="SiteDescription" />
+      <FieldRef ID="{92572361-F7C7-4C25-AC4E-337832368569}" Name="RequestorDepartment" />
+      <FieldRef ID="{69F4AC22-69BA-4460-9E5E-FE2066D7C4D3}" Name="RequestorFacility" />
+      <FieldRef ID="{B3354B8F-CDDF-40C6-98CC-E72F74F5A70F}" Name="RequestorGlobalId" />
+      <FieldRef ID="{AF4457CC-26D2-47FD-9080-A4F450B1F337}" Name="ManagerName" />
+      <FieldRef ID="{1C508C2E-B7A8-474B-B1C5-67CA38C203C4}" Name="CostCenter" />
+      <FieldRef ID="{104B45FE-957D-43BE-B066-4CAB7B2EBC02}" Name="PrimarySiteOwner" />
+      <FieldRef ID="{84E9EBB0-CC2A-494B-8004-6A93724E3BAD}" Name="SecondarySiteOwner" />
+      <FieldRef ID="{DAF7B037-5E0D-477E-A391-3ED4AD3D3EE0}" Name="TertiarySiteOwner" />
+      <FieldRef ID="{E43166CF-CA9D-4B4E-9E3B-46E2C325ABE4}" Name="CommunitySiteType" />
+      <FieldRef ID="{39FDF4BC-1389-42F3-A160-60A319871C0E}" Name="Moderator" />
+      <FieldRef ID="{F9FED763-EDF4-4579-9569-B288D1B395EC}" Name="InitialMembersToProvision" />
+      <FieldRef ID="{1FDE51C2-F532-46B1-9AC3-59BBE0D62AE7}" Name="ClarityProjectNumber" />
+      <FieldRef ID="{FBA67873-E8E6-4BDB-A029-317CFEA8EA4D}" Name="ProjectStartDate" />
+      <FieldRef ID="{BFE6348E-A5F3-4DD5-B061-750E7E3B0B6A}" Name="AnticipatedProjectEndDate" />
+      <FieldRef ID="{C0038396-90D1-41DD-B3A6-27F04D320C41}" Name="AdditionalInfo" />
+      <FieldRef ID="{B09805BB-33FB-4B7D-B648-2FA7C8B13B3A}" Name="IsTestSite" />
+      <FieldRef ID="{88E7C39A-EE85-4155-8D88-1D539DDEFDE7}" Name="WorkflowStatus" />
+      <FieldRef ID="{29B33FE2-95F7-4A11-9D15-ACF53401B145}" Name="RequestStatus" />
+      <FieldRef ID="{DEAB539D-7D5E-4288-AF05-B65427DD0F26}" Name="JCIDueDate" />
+      <FieldRef ID="{8D2FC616-1C1E-4F3E-8489-8609621E8DCA}" Name="RequesterPhone" />
+      <FieldRef ID="{973CBFCC-89C9-406E-922D-296FD45843CF}" Name="RequestStatusTimestamp" />
+    </FieldRefs>
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00538623D3DB9D451190C0F215A55018D4"
+               Name="As Is Documentation"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_01_Proposal_AsIsDocumentation.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C009DDFCDA3AFA74621ACF6E7F350A25612"
+               Name="Communication Plan"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_03_MonitorandControl_CommunicationPlan.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00C3BDF94BD185401B8CA34922C1A60D5C"
+               Name="Complexity Assessment"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="1_PM2_Initiation_Phase_Complexity_Assessment_V1.0.xlsm" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00107636937A7E44449BCF35C88F34AC07"
+               Name="Detailed Functional Specification"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_02_Design_DetailedFunctionalRequirements.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C000166F8022F35411A8C0FB7E0A7871545"
+               Name="Disaster Recovery Plan"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="DisasterRecoveryPlanTemplate_v6_2.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00EC3FD72012284471A4C3655923FBD780"
+               Name="External Statement of Work"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="2_PM2_Proposal_Phase_SOW_V4.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00BC4483335ACB4E22A724C13C83837AA6"
+               Name="Gap Analysis"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_01_Proposal_GapAnalysis.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C0010CB332187EF4E1FBEE18E0BB05C754B"
+               Name="Implementation plan"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_04_Execution_ImplementationPlan.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00854DA11E61C34AD382FE4F37C9756539"
+               Name="Internal Statement of Work"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="2_PM2_Proposal_Phase_Internal_Statement_of_Work_V1.2.docx" />
+  </ContentType>
+  <!-- Parent ContentType: JCI Document (0x010100EA254AAEB50D427F87E6DD3EC4BD2437) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700E2616887C9CA46A68EB2B6CB63D4D390"
+               Name="JCI Document Excel"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="JCI_Document_Excel.xltx" />
+  </ContentType>
+  <!-- Parent ContentType: JCI Document (0x010100EA254AAEB50D427F87E6DD3EC4BD2437) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD2437006A6FABED10C54632AD4D118B640A67BD"
+               Name="JCI Document PowerPoint"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="JCI_Document_PowerPoint.potx" />
+  </ContentType>
+  <!-- Parent ContentType: JCI General Project Document (0x010100EA254AAEB50D427F87E6DD3EC4BD2437001AA0C7DF0AF14AE6B3FCF07D05373CB4) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD2437001AA0C7DF0AF14AE6B3FCF07D05373CB4005E93DFD602B54EB293C032E448B1F7C4"
+               Name="JCI General Project Document Excel"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="JCI_GeneralDoc_Excel.xlsx" />
+  </ContentType>
+  <!-- Parent ContentType: JCI General Project Document (0x010100EA254AAEB50D427F87E6DD3EC4BD2437001AA0C7DF0AF14AE6B3FCF07D05373CB4) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD2437001AA0C7DF0AF14AE6B3FCF07D05373CB400998984F59CF34E99AF08B2C6D698CDB6"
+               Name="JCI General Project Document PowerPoint"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="JCI_GeneralDoc_PowerPoint.pptx" />
+  </ContentType>
+  <!-- Parent ContentType: JCI IT Project Document (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C007A9509B7932F4E129CB2514E9AF85AEE"
+               Name="JCI IT Project Document Excel"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="JCI_ITDoc_Excel.xlsx" />
+  </ContentType>
+  <!-- Parent ContentType: JCI IT Project Document (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C004332EDEC049F42FB839212C19E5A691D"
+               Name="JCI IT Project Document PowerPoint"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="JCI_ITDoc_PowerPoint.pptx" />
+  </ContentType>
+  <!-- Parent ContentType: BaseMetadata (JCI.Foundation.Core\BaseMetadata) (0x010100EA254AAEB50D427F87E6DD3EC4BD2437) -->
+<!--  
+<ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700D50D6C39A0A440B6B60B00255B3040A8"
+               Name="Presentation - PowerPoint 2003"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="JC_PPT_Template_03_aug2_2012.ppt" />
+  </ContentType>
+  -->
+  <!-- Parent ContentType: BaseMetadata (JCI.Foundation.Core\BaseMetadata) (0x010100EA254AAEB50D427F87E6DD3EC4BD2437) -->
+ <!--
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD24370090B70FEE6CE44600A5B7F56A301A347C"
+               Name="Presentation - PowerPoint 2003 Wide"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PowerPoint_03_template_Widescreen_16x9.ppt" />
+  </ContentType>
+  -->
+  <!-- Parent ContentType: BaseMetadata (JCI.Foundation.Core\BaseMetadata) (0x010100EA254AAEB50D427F87E6DD3EC4BD2437) -->
+ <!--
+ <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD2437005CC0B5E18DB04CBA80DC316ABBC76512"
+               Name="Presentation - PowerPoint 2007"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="JC_PPT_Template_07Aug2012.pptx" />
+  </ContentType>
+  -->
+  <!-- Parent ContentType: BaseMetadata (JCI.Foundation.Core\BaseMetadata) (0x010100EA254AAEB50D427F87E6DD3EC4BD2437) -->
+ <!--
+ <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD2437006B4FDBA1CF134FCFA3F9019CF7E9FADC"
+               Name="Presentation - PowerPoint 2007 Wide"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PowerPoint_07_template_Widescreen_16x9.potx" />
+  </ContentType>
+  -->
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00D67206035FEB4E1586AAEB76CFC11C6F"
+               Name="Project Assessment"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_05_Close_ProjectClosureReport.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00DBD6BF23A7734696B9908C52061D5F9D"
+               Name="Project Budget Plan"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_02_Proposal_ProjectBudget.xlsx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00B9B0F320DF8A4E828002F8B6FD643EEC"
+               Name="Project Charter"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_01_Initiation_ProjectCharter.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00AB26336D8FF9464C8AA3D0CD55EC0A18"
+               Name="Roles and Responsibility Matrix"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_02_Proposal_RequirementsTraceabilityMatrix.xls" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00D96685E4463347219329BA1FFFA855D0"
+               Name="Security Self Service Questions"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="3_PM2_Execution_Design_Phase_Security_Self_Service_Questions_10_24_12.xlsx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00AA2C59E02D514964B0A58AF8B01C910B"
+               Name="Solution Delivery Proposal"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_02_Proposal_SolutionProposal.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00AB0F349A2716411EB0F498A8C9802A0E"
+               Name="Sponsor Survey"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_05_Close_ProjectSponsorSurvey.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00B622AF6A69AC4E1497D73A24A72CCCBF"
+               Name="Statement of Requirements"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_02_Proposal_Statement_of_Requirements(SOR).docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00BE75C0B9F85243769EEEBBDC26A9FD5D"
+               Name="Statement of Work Training"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_02_Proposal_Statement_of_Work(SOW).docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C004003388CE6E647E087DD35EAF6CDCED4"
+               Name="Support process and Help Desk Readiness"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_04_Validation_SupportProcessandHelpDeskReadiness.docx" />
+  </ContentType>
+    <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00DA9CA8378143496E9DB02DBF00973095"
+               Name="System test Specification"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_03_Development_SystemTestSpecification.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C0083FB2D4CBCB140E9B1F7B68C0AE2CE80"
+               Name="Team Survey"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_05_Close_ProjectTeamSurvey.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00C2B7CBFEF042473E82091C0BCE2B46BE"
+               Name="Testing Strategy"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_02_Design_Testing_Strategy.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00FA41095C8C134375906ACAFE199219A6"
+               Name="To Be Documentation"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_01_Proposal_ToBeDocumentation.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00BD08BD37B4344172843FACAB4EE48F07"
+               Name="Training Strategy"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_03_Development_TrainingStrategy.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C002112705639CE4882AA128A352A6BE646"
+               Name="Unit Test Specification"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_03_Development_Unit_Test_Specification.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C0023980A7E6989405E95509B8A8C114329"
+               Name="Use Case"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_01_Proposal_UseCases.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00DF2CC00B88BB4E25A52797D0806591D0"
+               Name="Use Case Guideline"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="2_PM2_Proposal_Phase_Use_Case_Guidelines_V1.0.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00CBCFE647BE8346349D0850C3AB9D592C"
+               Name="User Acceptance Test Specification"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_03_Development_UserAcceptanceTest_Specification.docx" />
+  </ContentType>
+  <!-- Parent ContentType: IT Project Document (JCI.Foundation.Core\ITProjectDocument) (0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C) -->
+  <ContentType ID="0x010100EA254AAEB50D427F87E6DD3EC4BD243700DEB8C8D5795E4CCF916F3DECC091F51C00626D8F063EC34E53B35369BBDCFD55FE"
+               Name="User Work Instructions"
+               Group="JCI Foundation Content Types"
+               Description="JCI Document Template"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+    <DocumentTemplate TargetName="PM2_06_SDLC_03_Development_UserWorkInstructions.docx" />
+  </ContentType>
+  
+</Elements>

@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C7B3152-4040-4DAF-8726-26F032C0E66D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JCI.Sandboxed.Foundation.ListDefinitions</RootNamespace>
+    <AssemblyName>JCI.Sandboxed.Foundation.ListDefinitions</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\key.snk">
+      <Link>key.snk</Link>
+    </None>
+    <None Include="DocLibraries\JCIBaseMetadataDocumentLibrary\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{69fa8205-6411-472f-bc22-0ac3e00891bf}</SharePointProjectItemId>
+    </None>
+    <None Include="DocLibraries\JCIGeneralProjectDocumentLibrary\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0a3c57c4-abd3-497b-97fa-e0cbddbd8232}</SharePointProjectItemId>
+    </None>
+    <None Include="DocLibraries\JCIITProjectDocumentLibrary\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d0ae92de-12a8-4fb4-b6f7-b75aeae5d2c8}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\BaseDocumentLibrary\BaseDocumentLibrary.feature">
+      <FeatureId>{968911dc-8f9a-4fa0-9f43-59c1d7a5bf4e}</FeatureId>
+    </None>
+    <None Include="Features\GlobalConfigurationList\GlobalConfigurationList.feature">
+      <FeatureId>{6941cc97-7655-4db1-b241-fe023b4d4c6f}</FeatureId>
+    </None>
+    <None Include="Features\Lists\Lists.feature">
+      <FeatureId>{0715c25e-a9f1-4c43-8a67-d7a0e98c852b}</FeatureId>
+    </None>
+    <None Include="Features\ProjectDocumentLibrary\ProjectDocumentLibrary.feature">
+      <FeatureId>{7d274dbf-42ed-4b36-97b8-64f42a8b64dd}</FeatureId>
+    </None>
+    <None Include="Features\ProjectWorkFlows\ProjectWorkFlows.feature">
+      <FeatureId>{c4552998-09e6-4e7e-b7ed-255404b9d576}</FeatureId>
+    </None>
+    <None Include="Features\TeamProjectAssignments\TeamProjectAssignments.feature">
+      <FeatureId>{861b631c-9db9-4a01-8bc4-3b311fb876dd}</FeatureId>
+    </None>
+    <None Include="GlobalConfigurationList\GlobalConfigurationList\GlobalConfigurationListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5bd9bfb6-724e-421a-b2a5-1cc60a8fdcfd}</SharePointProjectItemId>
+    </None>
+    <None Include="GlobalConfigurationList\GlobalConfigurationList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d7333dce-c8b2-4bf5-8bba-af4df48e4be1}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1dbd1b80-62a1-4ab9-b92a-63d21ba8ef1f}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\SiteApprover\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a28a7074-4477-40c8-874d-454457e4e9a4}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\SiteApprover\SiteApproverInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{72b69aa1-3fbd-4662-b105-1c8a932f8092}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\SiteFeaturesConfiguration\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{801b29f4-b5bd-47df-b67a-25c9a303c154}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\SiteFeaturesConfiguration\SiteFeaturesConfigurationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b3174af0-114c-4c2d-992e-f7e1474d0a4d}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\SiteRequest\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{48da9250-b02d-4fd8-ac49-de4d0a733581}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\SiteRequest\SiteRequestInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a9915a60-14e0-4a46-a1a7-e6a58f1ae3cf}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\WorkflowConfiguration\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2300e354-f5ac-4aeb-bebe-e85215fa6ad0}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\WorkflowConfiguration\WorkflowConfigurationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{388ce32a-0d78-4ed0-ae1d-01a940de72dd}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{21dcc0f0-5dfe-4a03-9727-4f300d12f521}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Project\ProjectChangeRequest\ProjectChangeRequestInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a7027ef8-66cd-422a-bfb3-50a8b197fd62}</SharePointProjectItemId>
+    </None>
+    <None Include="Project\ProjectChangeRequest\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6f9fd23c-c671-4bae-a3ae-46efb883d705}</SharePointProjectItemId>
+    </None>
+    <None Include="Team\TeamProjectAssignments\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3019c7db-80b2-4797-b474-e9ba94eb7613}</SharePointProjectItemId>
+    </None>
+    <None Include="Team\TeamProjectAssignments\TeamProjectAssigmentsInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9dab14d0-ffcd-4779-a380-017df5d9f5a3}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DocLibraries\JCIBaseMetadataDocumentLibrary\EditDlg.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocLibraries\JCIBaseMetadataDocumentLibrary\Elements.xml" />
+    <Content Include="DocLibraries\JCIBaseMetadataDocumentLibrary\FileDlg.htm" />
+    <Content Include="DocLibraries\JCIBaseMetadataDocumentLibrary\Repair.aspx" />
+    <Content Include="DocLibraries\JCIBaseMetadataDocumentLibrary\Schema.xml" />
+    <Content Include="DocLibraries\JCIBaseMetadataDocumentLibrary\Upload.aspx" />
+    <Content Include="DocLibraries\JCIGeneralProjectDocumentLibrary\EditDlg.htm" />
+    <Content Include="DocLibraries\JCIGeneralProjectDocumentLibrary\Elements.xml" />
+    <Content Include="DocLibraries\JCIGeneralProjectDocumentLibrary\FileDlg.htm" />
+    <Content Include="DocLibraries\JCIGeneralProjectDocumentLibrary\Repair.aspx" />
+    <Content Include="DocLibraries\JCIGeneralProjectDocumentLibrary\Schema.xml" />
+    <Content Include="DocLibraries\JCIGeneralProjectDocumentLibrary\Upload.aspx" />
+    <Content Include="DocLibraries\JCIITProjectDocumentLibrary\EditDlg.htm" />
+    <Content Include="DocLibraries\JCIITProjectDocumentLibrary\Elements.xml" />
+    <Content Include="DocLibraries\JCIITProjectDocumentLibrary\FileDlg.htm" />
+    <Content Include="DocLibraries\JCIITProjectDocumentLibrary\Repair.aspx" />
+    <Content Include="DocLibraries\JCIITProjectDocumentLibrary\Schema.xml" />
+    <Content Include="DocLibraries\JCIITProjectDocumentLibrary\Upload.aspx" />
+    <Content Include="Features\BaseDocumentLibrary\BaseDocumentLibrary.Template.xml">
+      <DependentUpon>BaseDocumentLibrary.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GlobalConfigurationList\GlobalConfigurationList.Template.xml">
+      <DependentUpon>GlobalConfigurationList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Lists\Lists.Template.xml">
+      <DependentUpon>Lists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\ProjectDocumentLibrary\ProjectDocumentLibrary.Template.xml">
+      <DependentUpon>ProjectDocumentLibrary.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\ProjectWorkFlows\ProjectWorkFlows.Template.xml">
+      <DependentUpon>ProjectWorkFlows.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\TeamProjectAssignments\TeamProjectAssignments.Template.xml">
+      <DependentUpon>TeamProjectAssignments.feature</DependentUpon>
+    </Content>
+    <Content Include="GlobalConfigurationList\GlobalConfigurationList\Elements.xml" />
+    <Content Include="GlobalConfigurationList\GlobalConfigurationList\GlobalConfigurationListInstance\Elements.xml" />
+    <Content Include="GlobalConfigurationList\GlobalConfigurationList\Schema.xml" />
+    <Content Include="Images\JCI_featureIcon.png" />
+    <Content Include="Lists\Elements.xml" />
+    <Content Include="Lists\SiteApprover\Elements.xml" />
+    <Content Include="Lists\SiteApprover\Schema.xml" />
+    <Content Include="Lists\SiteApprover\SiteApproverInstance\Elements.xml" />
+    <Content Include="Lists\SiteFeaturesConfiguration\Elements.xml" />
+    <Content Include="Lists\SiteFeaturesConfiguration\Schema.xml" />
+    <Content Include="Lists\SiteFeaturesConfiguration\SiteFeaturesConfigurationInstance\Elements.xml" />
+    <Content Include="Lists\SiteRequest\Elements.xml" />
+    <Content Include="Lists\SiteRequest\Schema.xml" />
+    <Content Include="Lists\SiteRequest\SiteRequestInstance\Elements.xml" />
+    <Content Include="Lists\WorkflowConfiguration\Elements.xml" />
+    <Content Include="Lists\WorkflowConfiguration\Schema.xml" />
+    <Content Include="Lists\WorkflowConfiguration\WorkflowConfigurationInstance\Elements.xml" />
+    <Content Include="Project\ProjectChangeRequest\Elements.xml" />
+    <Content Include="Project\ProjectChangeRequest\ProjectChangeRequestInstance\Elements.xml" />
+    <Content Include="Project\ProjectChangeRequest\Schema.xml" />
+    <Content Include="Team\TeamProjectAssignments\Elements.xml" />
+    <Content Include="Team\TeamProjectAssignments\Schema.xml" />
+    <Content Include="Team\TeamProjectAssignments\TeamProjectAssigmentsInstance\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

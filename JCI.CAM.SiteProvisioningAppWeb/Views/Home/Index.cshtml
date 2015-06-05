@@ -1,0 +1,382 @@
+﻿@using JCI.CAM.SiteProvisioningAppWeb.Resources;
+@{
+    ViewBag.Title = "New Site Request";
+}
+
+<!-- ToDo: use resources string to replace static content -->
+@using JCI.CAM.SiteProvisioningAppWeb.Resources;
+<div data-bind="visible:(JCI.CAM.SiteRequest.loading() == 'wait')" class="fullscreen loader">
+</div>
+<div class="loaderText" data-bind="visible: (JCI.CAM.SiteRequest.loading() == 'wait')">
+    <h2>
+        @Resources.LoadingText
+        <img src="~/Content/Images/loading.gif" />
+    </h2>
+</div>
+<div id="marker" style="color:#ffffff; font-size: 1px;" >_</div>
+<!-- New Request -->
+<div data-bind="visible: (JCI.CAM.SiteRequest.mode() == 'new')" class="row width">
+    <div class="col-md-11">
+        <div id='wizard' class="row">
+
+            <!-- First step - Site Selection -->
+            <section class="step" data-step-title="Site Type">
+                <div class="col-md-9 control-group">
+                    <div class="row">
+                        <div class="col-md-7">
+                            @*<h3 id="action">@Resources.SiteRequestWebPart_ComponentTitle_LabelText</h3>*@
+                            <!-- Iterative rendering for site templates -->
+                            <div class="form-inline row SiteType" data-bind="foreach: request.formData.templates.sites">
+                                <div class="row thumb" data-bind="attr:{alt:Id}, event:{click: JCI.CAM.SiteRequest.setSiteType()}">
+                                    <div class="col-md-3">
+                                        <a href="#" class="thumbnail">
+                                            <img data-bind="attr:{src:TypeIcon, alt:Name}" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7 caption">
+                                        <h3 data-bind="text: Name"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border col-md-4">
+                            <div class="row">
+                                <div class="thumb2 col-md-offset-1">
+                                    <a href="#" class="thumbnail col-md-4">
+                                        <img data-bind="attr:{src: JCI.CAM.SiteRequest.siteTypeImg}" />
+                                    </a>
+                                    <div class="col-md-8 caption">
+                                        <h4 data-bind="text: JCI.CAM.SiteRequest.siteTypeName"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt10">
+                                <p class="col-md-offset-1" data-bind="html: JCI.CAM.SiteRequest.siteTypeDescription"></p>
+                            </div>
+                            <a class="col-md-offset-3" onclick="$('#wizard').easyWizard('nextStep')"><i class='glyphicon glyphicon-circle-arrow-right'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div onclick="$('#wizard').easyWizard('goToStep', 2)" class="col-md-1 color color1"><a>2</a></div>
+                    <div onclick="$('#wizard').easyWizard('goToStep', 3)" class="col-md-1 color color2"><a>3</a></div>
+                    <div onclick="$('#wizard').easyWizard('goToStep', 4)" class="col-md-1 color color3"><a>4</a></div>
+                </div>
+            </section>
+
+            <!--- Second step - Details -->
+            <section class="step" data-step-title="Second">
+                <div class="col-md-1">
+                    <div onclick="$('#wizard').easyWizard('goToStep', 1)" class="col-md-1 color color1"><a>1</a></div>
+                </div>
+                <div class="col-md-9 control-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div>
+                                <div class="form-group">
+                                    <label for="name">@Resources.SiteRequestWebPart_SiteTitle_LabelText<span class="red">*</span></label>
+                                    <div class="input-group">
+                                        <input id="name" class="form-control" data-bind="value: request.siteName" maxlength="100" placeholder="Site Name" />
+                                        <span class="input-group-addon help">?</span>
+                                        <div class="help">@Resources.SiteRequestWebPart_SiteTitle_HelpText</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="desc">@Resources.SiteRequestWebPart_SiteDescription_LabelText<span class="red">*</span></label>
+                                    <div class="input-group">
+                                        <textarea id="desc" class="form-control" data-bind="value: request.description" placeholder="Description" maxlength="200" ></textarea>
+                                        <span class="input-group-addon help">?</span>
+                                        <div class="help">@Resources.SiteRequestWebPart_SiteDescription_HelpText</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="site">@Resources.SiteRequestList_SiteURL_Field<span class="red">*</span></label>
+                                    <span data-bind="visible: JCI.CAM.SiteRequest.siteUrlValid() == 'ok'"><i class="glyphicon glyphicon-ok green"></i> @Resources.SiteUrlAvailableText</span>
+                                    <i data-bind="visible: JCI.CAM.SiteRequest.siteUrlValid() == 'wait'" class="glyphicon glyphicon-repeat blue"></i>
+                                    <span data-bind="visible: JCI.CAM.SiteRequest.siteUrlValid() == 'no'"><i class="glyphicon glyphicon-remove red"></i>@Resources.SiteUrlExistsText</span>
+                                    <p><span data-bind="text: request.webAppUrl"></span><span data-bind="text: request.managedPath"></span>/<span style="overflow:hidden; display: inline-flex; text-overflow: ellipsis; max-width: 197px;" data-bind="text: request.siteURL"></span><span data-bind="visible: request.siteURL().length > 27" style="overflow:hidden; display: inline-flex;"> ...</span></p>
+                                    <div class="input-group">
+                                        <input id="site" maxlength="100" class="form-control" data-bind="textInput: request.siteURL, event:{change: JCI.CAM.SiteRequest.validateSiteURL}" placeholder="Site" />
+                                        <span data-bind="visible: (request.siteURL.isValid() == false && JCI.CAM.SiteRequest.siteUrlValid() !='na')" class="validationMessage" style="">URL can only contain alphanumeric characters.</span>
+                                        <span class="input-group-addon help">?</span>
+                                        <div class="help">@Html.Raw(Resources.SiteRequestWebPart_SiteUrl_HelpText)</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="powner">@Resources.SiteRequestList_PrimaryOwner_Field<span class="red">*</span></label>
+                                    <div class="input-group">
+                                        <div id="divAdministrators" class="form-control">
+                                            <span id="spanAdministrators"></span>
+                                            <input type="text" id="inputAdministrators" class="noBorder" />
+                                        </div>
+                                        <span class="input-group-addon help">?</span>
+                                        <div class="help">@Resources.SiteRequestWebPart_PrimaryOwnerToolTip_Text</div>
+                                    </div>
+
+                                    <div id="divAdministratorsSearch" class="cam-peoplepicker-usersearch"></div>
+                                    <input onchange="JCI.CAM.SiteRequest.primaryOwnerChanged()" type="text" data-bind="visible: false" id="hdnAdministrators" />
+                                    <input type="text" data-bind="visible: false, value: request.primaryOwner" id="Administrators" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="sowner">@Resources.SiteRequestWebPart_AdditionalOwner_LabelText</label>
+                                    <div class="input-group">
+                                        <div id="divsowner" class="form-control">
+                                            <span id="spansowner"></span>
+                                            <input type="text" id="inputsowner" class="noBorder" />
+                                        </div>
+                                        <span class="input-group-addon help">?</span>
+                                        <div class="help">@Resources.SiteRequestWebPart_SiteSecondaryOwner_HelpText</div>
+                                    </div>
+                                    <div id="divsownerSearch" class="cam-peoplepicker-usersearch"></div>
+                                    <input onchange="JCI.CAM.SiteRequest.secondaryOwnerChanged()" type="text" data-bind="visible: false" id="hdnsowner" />
+                                </div>
+                                <h4 class="options" data-bind="event:{click: JCI.CAM.SiteRequest.showOptions()}, visible: JCI.CAM.SiteRequest.show() === false">Options <i class="glyphicon glyphicon-chevron-right"></i></h4>
+                                <fieldset title="Options" data-bind="visible: JCI.CAM.SiteRequest.show() === true">
+                                    <legend class="options" data-bind="event:{click: JCI.CAM.SiteRequest.showOptions()}">Options <span id="options" class="glyphicon glyphicon-chevron-down"></span></legend>
+                                    <div class="form-group">
+                                        <label for="">@Resources.SiteRequestWebPart_BusinessUnit_LabelText<span class="red">*</span></label>
+                                        <div class="input-group">
+                                            <select class="form-control" data-bind="value: request.siteBU, options: request.formData.businessUnit"></select>
+                                            <span class="input-group-addon help">?</span>
+                                            <div class="help">@Resources.SiteRequestWebPart_BU_HelpText</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>@Resources.SiteRequestWebPart_Region_LabelText<span class="red">*</span></label>
+                                        <div class="input-group">
+                                            <select class="form-control" data-bind="value: request.siteRegion, options: request.formData.regions"></select>
+                                            <span class="input-group-addon help">?</span>
+                                            <div class="help">@Resources.SiteRequestWebPart_Region_HelpText</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>@Resources.SiteRequestWebPart_Country_LabelText<span class="red">*</span></label>
+                                        <div class="input-group">
+                                            <select class="form-control" data-bind="value: request.siteCountry, options: request.formData.countries"></select>
+                                            <span class="input-group-addon help">?</span>
+                                            <div class="help">@Resources.SiteRequestWebPart_Country_HelpText</div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="border col-md-4">
+                            <div class="row">
+                                <div class="thumb2 col-md-offset-1">
+                                    <a href="#" class="thumbnail col-md-4">
+                                        <img data-bind="attr:{src: JCI.CAM.SiteRequest.siteTypeImg}" />
+                                    </a>
+                                    <div class="col-md-8 caption">
+                                        <h4 data-bind="text: JCI.CAM.SiteRequest.siteTypeName"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt10">
+                                <p class="col-md-offset-1" data-bind="html: JCI.CAM.SiteRequest.siteTypeDescription"></p>
+                            </div>
+                            <a onclick="$('#wizard').easyWizard('prevStep')"><i class='glyphicon glyphicon-circle-arrow-left'></i></a>
+                            <a class="col-md-offset-2" onclick="$('#wizard').easyWizard('nextStep')"><i class='glyphicon glyphicon-circle-arrow-right'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div onclick="$('#wizard').easyWizard('goToStep', 3)" class="col-md-1 color color2"><a>3</a></div>
+                    <div onclick="$('#wizard').easyWizard('goToStep', 4)" class="col-md-1 color color3"><a>4</a></div>
+                </div>
+            </section>
+
+            <!--- Third step - Details -->
+            <section class="step" data-step-title="Third">
+                <div class="col-md-2">
+                    <div onclick="$('#wizard').easyWizard('goToStep', 1)" class="col-md-1 color color1"><a>1</a></div>
+                    <div onclick="$('#wizard').easyWizard('goToStep', 2)" class="col-md-1 color color2"><a>2</a></div>
+                </div>
+                <div class="col-md-9 control-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div data-bind="visible: (JCI.CAM.SiteRequest.baseType().toUpperCase() !== 'COMMUNITYSITE')" class="form-group">
+                                <label>@Resources.SiteRequestWebPart_ConfidentialityLevel_LabelText <span class="red">*</span></label>
+                                <div class="input-group">
+                                    <select class="form-control" data-bind="value: request.confidentiality, options: request.formData.confidentiallityLevels(), optionsText: 'text', optionsValue: 'value'"></select>
+                                    <span class="input-group-addon help">?</span>
+                                    <div class="help">@Html.Raw(Resources.SiteRequestWebPart_Confidentiality_HelpText)</div>
+                                </div>
+                            </div>
+                            <div data-bind="visible: (JCI.CAM.SiteRequest.baseType().toUpperCase() === 'PARTNERSITE')" class="form-group">
+                                <label for="name">@Resources.JCICustomerPlaceHolder<span class="red">*</span></label>
+                                <div class="input-group">
+                                    <input id="name" class="form-control" data-bind="value: request.jciCustomers" placeholder="@Resources.JCICustomerPlaceHolder" />
+                                    <span class="input-group-addon help">?</span>
+                                    <div class="help">@Resources.PartnerSite_CustomerName_HelpText</div>
+                                </div>
+                            </div>
+                            <div data-bind="visible: (JCI.CAM.SiteRequest.baseType().toUpperCase() === 'COMMUNITYSITE')" class="form-group">
+                                <label>@Resources.SiteRequestWebPart_Community_LabelText<span class="red">*</span></label>
+                                <div class="input-group">
+                                    <select class="form-control" data-bind="value: request.communitySiteType">
+                                        <option>Public</option>
+                                        <option>Private</option>
+                                        <option>Secured</option>
+                                    </select>
+                                    <span class="input-group-addon help">?</span>
+                                    <div class="help">@Html.Raw(Resources.SiteRequestWebPart_CommunitySiteOptions_HelpText)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div style="height: 30px;"></div>
+                            </div>
+                            <div data-bind="visible: (JCI.CAM.SiteRequest.baseType().toUpperCase() === 'PROJECTSITE' || JCI.CAM.SiteRequest.baseType().toUpperCase() === 'COLLABORATION')" class="form-group">
+                                <label>@Resources.SiteRequestWebPart_StartDate_LabelText<span class="red">*</span></label>
+                                <div class="input-group">
+                                    <input id="startDate" class="form-control" type="date" data-bind="value: request.startDate, text: request.startDate()" placeholder="yyyy-mm-dd" />
+                                    <span class="input-group-addon help">?</span>
+                                    <div class="help">@Resources.SiteRequestWebPart_StartDate_HelpText</div>
+                                </div>
+                            </div>
+                            <div data-bind="visible: (JCI.CAM.SiteRequest.baseType().toUpperCase() === 'PROJECTSITE' || JCI.CAM.SiteRequest.baseType().toUpperCase() === 'COLLABORATION')" class="form-group">
+                                <label>@Resources.SiteRequestWebPart_EndDate_LabelText</label>
+                                <div class="input-group">
+                                    <input id="endDate" class="form-control" type="date" data-bind="value: request.endDate" placeholder="yyyy-mm-dd" />
+                                    <span id="endDateValid" data-bind="visible: (request.endDate.isValid() == false && JCI.CAM.SiteRequest.datePrimaryCheck() == 'NO')" class="validationMessage" style="">@*Please check this value.*@</span>
+                                    <span class="input-group-addon help">?</span>
+                                    <div class="help">@Resources.SiteRequestWebPart_EndDate_HelpText</div>
+                                </div>
+                            </div>
+                            <div data-bind="visible: (JCI.CAM.SiteRequest.baseType().toUpperCase() === 'PROJECTSITE' || JCI.CAM.SiteRequest.baseType().toUpperCase() === 'COLLABORATION')" class="form-group">
+                                <label>@Resources.SiteRequestWebPart_ClarityId_LabelText</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="text" data-bind="value: request.projectNumber" placeholder="Project Number" />
+                                    <span class="input-group-addon help">?</span>
+                                    <div class="help">@Resources.SiteRequestWebPart_HelpClarityProjectNo_HelpText</div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input id="TestSite" type="checkbox" data-bind="checked: request.isTestSite" />
+                                </span>
+                                <label class="form-control nobold" for="TestSite">
+                                    @Resources.SiteRequestWebPart_IsTestSite_LabelText
+                                </label>
+                                <span class="input-group-addon help">?</span>
+                                <div class="help">@Html.Raw(Resources.SiteRequestWebPart_IsTest_HelpText)</div>
+                            </div>
+
+                            <div class="input-group pt10">
+                                <span class="input-group-addon">
+                                    <input class="checkbox" id="terms" type="checkbox" data-bind="checked: request.isAgreed" />
+                                </span>
+                                <label class="form-control nobold" for="terms">
+                                    <span class="red">*</span>
+                                    @Html.Raw(Resources.SiteRequestWebPart_Click_Text)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="border col-md-4">
+                            <div class="row">
+                                <div class="thumb2 col-md-offset-1">
+                                    <a href="#" class="thumbnail col-md-4">
+                                        <img data-bind="attr:{src: JCI.CAM.SiteRequest.siteTypeImg}" />
+                                    </a>
+                                    <div class="col-md-8 caption">
+                                        <h4 data-bind="text: JCI.CAM.SiteRequest.siteTypeName"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt10">
+                                <p class="col-md-offset-1" data-bind="html: JCI.CAM.SiteRequest.siteTypeDescription"></p>
+                            </div>
+                            <a onclick="$('#wizard').easyWizard('prevStep')"><i class='glyphicon glyphicon-circle-arrow-left'></i></a>
+                            <a class="col-md-offset-2" onclick="$('#wizard').easyWizard('nextStep')"><i class='glyphicon glyphicon-circle-arrow-right'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div onclick="$('#wizard').easyWizard('goToStep', 4)" class="col-md-1 color color3"><a>4</a></div>
+                </div>
+            </section>
+
+            <!-- Step 4 - Final Confirmation -->
+            <section class="step" data-step-title="Final">
+                <div class="col-md-3">
+                    <div onclick="$('#wizard').easyWizard('goToStep', 1)" class="col-md-1 color color1"><a>1</a></div>
+                    <div onclick="$('#wizard').easyWizard('goToStep', 2)" class="col-md-1 color color2"><a>2</a></div>
+                    <div onclick="$('#wizard').easyWizard('goToStep', 3)" class="col-md-1 color color3"><a>3</a></div>
+                </div>
+                <div class="col-md-9 control-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2>@Resources.SiteRequestWebPart_Page4Title_LabelText</h2>
+                            <p>@Resources.SiteRequestWebPart_FinalMessage_LabelText</p>
+                            <div id="submitwait" data-bind="visible: JCI.CAM.SiteRequest.submitStatus() === 'wait'" class="col-md-12 pad0">@Resources.SiteRequestWebPart_SubmitWait_Text <img src="~/Content/Images/loading.gif" /></div>
+                            <div class="error" data-bind="visible: JCI.CAM.SiteRequest.errorMsg() !== '' ">
+                                <!-- Container for error alert div -->
+                            </div>
+                            <div class="message alert" style="overflow:auto">
+                                <!-- Container for message alert div -->
+                            </div>
+                        </div>
+
+                        <div class="border col-md-4">
+                            <div class="row">
+                                <div class="thumb2 col-md-offset-1">
+                                    <a href="#" class="thumbnail col-md-4">
+                                        <img data-bind="attr:{src: JCI.CAM.SiteRequest.siteTypeImg}" />
+                                    </a>
+                                    <div class="col-md-8 caption">
+                                        <h4 data-bind="text: JCI.CAM.SiteRequest.siteTypeName"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt10" style="margin-right: 5px;">
+                                <p class="col-md-offset-1" data-bind="html: JCI.CAM.SiteRequest.siteTypeDescription"></p>
+                            </div>
+                            <div>
+                                <a onclick="$('#wizard').easyWizard('prevStep')"><i class='glyphicon glyphicon-circle-arrow-left'></i></a>
+                                <a class="col-md-offset-2" onclick="JCI.CAM.SiteRequest.validate()"><i class='glyphicon glyphicon-ok-sign'></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Request -->
+<div data-bind="visible: (JCI.CAM.SiteRequest.mode() === 'edit')" style="display: none;" id='wizard' class="row pad20">
+    <h3>Edit site request</h3>
+    <div class="input-group">
+        <span class="" id="">Additional Information (max. 255 char)</span>
+        <textarea id="AddInfo" maxlength="255" type="date" rows="10" cols="40" class="form-control description" placeholder="Additional Information"></textarea>
+    </div>
+    <button type="button" data-bind="event: {click: JCI.CAM.SiteRequest.submitInfo}, enable: (JCI.CAM.SiteRequest.submitStatus() == 'no')" class="btn btn-default">Submit</button>
+
+    <div class="message alert msg" style="overflow:auto; clear:both; "><!-- Container for message alert div --></div>
+</div>
+
+<!-- Delete Request -->
+<div data-bind="visible: (JCI.CAM.SiteRequest.mode() === 'delete')" style="display: none;" id='wizard' class="row pad20">
+    <h3>@Resources.CancelRequestHeaderText</h3>
+    <div class="input-group">
+        <div class="form-control-static" id="">@Resources.CancelRequestText</div>
+        <div class="btn-toolbar">
+            <div class="btn-group col-md-10" role="group" aria-label="First group">
+                <button type="button" data-bind="event: {click: JCI.CAM.SiteRequest.deleteRequest}, enable: (JCI.CAM.SiteRequest.submitStatus() == 'no')" class="btn btn-default btn-danger">Yes</button>
+            </div>
+            <div class="btn-group col-md-offset-4" role="group" aria-label="First group">
+                <button type="button" data-bind="event: {click: function(){}}, enable: (JCI.CAM.SiteRequest.submitStatus() == 'no')" class="btn btn-default">No</button>
+            </div>
+        </div>
+    </div>
+    <div class="message alert msg" style="overflow:auto; clear:both; "><!-- Container for message alert div --></div>
+</div>
+
+@section Variables
+{
+    <script type="text/javascript">
+        var commonmessages = commonmessages || {};
+        @*commonmessages.CommunitySiteDescription = '@Resources.SiteRequestWebPart_CommunitySiteDescription_LabelText';
+        commonmessages.TeamSiteDescription = '@Resources.SiteRequestWebPart_TeamSiteDescription_LabelText';
+        commonmessages.ProjectSiteDescription = '@Resources.SiteRequestWebPart_ProjectSiteDescription_LabelText';*@
+    </script>
+}

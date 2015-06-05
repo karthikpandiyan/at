@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Project Site Risks" OnQuickLaunch="FALSE" TemplateType="1100" FeatureId="00bfea71-5932-4f9c-ad71-1557e5751100" Url="Lists/ProjectSiteRisks" Description="Project Site Risks"></ListInstance>
+</Elements>

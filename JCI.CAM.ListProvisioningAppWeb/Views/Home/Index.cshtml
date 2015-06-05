@@ -1,0 +1,170 @@
+﻿@model JCI.CAM.ListProvisioningAppWeb.Models.ListModel
+
+
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.SPURL = Request.QueryString["SPHostUrl"];
+}
+
+<script type="text/javascript">
+    "use strict";
+
+
+        var appInsights=window.appInsights||function(config){
+            function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
+        }({
+            instrumentationKey:"8bfd2c0d-0791-4ad3-b506-fc15e9634a84"
+        });
+
+    window.appInsights=appInsights;
+    appInsights.trackPageView();
+
+
+    var hostweburl;
+
+    //load the SharePoint resources
+    $(document).ready(function () {
+        //Get the URI decoded URL.
+        hostweburl = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
+        // The SharePoint js files URL are in the form:
+        // web_url/_layouts/15/resource
+        var scriptbase = hostweburl + "/_layouts/15/";
+
+        // Load the js file and continue to the
+        //   success handler
+        $.getScript(scriptbase + "SP.UI.Controls.js", renderChrome);
+
+    });
+
+    // Callback for the onCssLoaded event defined
+    //  in the options object of the chrome control
+    function chromeLoaded() {
+        // When the page has loaded the required
+        //  resources for the chrome control,
+        //  display the page body.
+        $("body").show();
+    }
+
+    //Function to prepare the options and render the control
+    function renderChrome() {
+        // The Help, Account and Contact pages receive the
+        //   same query string parameters as the main page
+        // var imageBase = hostweburl + "/_layouts/15/images/";
+
+        var options = {
+            "appIconUrl": '~/../Content/images/JohnsonControlsLogo.png', //imageBase + "siteicon.png",
+            "appTitle": "New List or Library",
+            "appHelpPageUrl": "Help.html?"+ document.URL.split("?")[1],
+            // The onCssLoaded event allows you to specify a callback to execute when the chrome resources have been loaded.
+            "onCssLoaded": "chromeLoaded()",
+            "settingsLinks": [
+                {
+                    "linkUrl": "Account.html?"+ document.URL.split("?")[1],
+                    "displayName": "Account settings"
+                },
+                {
+                    "linkUrl": "Contact.html?"+ document.URL.split("?")[1],
+                    "displayName": "Contact us"
+                }
+            ]
+        };
+
+        var nav = new SP.UI.Controls.Navigation("chrome_ctrl_placeholder", options);
+        nav.setVisible(true);
+    }
+
+    // Function to retrieve a query string value.
+    // For production purposes you may want to use
+    //  a library to handle the query string.
+    function getQueryStringParameter(paramToRetrieve) {
+        var params =
+            document.URL.split("?")[1].split("&");
+        var strParams = "";
+        for (var i = 0; i < params.length; i = i + 1) {
+            var singleParam = params[i].split("=");
+            if (singleParam[0] == paramToRetrieve)
+                return singleParam[1];
+        }
+    }
+
+    function cancel() {
+        window.location = hostweburl;
+    }
+
+    function wait() {
+        $("#frmListCreate").data("validator").settings.submitHandler = function (form) {
+            //$("#btnCancel").attr("disabled", true);
+            $("#btnListCreate").attr("disabled", true).val("Working");
+            //showProgress('List or Library Creating...')
+            form.submit();
+        }
+    }
+
+    ////function showProgress(progressText) {
+    ////    $("#task_progress").show();
+    ////    if (progressText) {
+    ////        $('#progressText').html(progressText);
+    ////    }
+    ////}
+
+</script>
+<!-- The body is initally hidden. The onCssLoaded callback allows you to display the content after the required resources for the chrome control have been loaded.  -->
+<body style="display: none">
+    @using (Html.BeginForm("Create", "Home", new { SPHostUrl = @ViewBag.SPURL }, FormMethod.Post, new { id="frmListCreate", enctype = "multipart/form-data" }))
+    {
+        <!-- Chrome control placeholder -->
+        <div id="chrome_ctrl_placeholder"></div>
+        @Html.ValidationMessage("error", new { @class = "help-inline", @style="color:red" })
+        <div class="col-md-12 control-group">
+            <div class="row">
+                <div class="form-group col-xs-6">
+                    <h5 class="col-md-12 caption">
+                        Name and Description
+                    </h5>
+                    <h6 class="col-md-10 ms-descriptiontext ms-inputformdescription">
+                        Type a new name as you want it to appear in headings and links throughout the site. Type descriptive text that will help site visitors use this list.
+                    </h6>
+                </div>
+                <div class="form-group col-xs-6">
+                    Name :
+                    @Html.TextBoxFor(m => m.Title, new { maxlength = 50, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Title, String.Empty, new { @class = "help-inline", @style="color:red" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6">
+
+                </div>
+                <div class="form-group col-xs-6">
+                    Description:
+                    @Html.TextAreaFor(m => m.Description, new { rows = 6, columns = 30, @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6">
+                    <h5 class="col-md-12 caption">Templates</h5>
+                    <h6 class="col-md-10 ms-descriptiontext ms-inputformdescription">Select a template to determine the default configuration for this list or library.</h6>
+                </div>
+                <div class="form-group col-xs-6">
+                    Templates:
+                    @Html.DropDownListFor(m => m.TemplateTitle, new SelectList(Model.Templates), "-Please select a template-", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.TemplateTitle, String.Empty, new { @class = "help-inline", @style="color:red" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-inline row">
+                    <div class="form-group col-xs-7">
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <input type="submit" id="btnListCreate" name="Create" value="Create" onclick="wait();" />
+                        <input type="button" id="btnCancel" name="Cancel" value="Cancel" onclick="cancel();" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B29B813C-4668-4DFC-A02A-C9E557E51F38}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JCI.CAM.ConsoleApp</RootNamespace>
+    <AssemblyName>JCI.CAM.ConsoleApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.Publishing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.Taxonomy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SharePoint.Client.WorkflowServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Constants\MigrationConstants.cs" />
+    <Compile Include="Helpers\ConsoleOperations.cs" />
+    <Compile Include="Helpers\GlobalData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\key.snk">
+      <Link>key.snk</Link>
+    </None>
+    <None Include="App.config" />
+    <None Include="DocumentTemplates\DT As Is Documentation\2_PM2_Proposal_Phase_As_Is_Documentation_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT As Is Documentation\PM2_06_SDLC_01_Proposal_AsIsDocumentation.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT As Is Documentation\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Communication Plan\6_PM2_PMD_Communication_Plan_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Communication Plan\PM2_03_MonitorandControl_CommunicationPlan.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Communication Plan\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Complexity Assessment\1_PM2_Initiation_Phase_Complexity_Assessment_V1.0.xlsm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Complexity Assessment\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Detailed Functional Specification\3_PM2_Execution_Design_Phase_Detailed_Functional_Requirements_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Detailed Functional Specification\PM2_06_SDLC_02_Design_DetailedFunctionalRequirements.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Detailed Functional Specification\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Disaster Recovery Plan\DisasterRecoveryPlanTemplate_v6_2.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Disaster Recovery Plan\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT External Statement of Work\2_PM2_Proposal_Phase_SOW_V4.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT External Statement of Work\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Gap Analysis\2_PM2_Proposal_Phase_Gap_Analysis_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Gap Analysis\PM2_06_SDLC_01_Proposal_GapAnalysis.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Gap Analysis\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Implementation plan\3_PM2_Execution_Validation_Phase_Implementation_Plan_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Implementation plan\PM2_04_Execution_ImplementationPlan.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Implementation plan\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Internal Statement of Work\2_PM2_Proposal_Phase_Internal_Statement_of_Work_V1.2.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Internal Statement of Work\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT JCIDocumentExcel\JCI_Document_Excel.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT JCIDocumentExcel\JCI_Document_Excel.xltx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT JCIDocumentExcel\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT JCIDocumentPowerPoint\JCI_Document_PowerPoint.potx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT JCIDocumentPowerPoint\JCI_Document_PowerPoint.pptx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT JCIDocumentPowerPoint\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT JCIGeneralDocumentExcel\JCI_GeneralDoc_Excel.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT JCIGeneralDocumentExcel\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT JCIGeneralDocumentPowerPoint\JCI_GeneralDoc_PowerPoint.pptx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT JCIGeneralDocumentPowerPoint\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT JCIITDocumentExcel\JCI_ITDoc_Excel.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT JCIITDocumentExcel\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT JCIITDocumentPowerPoint\JCI_ITDoc_PowerPoint.pptx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT JCIITDocumentPowerPoint\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2003 Wide\JC_PPT_03_Template_Widescreen_16x9.ppt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2003 Wide\PowerPoint_03_template_Widescreen_16x9.ppt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2003 Wide\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2003\JC_PPT_Template_03Aug2012.ppt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2003\JC_PPT_Template_03_aug2_2012.ppt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2003\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2007 Wide\PowerPoint_07_template_Widescreen_16x9.potx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2007 Wide\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2007\JC_PPT_Template_07Aug2012.pptx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Presentation - PowerPoint 2007\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Project Assessment\5_PM2_Close_Phase_Project_Assessment_and_Close_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Project Assessment\PM2_05_Close_ProjectClosureReport.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Project Assessment\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Project Budget Plan\2_PM2_Proposal_Phase_Project_Budget_Plan_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Project Budget Plan\PM2_02_Proposal_ProjectBudget.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Project Budget Plan\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Project Charter\1_PM2_Initiation_Phase_Project_Charter_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Project Charter\PM2_01_Initiation_ProjectCharter.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Project Charter\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Roles and Responsibility Matrix\6_PM2_PMD_Responsibility_Matrix_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Roles and Responsibility Matrix\PM2_02_Proposal_RequirementsTraceabilityMatrix.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Roles and Responsibility Matrix\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Security Self Service Questions\3_PM2_Execution_Design_Phase_Security_Self_Service_Questions_10_24_12.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Security Self Service Questions\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Solution Delivery Proposal\2_PM2_Proposal_Phase_Solution_Delivery_Proposal_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Solution Delivery Proposal\PM2_02_Proposal_SolutionProposal.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Solution Delivery Proposal\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Sponsor Survey\5_PM2_Close_Phase_Project_Sponsor_Survey_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Sponsor Survey\PM2_05_Close_ProjectSponsorSurvey.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Sponsor Survey\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Statement of Requirements\2_PM2_Proposal_Phase_Statement_of_Requirements_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Statement of Requirements\PM2_02_Proposal_Statement_of_Requirements%28SOR%29.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Statement of Requirements\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Statement of Work Training\2_PM2_Proposal_Phase_SOW_Training_2012.pptx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Statement of Work Training\PM2_02_Proposal_Statement_of_Work%28SOW%29.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Statement of Work Training\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Support process and Help Desk Readiness\3_PM2_Execution_Validation_Phase_Support_Process_and_Help_Desk_Readiness_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Support process and Help Desk Readiness\PM2_06_SDLC_04_Validation_SupportProcessandHelpDeskReadiness.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Support process and Help Desk Readiness\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT System test Specification\3_PM2_Execution_Development_Phase_System_Test_Specification_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT System test Specification\PM2_06_SDLC_03_Development_SystemTestSpecification.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT System test Specification\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Team Survey\5_PM2_Close_Phase_Project_Team_Survey_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Team Survey\PM2_05_Close_ProjectTeamSurvey.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Team Survey\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Testing Strategy\3_PM2_Execution_Design_Phase_Testing_Strategy_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Testing Strategy\PM2_06_SDLC_02_Design_Testing_Strategy.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Testing Strategy\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT To Be Documentation\2_PM2_Proposal_Phase_To_Be_Documentation_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT To Be Documentation\PM2_06_SDLC_01_Proposal_ToBeDocumentation.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT To Be Documentation\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Training Strategy\3_PM2_Execution_Development_Phase_Training_Strategy_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Training Strategy\PM2_06_SDLC_03_Development_TrainingStrategy.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Training Strategy\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Unit Test Specification\3_PM2_Execution_Development_Phase_Unit_Test_Specification_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Unit Test Specification\PM2_06_SDLC_03_Development_Unit_Test_Specification.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Unit Test Specification\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Use Case Guideline\2_PM2_Proposal_Phase_Use_Case_Guidelines_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Use Case Guideline\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT Use Case\2_PM2_Proposal_Phase_Use_Cases_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Use Case\PM2_06_SDLC_01_Proposal_UseCases.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT Use Case\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT User Acceptance Test Specification\3_PM2_Execution_Development_Phase_User_Acceptance_Test_Specification_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT User Acceptance Test Specification\PM2_06_SDLC_03_Development_UserAcceptanceTest_Specification.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT User Acceptance Test Specification\SharePointProjectItem.spdata" />
+    <None Include="DocumentTemplates\DT User Work Instructions\3_PM2_Execution_Development_Phase_User_Work_Instructions_V1.0.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT User Work Instructions\PM2_06_SDLC_03_Development_UserWorkInstructions.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DocumentTemplates\DT User Work Instructions\SharePointProjectItem.spdata" />
+    <Content Include="Themes\JCITheme\JCIPalette.spcolor">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="WebPartDefinition\ScriptEditor.webpart">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SchemaFiles\DocumentTemplates.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DocumentTemplates\DT As Is Documentation\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Communication Plan\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Complexity Assessment\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Detailed Functional Specification\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Disaster Recovery Plan\Elements.xml" />
+    <Content Include="DocumentTemplates\DT External Statement of Work\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Gap Analysis\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Implementation plan\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Internal Statement of Work\Elements.xml" />
+    <Content Include="DocumentTemplates\DT JCIDocumentExcel\Elements.xml" />
+    <Content Include="DocumentTemplates\DT JCIDocumentPowerPoint\Elements.xml" />
+    <Content Include="DocumentTemplates\DT JCIGeneralDocumentExcel\Elements.xml" />
+    <Content Include="DocumentTemplates\DT JCIGeneralDocumentPowerPoint\Elements.xml" />
+    <Content Include="DocumentTemplates\DT JCIITDocumentExcel\Elements.xml" />
+    <Content Include="DocumentTemplates\DT JCIITDocumentPowerPoint\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Presentation - PowerPoint 2003 Wide\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Presentation - PowerPoint 2003\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Presentation - PowerPoint 2007 Wide\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Presentation - PowerPoint 2007\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Project Assessment\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Project Budget Plan\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Project Charter\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Roles and Responsibility Matrix\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Security Self Service Questions\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Solution Delivery Proposal\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Sponsor Survey\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Statement of Requirements\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Statement of Work Training\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Support process and Help Desk Readiness\Elements.xml" />
+    <Content Include="DocumentTemplates\DT System test Specification\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Team Survey\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Testing Strategy\Elements.xml" />
+    <Content Include="DocumentTemplates\DT To Be Documentation\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Training Strategy\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Unit Test Specification\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Use Case Guideline\Elements.xml" />
+    <Content Include="DocumentTemplates\DT Use Case\Elements.xml" />
+    <Content Include="DocumentTemplates\DT User Acceptance Test Specification\Elements.xml" />
+    <Content Include="DocumentTemplates\DT User Work Instructions\Elements.xml" />
+    <Content Include="SchemaFiles\JCIContentTypes.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SchemaFiles\JCIFields.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SchemaFiles\JCITaxonomyFields.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SchemaFiles\JCIListDefinitionMigration.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SchemaFiles\JCIThemePackage.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SchemaFiles\SiteMigrationRequestList.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JCI.Azure.Framework.Provisioning\JCI.Azure.Framework.Provisioning.csproj">
+      <Project>{4880fde2-39e0-4f71-8afe-1bcb1ed61fd6}</Project>
+      <Name>JCI.Azure.Framework.Provisioning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JCI.CAM.Common\JCI.CAM.Common.csproj">
+      <Project>{cd640094-5058-47d2-ace5-c535fcc32d80}</Project>
+      <Name>JCI.CAM.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SchemaFiles\SiteProvisioningLists.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SchemaFiles\ListTemplates.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\JCITheme\JohnsonControlsLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Workflows\SiteRequestApprovalWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Workflows\SiteRequestUpdatedWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

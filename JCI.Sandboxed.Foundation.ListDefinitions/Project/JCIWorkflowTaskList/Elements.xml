@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="JCIWorkflowTaskList"
+                OnQuickLaunch="FALSE"
+                TemplateType="171"
+                FeatureId="f9ce21f8-f437-4f7e-8bc6-946378c850f0"
+                Url="Lists/JCIWorkflowTaskList"
+                Description="JCI Workflow Task List"
+                Hidden="TRUE">
+  </ListInstance>
+  <ContentTypeBinding ListUrl="Lists/JCIWorkflowTaskList"
+                      RootWebOnly="FALSE"
+                      ContentTypeId="0x01080005645F3F85164FDFBA882E93A3F91C65"/>
+</Elements>

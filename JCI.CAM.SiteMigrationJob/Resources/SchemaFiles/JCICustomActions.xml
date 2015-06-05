@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CustomActions>
+  <CustomAction Name="JCI_CAM_HeaderFooterInjection">
+    <ScriptBlock>
+      <![CDATA[       
+          var JCI_CAM_BrandingCustomizationApp_AppWeb = 'https://~webSiteHostName/branding';   
+          var headID = document.getElementsByTagName('head')[0]; 
+          var JCIMasterCSS = document.createElement('link');
+          JCIMasterCSS.rel = 'stylesheet'; 
+          JCIMasterCSS.href = JCI_CAM_BrandingCustomizationApp_AppWeb + '/Styles/CSS/JCIMaster.css';
+          JCIMasterCSS.type = 'text/css';
+          headID.appendChild(JCIMasterCSS);
+          var brandingNavigation = document.createElement('script');
+          brandingNavigation.type = 'text/javascript';
+          brandingNavigation.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/InjectBrandingNavigation.js';
+          headID.appendChild(brandingNavigation);        
+          var JCIMaster = document.createElement('script'); JCIMaster.type = 'text/javascript';
+          JCIMaster.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JCIMaster.js';
+          headID.appendChild(JCIMaster);
+          var JCIGlobalNavigation = document.createElement('script');
+          JCIGlobalNavigation.type = 'text/javascript';
+          JCIGlobalNavigation.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JCIGlobalNavigation.js';
+          headID.appendChild(JCIGlobalNavigation);
+          var jQueryWaterMark = document.createElement('script');
+          jQueryWaterMark.type = 'text/javascript';
+          jQueryWaterMark.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JQuery.WaterMark.js';
+          headID.appendChild(jQueryWaterMark);
+          var directAccess = document.createElement('script');
+          directAccess.type = 'text/javascript';
+          directAccess.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/DirectAccess.js';
+          headID.appendChild(directAccess);
+          var webtrendsLoad = document.createElement('script');
+          webtrendsLoad.type = 'text/javascript';
+          webtrendsLoad.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/webtrends.load.js'; 
+          headID.appendChild(webtrendsLoad);     
+          var JCIStickyFooter = document.createElement('script'); JCIStickyFooter.type = 'text/javascript';
+          JCIStickyFooter.src = JCI_CAM_BrandingCustomizationApp_AppWeb + '/scripts/JCI.StickyFooter.js';
+          headID.appendChild(JCIStickyFooter);
+        ]]>
+    </ScriptBlock>
+  </CustomAction>
+
+  <CustomAction Name="JCI_CAM_SPDSettings">
+    <ScriptBlock>
+      <![CDATA[         
+          var JCI_CAM_SPDSettingsApp_AppWeb = 'https://~webSiteHostName/SPDSettings'; 
+          var headID = document.getElementsByTagName('head')[0];
+          var SPDSettingsScript = document.createElement('script');
+          SPDSettingsScript.type = 'text/javascript';
+          SPDSettingsScript.src = JCI_CAM_SPDSettingsApp_AppWeb + '/scripts/settings.js';
+          headID.appendChild(SPDSettingsScript);       
+        ]]>
+    </ScriptBlock>
+  </CustomAction>
+
+  <CustomAction Name="JCI_CAM_TestSiteBannerInjection">
+    <ScriptBlock>
+      <![CDATA[
+var JCI_CAM_TestSiteBannerApp_AppWeb = 'https://~webSiteHostName/testsitebanner';
+var headID = document.getElementsByTagName('head')[0];
+var testBannerScript = document.createElement('script');
+testBannerScript.type = 'text/javascript';
+testBannerScript.src = JCI_CAM_TestSiteBannerApp_AppWeb + '/scripts/TestSiteBannerInjection.js';
+headID.appendChild(testBannerScript);
+]]>
+    </ScriptBlock>
+  </CustomAction>
+
+  <CustomAction Name="JCI_CAM_SubSite_OverrideCreateNewSite">
+    <ScriptBlock>
+      <![CDATA[    
+       var JCI_CAM_SubSiteSetting_AppWebUrl = 'https://~webSiteHostName/subsiteprovisioning/';
+       var headID = document.getElementsByTagName('head')[0]; 
+       var subSiteScript = document.createElement('script');
+          subSiteScript.type = 'text/javascript';
+          subSiteScript.src = JCI_CAM_SubSiteSetting_AppWebUrl + 'Resources/OverrideNewSubSiteLink.js';
+          headID.appendChild(subSiteScript);     
+      ]]>
+    </ScriptBlock>
+  </CustomAction>
+</CustomActions>
